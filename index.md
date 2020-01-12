@@ -1,3 +1,0 @@
-MAIN PAGE 
-<BR>
-<a href="http://ishopp.cf:8080">MY SITE</a>
