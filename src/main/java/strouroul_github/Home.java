@@ -34,23 +34,23 @@ public class Home extends HttpServlet {
             throws ServletException, IOException {
         
         
-             String  this_URL="/LandingServlet";
-       RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher( this_URL );
-       dispatcher.forward(request, response);
+////             String  this_URL="/LandingServlet";
+////       RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher( this_URL );
+////       dispatcher.forward(request, response);
        
-////        response.setContentType("text/html;charset=UTF-8");
-////        try (PrintWriter out = response.getWriter()) {
-////            /* TODO output your page here. You may use following sample code. */
-////            out.println("<!DOCTYPE html>");
-////            out.println("<html>");
-////            out.println("<head>");
-////            out.println("<title>Servlet Home</title>");            
-////            out.println("</head>");
-////            out.println("<body>");
-////            out.println("<h1>Servlet Home at " + request.getContextPath() + "</h1>");
-////            out.println("</body>");
-////            out.println("</html>");
-////        }
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet Home</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet Home at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
