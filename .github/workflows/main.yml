@@ -18,12 +18,14 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: windows-latest  
+    runs-on: ubuntu-latest  
        steps:
-        - uses: actions/checkout@v3
-        - uses: shogo82148/actions-setup-perl@v1
-          with:
-            perl-version: '5.32'
-            distribution: strawberry
-        - run: cpanm --installdeps .
-        - run: prove -lv t
+      - uses: actions/checkout@v1
+      - name: Setup Perl
+        uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: '5.30'
+      - name: perl -V
+        run: perl -V
+      - run: cpanm --installdeps .
+      - run: prove -lv t
