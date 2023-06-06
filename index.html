@@ -3,8 +3,124 @@
         <title>STROUROUL.github.io</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel='stylesheet' href='./font-awesome/css/all.css'>
+
     </head>
     <body>
-        <div>STROUROUL.github.io</div>
+        <div><i class="fa-solid fa-at"></i> STROUROUL.github.io</div>
+
+
+
+    <script>
+
+
+     //   let my_status=        checkConnection("ishopper.info",443)
+      //  console.log(JSON.stringify(my_status))
+
+     let my_services = {
+         smtp: {
+             port: 25,
+             host: "mail.ishopper.info",
+             desc: "SMTP Server",
+             logo: '<i class="fa-solid fa-at"></i>'
+         },
+         pop3: {
+             port: 110,
+             host: "mail.ishopper.info",
+             desc: "POP3 Server",
+             logo: '<img src="/assets/new_taxi_layout/pop3.jpg" style="width: 25px;height: 25px;">'
+         },
+         imap: {
+             port: 143,
+             host: "mail.ishopper.info",
+             desc: "IMAP Server",
+             logo: '<i class="fa-solid fa-envelope"></i>'
+         },
+         web: {
+             url: "http://ishopper.info",
+             port: 80,
+             host: "ishopper.info",
+             desc: "HTTP Server",
+             logo: '<img src="/assets/new_taxi_layout/webserver.png" style="width: 25px;height: 25px;"> '
+         },
+         web_ssl: {
+             url: "https://ishopper.info",
+             port: 443,
+             host: "ishopper.info",
+             desc: "HTTPS Server",
+             logo: '<i class="fa-brands fa-expeditedssl"></i>'
+         },
+
+         ws: {
+             port: 3000,
+             host: "ishopper.info",
+             desc: "WS Server",
+             logo: '<img src="/assets/new_taxi_layout/ws_network.png" style="width: 25px;height: 25px;"> '
+         },
+         ws_ssl: {
+             port: 9898,
+             host: "ishopper.info",
+             desc: "WS w/ SSL Server",
+             logo: '<i class="fa-brands fa-expeditedssl"></i>'
+         },
+
+
+         mysql: {
+             port: 3306,
+             host: "ishopper.info",
+             desc: "MySQL Server",
+             logo: '<img src="/assets/new_taxi_layout/mysql.png" style="width: 25px;height: 25px;">'
+         },
+         youtrack: {
+             url: "https://youtrack.ishopper.info:8443",
+             port: 8443,
+             host: "youtrack.ishopper.info",
+             desc: "YOUTRACK Server",
+             logo: '<img src="/assets/new_taxi_layout/youtrack-svgrepo-com.svg" style="width: 25px;height: 25px;">'
+         },
+         gitlab: {
+             url: "https://ishopper.info/gitlab",
+             port: 443,
+             host: "gitlab.ishopper.info",
+             desc: "GITLAB Server",
+             logo: '<i class="fa-brands fa-gitlab"></i>'
+         },
+     };
+
+     getStatus();
+        async function getStatus() {
+            try {
+                let my_status = await checkConnection("ishopper.info", 443);
+                console.log(JSON.stringify(my_status));
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        function checkConnection(host, port, timeout) {
+            timeout = timeout || 10000; // default of 10 seconds
+
+            return new Promise(function (resolve, reject) {
+                var timer = setTimeout(function () {
+                    reject({ status: "Offline", time: new Date().getTime() });
+                }, timeout);
+
+                fetch(`https://${host}:${port}`)
+                    .then(function (response) {
+                        clearTimeout(timer);
+                        if (response.ok) {
+                            resolve({ status: "Online", time: new Date().getTime() });
+                        } else {
+                            reject({ status: "Offline", time: new Date().getTime() });
+                        }
+                    })
+                    .catch(function (error) {
+                        clearTimeout(timer);
+                        reject(error);
+                    });
+            });
+        }
+    </script>
     </body>
 </html>
