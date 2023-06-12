@@ -4,13 +4,6 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-  <link rel="stylesheet" href="./assets/fontawesome-6/pro/css/all.css">
-    <link rel="stylesheet" href="./assets/fontawesome-6/pro/css/regular.css"      crossorigin="anonymous"/>
-    <link rel="stylesheet" href="./assets/fontawesome-6/pro/css/solid.css"     crossorigin="anonymous"/>
-    <link rel="stylesheet" href="./assets/fontawesome-6/pro/css/brands.css" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="./assets/fontawesome-6/pro/css/light.css"      crossorigin="anonymous"/>
-    <link rel="stylesheet" href="./assets/fontawesome-6/pro/css/duotone.css"     crossorigin="anonymous"/>
-    <link rel="stylesheet" href="./assets/fontawesome-6/pro/css/thin.css" crossorigin="anonymous"/>
 
     <!-- <link rel="stylesheet" href="./assets/font-awesome/css/regular.css"      crossorigin="anonymous"/>
      <link rel="stylesheet" href="./assets/font-awesome/css/solid.css"     crossorigin="anonymous"/>
@@ -37,49 +30,98 @@
 
 
 
-  <script>
-    var css = [];
-    for (var i=0; i<document.styleSheets.length; i++)
-    {
-      var sheet = document.styleSheets[i];
-      var rules = ('cssRules' in sheet)? sheet.cssRules : sheet.rules;
-      if (rules)
-      {
-        css.push('\n/* Stylesheet : '+(sheet.href||'[inline styles]')+' */');
-        for (var j=0; j<rules.length; j++)
-        {
-          var rule = rules[j];
-          if ('cssText' in rule)
-            css.push(rule.cssText);
-          else
-            css.push(rule.selectorText+' {\n'+rule.style.cssText+'\n}\n');
-        }
-      }
-    }
-    var cssInline = css.join('\n')+'\n';
 
-  //  console.log(cssInline)
-  </script>
-
-
+ <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/all.css">
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/regular.css"      crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/solid.css"     crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/brands.css" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/light.css"      crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/duotone.css"     crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/thin.css" crossorigin="anonymous"/>
 
 
 
    -->
 
-<style>
+<!--
+    <link rel="stylesheet" href="./assets/fontawesome-6/pro/css/all.css">
+
+
+
+
+    <link rel="stylesheet" href="./assets/font-awesome/css/regular.css"      crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./assets/font-awesome/css/solid.css"     crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./assets/font-awesome/css/brands.css" crossorigin="anonymous"/>
+
+    -->
+
+    <link rel="stylesheet" href="./assets/fontawesome-6/pro/css/all.css">
+    <link rel="stylesheet" href="./assets/fontawesome-6/pro/css/regular.css"      crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./assets/fontawesome-6/pro/css/solid.css"     crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./assets/fontawesome-6/pro/css/brands.css" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./assets/fontawesome-6/pro/css/light.css"      crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./assets/fontawesome-6/pro/css/duotone.css"     crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./assets/fontawesome-6/pro/css/thin.css" crossorigin="anonymous"/>
+
+    <style>
     .fa-binary-circle-check::before {
         content: "\e33c"; }
 
 
 </style>
-  <link rel="stylesheet" href="https://static.fontawesome.com/css/fontawesome-app.css">
+
+
+    <script>
+        var css = [];
+        for (var i=0; i<document.styleSheets.length; i++)
+        {
+            var sheet = document.styleSheets[i];
+            var rules = ('cssRules' in sheet)? sheet.cssRules : sheet.rules;
+            if (rules)
+            {
+                css.push('\n/* Stylesheet : '+(sheet.href||'[inline styles]')+' */');
+                for (var j=0; j<rules.length; j++)
+                {
+                    var rule = rules[j];
+                    if ('cssText' in rule)
+                        css.push(rule.cssText);
+                    else
+                        css.push(rule.selectorText+' {\n'+rule.style.cssText+'\n}\n');
+                }
+            }
+        }
+        var cssInline = css.join('\n')+'\n';
+
+
+    </script>
+
+
+    <link rel="stylesheet" href="https://static.fontawesome.com/css/fontawesome-app.css">
 </head>
 <body>
+<div id="show_all"></div> <BR>
+<script>
+
+    let iconContainer=document.getElementById("show_all");
 
 
+    for(let x=0;x<css.length;x++){
+        if(css[x].indexOf(".fa-")>-1&&css[x].indexOf("::")>-1){
 
+            let clean_css=css[x].toString().substring(1,css[x].indexOf("::"))
+        //    all_styles_html+=`<i class="fa-solid ${clean_css}"></i><BR>`;
 
+            // Create a new FontAwesome icon element
+            const iconElement = document.createElement('i');
+            iconElement.className = 'fa-solid '+clean_css;
+
+            // Add the icon element to the container
+            iconContainer.appendChild(iconElement);
+        }
+
+    }
+
+</script>
 
 
 <main class="w-100 min-vh-100 bg-gray9 white sans-serif pa6 flex flex-column justify-center items-center ba bw4 b--gray8">

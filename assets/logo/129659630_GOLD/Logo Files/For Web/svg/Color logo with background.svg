@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="3187.5"
+     height="2475" viewBox="0 0 3187.5 2475">
+    <rect fill="#222831" width="3187.5" height="2475"/>
+    <g transform="scale(9.375) translate(10, 10)">
+        <defs id="SvgjsDefs5405">
+            <linearGradient id="SvgjsLinearGradient5412">
+                <stop id="SvgjsStop5413" stop-color="#2d388a" offset="0"></stop>
+                <stop id="SvgjsStop5414" stop-color="#00aeef" offset="1"></stop>
+            </linearGradient>
+            <linearGradient id="SvgjsLinearGradient5415">
+                <stop id="SvgjsStop5416" stop-color="#2d388a" offset="0"></stop>
+                <stop id="SvgjsStop5417" stop-color="#00aeef" offset="1"></stop>
+            </linearGradient>
+            <linearGradient id="SvgjsLinearGradient5418">
+                <stop id="SvgjsStop5419" stop-color="#2d388a" offset="0"></stop>
+                <stop id="SvgjsStop5420" stop-color="#00aeef" offset="1"></stop>
+            </linearGradient>
+        </defs>
+        <g id="SvgjsG5406" featureKey="rootContainer" transform="matrix(1,0,0,1,0,0)"
+           fill="url(#SvgjsLinearGradient5412)">
+            <rect y="0" height="1" width="1" opacity="0"></rect>
+            <rect y="239" width="320" height="5"></rect>
+        </g>
+        <g id="SvgjsG5407" featureKey="monogramFeature-0"
+           transform="matrix(4.727618217468262,0,0,4.727618217468262,-4.98622304607518,-56.23778597763351)"
+           fill="url(#SvgjsLinearGradient5415)">
+            <path d="M5.1563 41.367000000000004 l-3.0762 0 l2.5488 -11.338 l13.975 0 l-2.5488 11.338 l3.1055 0 l-4.1309 18.633 l-13.975 0 z M22.207 15.703000000000003 l-2.4316 10.605 l-14.473 0 l2.4316 -10.605 l14.473 0 z"></path>
+        </g>
+        <g id="SvgjsG5408" featureKey="nameFeature-0"
+           transform="matrix(4.849660396575928,0,0,4.849660396575928,119.99999884375087,-2.0921396427042183)"
+           fill="url(#SvgjsLinearGradient5418)">
+            <path d="M10.96 40.08 l-4.08 0 l-2.2 -6.04 l-0.88 0 l0 6.04 l-3.8 0 l0 -28.64 l5.96 0 c2.64 0 4.76 2.12 4.76 4.76 l0 13.08 c0 1.72 -0.88 3.2 -2.24 4.04 z M3.8 15.239999999999998 l0 15 l2.16 0 c0.52 0 0.96 -0.44 0.96 -0.96 l0 -13.08 c0 -0.52 -0.44 -0.96 -0.96 -0.96 l-2.16 0 z M16.76 11.36 l0 28.48 l-3.8 0 l0 -28.48 l3.8 0 z M23.76 40.04 l-5 0 l0 -28.52 l5 0 c3.4 0 6.12 2.76 6.12 6.16 l0 16.2 c0 1.64 -0.64 3.2 -1.8 4.36 s-2.68 1.8 -4.32 1.8 z M22.560000000000002 15.36 l0 20.84 l1.2 0 c0.6 0 1.2 -0.24 1.64 -0.68 s0.68 -1 0.68 -1.64 l0 -16.2 c0 -1.28 -1.04 -2.32 -2.32 -2.32 l-1.2 0 z M41.2 24.92 l-5.52 0 l0 11.28 l5.56 0 l0 3.8 l-9.36 0 l0 -28.56 l9.36 0 l0 3.8 l-5.56 0 l0 5.88 l5.52 0 l0 3.8 z"></path>
+        </g>
+    </g>
+</svg>
+	

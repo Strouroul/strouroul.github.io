@@ -1,0 +1,54 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        var worker = null;
+        var port = null;
+
+        function onSocketMessage(ev) {
+            window.parent.postMessage({app: 'sw-proxy', type: 'message', payload: ev.data}, '*');
+        }
+
+        function initWorker() {
+            if (!window.parent) return;
+            if (location.hostname != 'dashboard.visme.co' && location.hostname != 'localhost') return;
+            if (window.SharedWorker && location.hostname != 'localhost') {
+                worker = new SharedWorker('https://dashboard.visme.co/v2/eb-worker.js');
+                port = this.worker.port;
+                port.addEventListener('message', onSocketMessage);
+                port.start();
+            } else if (window.Worker) {
+                worker = new Worker((location.hostname === 'localhost') ? '/eb-worker.js' : 'https://dashboard.visme.co/v2/eb-worker.js');
+                port = this.worker;
+                port.addEventListener('message', onSocketMessage);
+            } else {
+                return false;
+            }
+
+
+            addEventListener('beforeunload', () => {
+                port.postMessage({event: 'disconnect'});
+            });
+
+            return true;
+        }
+
+        if (initWorker()) {
+            addEventListener('message', (ev) => {
+                if (!ev.data) return;
+                if (ev.data.app !== 'sw-proxy') return;
+                if (ev.data.type === 'send') {
+                    port.postMessage(ev.data.payload);
+                }
+            });
+
+            window.parent.postMessage({app: 'sw-proxy', type: 'load'}, '*');
+        }
+    </script>
+    <script defer="defer" src="v52afc6f149f6479b8c77fa569edb01181681764108816"
+            integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw=="
+            data-cf-beacon="{&quot;rayId&quot;:&quot;7cf33d99a8ab0d8b&quot;,&quot;token&quot;:&quot;9d47e800619f4bacb18b2f3e08467f1b&quot;,&quot;version&quot;:&quot;2023.4.0&quot;,&quot;si&quot;:100}"
+            crossorigin="anonymous"></script>
+</head>
+<body></body>
+</html>

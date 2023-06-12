@@ -7,7 +7,9 @@
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url("../webfonts/fa-duotone-900.woff2") format("woff2"), url("../webfonts/fa-duotone-900.woff") format("woff"), url("../webfonts/fa-duotone-900.ttf") format("truetype"); }
+  src: url("../webfonts/fa-duotone-900.woff2") format("woff2"),
+  url("../webfonts/fa-duotone-900.woff") format("woff"),
+  url("../webfonts/fa-duotone-900.ttf") format("truetype"); }
 
 .fad,
 .fa-duotone {
