@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+     width="3169.0140845070423"
+     height="3169.0140845070423" viewBox="0 0 3169.0140845070423 3169.0140845070423">
+
+    <g transform="scale(8.450704225352112) translate(10, 10)">
+        <defs id="SvgjsDefs1934">
+            <linearGradient id="SvgjsLinearGradient1941">
+                <stop id="SvgjsStop1942" stop-color="#2d388a" offset="0"></stop>
+                <stop id="SvgjsStop1943" stop-color="#00aeef" offset="1"></stop>
+            </linearGradient>
+            <linearGradient id="SvgjsLinearGradient1944">
+                <stop id="SvgjsStop1945" stop-color="#2d388a" offset="0"></stop>
+                <stop id="SvgjsStop1946" stop-color="#00aeef" offset="1"></stop>
+            </linearGradient>
+            <linearGradient id="SvgjsLinearGradient1947">
+                <stop id="SvgjsStop1948" stop-color="#2d388a" offset="0"></stop>
+                <stop id="SvgjsStop1949" stop-color="#00aeef" offset="1"></stop>
+            </linearGradient>
+        </defs>
+        <g id="SvgjsG1935" featureKey="rootContainer" transform="matrix(3.410182476043701,0,0,3.410182476043701,0,0)"
+           fill="url(#SvgjsLinearGradient1941)">
+            <path xmlns="http://www.w3.org/2000/svg" d="M0 0v104.1h104.1V0zm101.7 101.7H2.4V2.4h99.3z"></path>
+        </g>
+        <g id="SvgjsG1936" featureKey="monogramFeature-0"
+           transform="matrix(2.25,0,0,2.25,148.13312697410583,23.349750995635986)" fill="url(#SvgjsLinearGradient1944)">
+            <path d="M21.826 41.016 l-4.3945 19.102 l-14.824 0 l4.3945 -19.102 l-2.9883 0 l5.7422 -24.727 l14.795 0 l-5.6836 24.727 l2.959 0 z"></path>
+        </g>
+        <g id="SvgjsG1937" featureKey="nameFeature-0"
+           transform="matrix(4.251700401306152,0,0,4.251700401306152,78,134.70068267185155)"
+           fill="url(#SvgjsLinearGradient1947)">
+            <path d="M3.8 11.36 l0 28.48 l-3.8 0 l0 -28.48 l3.8 0 z M16.76 40.08 l-4.08 0 l-2.2 -6.04 l-0.88 0 l0 6.04 l-3.8 0 l0 -28.64 l5.96 0 c2.64 0 4.76 2.12 4.76 4.76 l0 13.08 c0 1.72 -0.88 3.2 -2.24 4.04 z M9.6 15.239999999999998 l0 15 l2.16 0 c0.52 0 0.96 -0.44 0.96 -0.96 l0 -13.08 c0 -0.52 -0.44 -0.96 -0.96 -0.96 l-2.16 0 z M22.560000000000002 11.36 l0 28.48 l-3.8 0 l0 -28.48 l3.8 0 z M29.560000000000002 40.04 l-5 0 l0 -28.52 l5 0 c3.4 0 6.12 2.76 6.12 6.16 l0 16.2 c0 1.64 -0.64 3.2 -1.8 4.36 s-2.68 1.8 -4.32 1.8 z M28.360000000000003 15.36 l0 20.84 l1.2 0 c0.6 0 1.2 -0.24 1.64 -0.68 s0.68 -1 0.68 -1.64 l0 -16.2 c0 -1.28 -1.04 -2.32 -2.32 -2.32 l-1.2 0 z M47.00000000000001 24.92 l-5.52 0 l0 11.28 l5.56 0 l0 3.8 l-9.36 0 l0 -28.56 l9.36 0 l0 3.8 l-5.56 0 l0 5.88 l5.52 0 l0 3.8 z"></path>
+        </g>
+    </g>
+</svg>
+	
