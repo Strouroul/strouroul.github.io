@@ -18,8 +18,8 @@
                 <link rel="stylesheet" type="text/css" href="/sitemap.css" />
                 <meta property="og:title" content="iRide" />
                 <meta property="og:type" content="text/html" />
-                <meta property="og:url" content="https://iride.ishopper.info/" />
-                <meta property="og:image" content="https://iride.ishopper.info/favicon.png" />
+                <meta property="og:url" content="https://strouroul.github.io/" />
+                <meta property="og:image" content="https://iride.glitch.me/favicon.png" />
 
                 <!-- https://livedemo00.template-help.com/wt_prod-27536/ -->
 
