@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="https://strouroul.github.io/sitemaps_xsl.xsl"?>
+<sitemapindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd"
+              xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+   <loc>https://iride.glitch.me/index.js</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>1.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/info/testimonials</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>2.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/info/driver_details</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>3.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/info/our_drivers</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>4.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/info/faq</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>5.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/info/ride_details</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>6.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/info/our_rides</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>7.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/info/service_details</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>8.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/info/blog_details</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>9.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/info/blog_grid</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>10.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/info/blog_classic</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>11.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/info/about_company</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>12.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/info/our_service</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>13.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/info/aboutus</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>14.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/socials</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>15.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/activity</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>16.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/groups</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>17.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/members</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>18.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/email_valid</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>19.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/signup_newsletter</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>20.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/SPA</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>21.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/user/logout</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>22.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/user/double_user_logout_to_login</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>23.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/dashboard/user/history</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>24.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/dashboard/user/last_activity</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>25.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/msg_board/topic/reply/get_text_area</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>26.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/msg_board/topic/add</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>27.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/msg_board/admin</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>28.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/msg_board/admin/category/add</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>29.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/msg_board/dashboard</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>30.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/msg_board</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>31.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/wallet</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>32.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/wallet/success</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>33.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/policy</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>34.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/policy/refund</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>35.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/policy/privacy</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>36.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/policy/terms</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>37.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/facebook/stats</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>38.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/call_center</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>39.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/secure_js</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>40.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/secure_js/js_beans</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>41.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/secure_TEST</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>42.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/old_home</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>43.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/new_home</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>44.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/new_about_us</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>45.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/new_contact_us</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>46.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/scan_qr_code</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>47.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/google62118e881cdc6191.html</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>48.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/domain_maintenance</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>49.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/home</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>50.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>51.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/pages/floating_alert</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>52.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/server_status</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>53.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/get_os</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>54.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/home</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>55.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/testWS</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>56.0</priority>
+</url>
+<url>
+   <loc>https://iride.glitch.me/popup_login</loc>
+   <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>57.0</priority>
+</url>
+</sitemapindex>
