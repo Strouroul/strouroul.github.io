@@ -72,12 +72,13 @@
             </head>
             <body>
                 <div id="main">
-                    <h1>iRide XML Sitemap</h1>
+                    <h1>XML Sitemap</h1>
                     <p>
 
                       <span>
-                          <a href="https://iride.ishopper.info/"><i class="fa-solid fa-house"></i> HOME </a> |
-                          <a href="https://iride.ishopper.info/sitemap.xml">Index sitemap</a>
+                          <a href="/"><i class="fa-solid fa-house"></i> HOME </a> |
+                          <a href="/sitemap.xml">Index sitemap</a> |
+                          <a href="/sitemap_crypto.xml">Exchange sitemap</a>
                       </span>
                     </p>
                <!--     <xsl:if test="sitemap:sitemapindex/sitemap:url">
