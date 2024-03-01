@@ -55,7 +55,7 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
 </head>
 
 <body>
-<script src="./porti2/js/iconify.min.js"></script>
+<script src="/js/iconify.min.js"></script>
 
 <!-- ==================== Start Loading ==================== -->
 
@@ -112,7 +112,39 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
             </div>
             <div class="col-lg-3 col-6">
                 <div class="d-flex justify-content-end text-u">
-                    <a href="mailto:kool_egypt@hotmail.com">kool_egypt@hotmail.com</a>
+                    <!--
+                    <a href="mailto:kool_egypt@hotmail.com?Subject=Github Contact&body=%0A%0A%0A%0AFrom GitHub">kool_egypt@hotmail.com</a>
+                    -->
+
+                    <a href="javascript:void(0)" id="emailLink">kool_egypt@hotmail.com</a>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            var emailLink = document.getElementById('emailLink');
+
+                            emailLink.addEventListener('click', function(e) {
+                                e.preventDefault(); // Prevent the default link behavior
+
+                                var date = new Date(); // Get the current date and time
+                                var formattedDate = date.getFullYear() + "-" +
+                                    ("0" + (date.getMonth() + 1)).slice(-2) + "-" +
+                                    ("0" + date.getDate()).slice(-2) + " " +
+                                    ("0" + date.getHours()).slice(-2) + ":" +
+                                    ("0" + date.getMinutes()).slice(-2) + ":" +
+                                    ("0" + date.getSeconds()).slice(-2); // Format the date and time
+
+                                var subject = encodeURIComponent("Github Contact");
+                                var body = encodeURIComponent("\n\n\n\nFrom GitHub\n\n" + "Sent at: " +date.toLocaleString() // formattedDate
+
+                                );
+
+                                // Construct the mailto link with the subject and body
+                                var mailtoLink = "mailto:kool_egypt@hotmail.com?Subject=" + subject + "&body=" + body;
+
+                                // Set the href of the link
+                                window.location.href = mailtoLink;
+                            });
+                        });
+                    </script>
                 </div>
             </div>
         </div>
