@@ -77,7 +77,7 @@
 
                       <span>
                           <a href="/"><i class="fa-solid fa-house"></i> HOME </a> |
-
+                          <a href="/sitemap.xml">Index Sitemap</a> |
                           <a href="/sitemap_crypto.xml">Exchange sitemap</a>
                       </span>
                     </p>
