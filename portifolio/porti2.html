@@ -1478,18 +1478,26 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
                                     <h3>Let's make your brand brilliant!</h3>
                                 </div>
                                 <div class="full-width wow fadeInUp" data-wow-delay=".5s">
-                                    <form id="contact-form" method="post" action="contact.php">
+                                    <form id="contact-form" method="post" action="https://iride.glitch.me/info/contactus">
 
                                         <div class="messages"></div>
 
                                         <div class="controls row">
-
                                             <div class="col-lg-6">
                                                 <div class="form-group mb-30">
-                                                    <input id="form_name" type="text" name="name"
-                                                           placeholder="Your Name" required="required">
+                                                    <input id="firstname" type="text" name="firstname"
+                                                           placeholder="Your First Name" required="required">
                                                 </div>
                                             </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group mb-30">
+                                                    <input id="lastname" type="text" name="lastname"
+                                                           placeholder="Your Last Name" required="required">
+                                                </div>
+                                            </div>
+
+
+
 
                                             <div class="col-lg-6">
                                                 <div class="form-group mb-30">
@@ -1498,14 +1506,24 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
                                                 </div>
                                             </div>
 
+                                            <div class="col-lg-6">
+                                                <div class="form-group mb-30">
+                                                    <input id="phone" type="text" name="phone"
+                                                           placeholder="Your Phone" required="required">
+                                                </div>
+                                            </div>
+
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                        <textarea id="form_message" name="message"
+                                                        <textarea id="message" name="message"
                                                                   placeholder="Your Message" required="required"></textarea>
                                                 </div>
                                                 <div class="mt-30">
                                                     <button type="submit">
-                                                        <span class="text">Send A Message</span>
+                                                   <!--     <span class="text">Send A Message</span> -->
+                                                        <button id="submit" class="text" type="button" onclick="send_contact_info()">Send
+                                                            Massage
+                                                        </button>
                                                     </button>
                                                 </div>
                                             </div>
