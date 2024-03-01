@@ -8,7 +8,7 @@
     <xsl:template match="/">
         <html xmlns="http://www.w3.org/1999/xhtml">
             <head>
-                <title>iRide XML Sitemap</title>
+                <title>XML Sitemap</title>
 
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
                 <style type="text/css">
