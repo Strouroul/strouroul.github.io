@@ -52,10 +52,90 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
     <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/thin.css"
           crossorigin="anonymous"/>
 
+
+
+    <script>
+
+        async function postAjax_ASYNC(url, data, success) {
+
+            return new Promise((resolve, reject) => {
+                let my_data = "";
+
+                var params = typeof data == 'string' ? data : Object.keys(data).map(
+                    function (k) {
+                        return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+                    }
+                ).join('&');
+
+                var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+                xhr.open('POST', url);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState > 3 && xhr.status == 200) {
+                        my_data = xhr.responseText;
+                        resolve( success(xhr.responseText));
+                        //  return (xhr.responseText);
+
+                    }
+                    else if (xhr.readyState > 3 && xhr.status !== 200) {
+                        reject("Request failed with status: " + xhr.status);
+                    }
+                    /*else {
+
+                        reject ( "Request failed with status: " + xhr.status);
+                    }*/
+                };
+                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.send(params);
+            })
+
+
+
+
+            //return my_data;
+
+            //return my_data;
+        }
+
+
+        /*    async function postAjax_ASYNC(url, data, success) {
+
+                return new Promise((resolve, reject) => {
+                    let my_data = "";
+
+                    var params = typeof data == 'string' ? data : Object.keys(data).map(
+                        function (k) {
+                            return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+                        }
+                    ).join('&');
+
+                    var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+
+                    xhr.timeout = 5000;
+                    xhr.open('POST', url);
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState > 3 && xhr.status == 200) {
+                            my_data = xhr.responseText;
+                            resolve(success(xhr.responseText));
+                            //  return (xhr.responseText);
+
+                        } else if (xhr.readyState > 3 && xhr.status !== 200) {
+                            reject("Request failed with status: " + xhr.status);
+                        }
+
+                    };
+                    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send(params);
+                })
+            }*/
+    </script>
 </head>
 
 <body>
-<script src="./porti2/js/iconify.min.js"></script>
+<script src="/js/iconify.min.js"></script>
+
+
 
 <!-- ==================== Start Loading ==================== -->
 
@@ -344,7 +424,7 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
                                                     </div>
                                                     <div class="spacer" style="width: 20px;"></div> <!-- Spacer div -->
                                                     <div class="img icon-img-40">
-                                                        <img src="https://img.icons8.com/?size=64&id=Nkym0Ujb8VGI&format=png" alt="">
+                                                         <img src="https://img.icons8.com/?size=64&id=Nkym0Ujb8VGI&format=png" alt="">
                                                         <i class="iconify" data-icon="logos:webrtc" data-toggle="tooltip" data-html="true"
                                                            data-placement="top" title="WebRTC" style="width: 35px;height: 35px;"></i>
 
@@ -424,6 +504,7 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
 
 
 
+
                                                     </div>
                                                     <div class="spacer" style="width: 20px;"></div> <!-- Spacer div -->
                                                     <div class="img icon-img-40" >
@@ -444,7 +525,7 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
                                                         <i class="iconify" data-icon="wpf:macos" style="width:40px;height:40px;"></i>
                                                         <i class="iconify" data-icon="f7:logo-macos" style="width:40px;height:40px;"></i>
 
-                                                    </div>
+                                                       </div>
                                                     <div class="spacer" style="width: 20px;"></div> <!-- Spacer div -->
                                                     <div class="img icon-img-40" >
 
@@ -467,8 +548,11 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
                                                         <i class="iconify" data-icon="fluent:movies-and-tv-24-regular" style="width:40px;height:40px;"></i>
                                                         <i class="iconify" data-icon="icon-park:music" style="width:40px;height:40px;"></i>
 
-
                                                     </div>
+
+
+
+
                                                 </div>
                                                 <div>
                                                     <h6 class="fz-18">Tools</h6>
@@ -1477,8 +1561,8 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
                                     </div>
                                     <h3>Let's make your brand brilliant!</h3>
                                 </div>
-                                <div class="full-width wow fadeInUp" data-wow-delay=".5s">
-                                    <form id="contact-form" method="post" action="https://iride.glitch.me/info/contactus">
+                                <div class="full-width wow fadeInUp contact-form" data-wow-delay=".5s">
+                                    <form  id="contact-form" method="post" action="https://iride.glitch.me/info/contactus">
 
                                         <div class="messages"></div>
 
@@ -1501,7 +1585,7 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
 
                                             <div class="col-lg-6">
                                                 <div class="form-group mb-30">
-                                                    <input id="form_email" type="email" name="email"
+                                                    <input id="email" type="email" name="email"
                                                            placeholder="Your Email" required="required">
                                                 </div>
                                             </div>
@@ -1519,12 +1603,14 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
                                                                   placeholder="Your Message" required="required"></textarea>
                                                 </div>
                                                 <div class="mt-30">
-                                                    <button type="submit">
-                                                   <!--     <span class="text">Send A Message</span> -->
-                                                        <button id="submit" class="text" type="button" onclick="send_contact_info()">Send
-                                                            Massage
-                                                        </button>
-                                                    </button>
+
+
+                                                        <!--     <span class="text">Send A Message</span> -->
+                                                        <button id="submit"
+                                                                class="text"
+                                                                type="button"
+                                                                onclick="send_contact_info()"
+                                                        >  <i class="iconify" data-icon="streamline:send-email-solid" style="width:25px;height:25px;"></i> Send Massage</button>
                                                 </div>
                                             </div>
 
@@ -1532,6 +1618,7 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
                                     </form>
                                 </div>
                             </div>
+
 
                             <!-- ==================== End Contact ==================== -->
 
@@ -1646,11 +1733,680 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
 
 
 
+<link rel="stylesheet" href="./porti2/css/final_modal_style.css">
+
+
+<!-- INVISIBLE MODAL TRIGGER -->
+<span id="myBtn" style="display: none;"></span>
+<span id="myBtn_modal" style="display: none;"></span>
+<!-- END OF INVISIBLE MODAL TRIGGER -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"  ><b id="modal_title_header"></b></h5>
+                <!-- <button type="button" class="btn-close" id="modal_close_btn" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                <span id="modal_close_btn" class="close">&times;</span>
+            </div>
+            <div class="modal-body" id="modal_body">
+                ...
+            </div>
+            <!--  <div class="modal-footer" id="modal_footer" style="display: none;">
+
+                 <button type="button" class="btn btn-primary" id="modal_close_footer_btn" style="display: none;">Done</button>
+             </div> -->
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modal_in_modal" tabindex="-1" aria-labelledby="modal_in_modal_Label"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal_in_modal-title"  ><b id="modal_in_modal_title_header"></b></h5>
+                <!-- <button type="button" class="btn-close" id="modal_close_btn" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                <span id="modal_in_modal_close_btn" class="close">&times;</span>
+            </div>
+            <div class="modal-body" id="modal_in_modal_body">
+                ...
+            </div>
+            <div class="modal-footer" id="modal_in_modal_footer">
+                <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="modal_close_footer_btn_grey" >Close</button> -->
+                <button type="button" class="btn btn-primary" id="modal_in_modal_close_footer_btn" onclick="modal_in_modal_close_btn.click()">Done</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let modal_close_footer_btn=document.getElementById("modal_close_footer_btn");
+
+    let modal_title_header=document.getElementById("modal_title_header");
+    let modal_body=document.getElementById("modal_body");
+    let modal_footer=document.getElementById("modal_footer");
+
+
+
+
+    let modal_in_modal_title_header=document.getElementById("modal_in_modal_title_header");
+    let modal_in_modal_body=document.getElementById("modal_in_modal_body");
+    let modal_in_modal_footer=document.getElementById("modal_in_modal_footer");
+
+    let modal_in_modal_close_footer_btn=document.getElementById("modal_in_modal_close_footer_btn");
+    let modal_in_modal_close_btn=document.getElementById("modal_in_modal_close_btn");
+
+    window.addEventListener('resize', function(event) {
+        //    console.log('Page was resized');
+        // Additional code to handle resize event
+        check_resize();
+
+
+
+    });
+
+    check_resize();
+
+
+    function check_resize(){
+        let isSmallScreen = window.innerWidth <= 768; // Adjust the threshold as needed
+        var modalContents = document.querySelectorAll('.modal-content');
+        if (isSmallScreen) {
+
+            //  document.querySelector('.modal-content').style.width = "350px";
+            //   document.querySelector('.modal-content').style.minHeight = "200px";
+            modalContents.forEach(function(modalContent) {
+                // Your code to handle each modal-content element goes here
+
+                // Example: Log the text content of each modal-content element
+                //    console.log(modalContent.textContent);
+                if(modalContent.id.toString().includes('modal_in_modal')){  modalContent.style.width = "300px";}
+                else{  modalContent.style.width = "350px";}
+
+                modalContent.style.minHeight = "200px";
+            });
+            console.log("This is a small screen (phone).");
+            modal_body.style.width = "100%";
+            modal_body.style.height = "250px";
+            modal_body.style.overflowY = "auto";
+            modal_body.style.wordWrap = "break-word";
+
+            modal_in_modal_body.style.width = "100%";
+            modal_in_modal_body.style.height = "200px";
+            modal_in_modal_body.style.overflowY = "auto";
+            modal_in_modal_body.style.wordWrap = "break-word";
+        } else {
+            console.log("This is a larger screen (laptop/desktop).");
+            // document.querySelector('.modal-content').style.width = "600px";
+            // document.querySelector('.modal-content').style.minHeight = "300px";
+            modalContents.forEach(function(modalContent) {
+                // Your code to handle each modal-content element goes here
+
+                // Example: Log the text content of each modal-content element
+                //  console.log(modalContent.textContent);
+                if(modalContent.id.toString().includes('modal_in_modal')){  modalContent.style.width = "550px";}
+                else{  modalContent.style.width = "600px";}
+
+                modalContent.style.minHeight = "300px";
+                modalContent.style.maxHeight = "400px";
+            });
+            modal_body.style.height = "300px";
+            modal_body.style.width = "600px";
+            modal_body.style.overflowY = "auto";
+            modal_body.style.wordWrap = "break-word";
+
+
+            modal_in_modal_body.style.height = "250px";
+            modal_in_modal_body.style.width = "600px";
+            modal_in_modal_body.style.overflowY = "auto";
+            modal_in_modal_body.style.wordWrap = "break-word";
+        }
+    }
+
+
+
+    function set_listner_stuff(my_element){
+        // console.log("done css : "+my_element.className);
+        // console.log("done css : "+my_element.id);
+    }
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    var modal_in_modal=document.getElementById("modal_in_modal");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementById("modal_close_btn");
+    var span_modal = document.getElementById("modal_in_modal_close_btn");
+
+    var myBtn_modal = document.getElementById("myBtn_modal");
+    myBtn_modal.onclick = function () {
+        if (modal_in_modal.classList.contains("w3-animate-hide")) {
+            modal_in_modal.classList.remove('w3-animate-hide');
+        }
+        modal_in_modal.classList.add('w3-animate-show')
+        modal_in_modal.style.display = "flex";
+    }
+    var btn = document.getElementById("myBtn");
+    var btn_status="OFF";
+    // When the user clicks the button, open the modal
+    btn.onclick = function () {
+        if (modal.classList.contains("w3-animate-hide")) {
+            modal.classList.remove('w3-animate-hide');
+
+        }
+        modal.classList.add('w3-animate-show')
+        modal.style.display = "flex";
+        if(btn_status==="OFF"){
+            btn_status="ON";
+        }else{
+            btn_status="OFF";
+        }
+    }
+
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        if (modal.classList.contains("w3-animate-show")) {
+            modal.classList.remove('w3-animate-show');
+            btn_status="OFF";
+        }
+        modal.classList.add('w3-animate-hide');
+
+        setTimeout(function(){
+            modal.style.display = "none";
+            modal.classList.remove('w3-animate-hide');
+        },800)
+        //
+
+        modal_body.innerHTML="";
+    }
+    span_modal.onclick = function() {
+        if( modal_in_modal.classList.contains("w3-animate-show")){
+            modal_in_modal.classList.remove('w3-animate-show');
+        }
+        modal_in_modal.classList.add('w3-animate-hide');
+
+        setTimeout(function(){
+            modal_in_modal.style.display = "none";
+            modal_in_modal.classList.remove('w3-animate-hide');
+        },800)
+        //
+
+
+    }
+
+    /*For when object has fully faded*/
+    modal.addEventListener("animationend", function() {
+        set_listner_stuff(this)
+        if (this.className === "w3-animate-hide") {
+            this.style.display = "none";
+            this.classList.remove('w3-animate-hide');
+        }
+        if (this.className == "w3-animate-show") {
+            this.style.display = "block";
+            this.classList.remove('w3-animate-show');
+        }
+        //this.style.display="none";
+    }.bind(modal));
+    modal.addEventListener("transitionend", function() {
+        set_listner_stuff(this)
+        if (this.className === "w3-animate-hide") {
+            this.style.display = "none";
+            this.classList.remove('w3-animate-hide');
+        }
+        if (this.className == "w3-animate-show") {
+            this.style.display = "block";
+            this.classList.remove('w3-animate-show');
+        }
+    }.bind(modal));
+    // Get the button that opens the modal
+
+    modal_in_modal.addEventListener("animationend", function() {
+        set_listner_stuff(this)
+        if (this.className === "w3-animate-hide") {
+            this.style.display = "none";
+            this.classList.remove('w3-animate-hide');
+        }
+        if (this.className == "w3-animate-show") {
+            this.style.display = "block";
+            this.classList.remove('w3-animate-show');
+        }
+        //this.style.display="none";
+    }.bind(modal))
+
+
+    modal_in_modal.addEventListener("transitionend", function() {
+        set_listner_stuff(this)
+        if (this.className === "w3-animate-hide") {
+            this.style.display = "none";
+            this.classList.remove('w3-animate-hide');
+        }
+        if (this.className == "w3-animate-show") {
+            this.style.display = "block";
+            this.classList.remove('w3-animate-show');
+        }
+    }.bind(modal))
 
 
 
 
 
+    modal_in_modal_close_footer_btn=span_modal.onclick;
+    // modal_close_footer_btn.onclick=span.onclick;
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        /*  if (event.target == modal) {
+              modal.style.display = "none";
+          }*/
+    }
+</script>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="./porti2/css/snackbar_alert.css"/>
+
+<div id="snackbar">Some text some message..</div>
+
+
+<script>
+
+    function format_time(timeDIFF){
+
+        let seconds = Math.floor(timeDIFF / 1000);
+        let days = Math.floor(seconds / (3600 * 24));
+        let hours = Math.floor((seconds % (3600 * 24)) / 3600);
+        let minutes = Math.floor((seconds % 3600) / 60);
+        seconds = seconds % 60;
+
+        let elapsed_time = '';
+
+        if (days > 0) {
+            elapsed_time += days + 'd ';
+        }
+        if (hours > 0) {
+            elapsed_time += hours + 'h ';
+        }
+        if (minutes > 0) {
+            elapsed_time += minutes + 'm ';
+        }
+        if (seconds > 0 && minutes < 1) {
+            elapsed_time += seconds + 's ';
+        }
+
+        return elapsed_time.trim(); // Trim any trailing whitespace
+
+    }
+
+    let all_alerts=[];
+    let alert_on=false;
+    let this_timeout_param=parseInt(8)||8;
+
+    // notifications_html=document.getElementById("notifications_html");
+
+
+    notifications_html_starter=' <li>\n' +
+        '                    <h6>Notifications</h6>\n' +
+        '                    <label class="label label-danger">New</label>\n' +
+        '                </li>';
+    var x = document.getElementById("snackbar");
+
+    function show_alert(my_message) {
+
+        //  console.log(`alert timeout : ${this_timeout_param}`)
+        //  console.log(`all_alerts : ${all_alerts}`)
+
+        let this_alert_now={msg:my_message,time:new Date()};
+        let user_img="";
+        let user_display_name="";
+
+
+
+
+
+
+        if( !all_alerts.some(obj => obj.msg.includes(my_message)?true:false ) ){
+            // console.log("MSG NOT IN QUEUE");
+            all_alerts.push(this_alert_now)
+        }
+        else{
+            console.log("MSG IN QUEUE")
+
+        }
+        if(document.getElementById('notifications_html')!=null &&
+            notifications_html_starter!=null ){
+
+            document.getElementById('notifications_html').innerHTML=
+                notifications_html_starter;
+
+            let msg_found_in_queue=false;
+            all_alerts.forEach(this_ALERT=>{
+
+
+                document.getElementById('notifications_html').innerHTML+=
+                    `<li>
+                 <div class="media" onclick="show_alert_details('${user_display_name}', '${this_ALERT.msg}', '${format_time(new Date().getTime()-new Date(this_ALERT.time).getTime())}')">
+                            <img class="img-radius" src="${user_img}"
+                                 alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="notification-user">${user_display_name}</h5>
+                                <p class="notification-msg">${
+                        (typeof this_ALERT.msg==="object"?JSON.stringify(this_ALERT.msg):this_ALERT.msg)      }</p>
+                                <span class="notification-time">${format_time(new Date().getTime()-new Date(this_ALERT.time).getTime())}</span>
+                            </div>
+                        </div>
+                    </li> `;
+            })
+
+            notifications_count.innerHTML=all_alerts.length;
+        }
+
+        if(!alert_on){
+            if(all_alerts.length>1){
+
+            }
+            else     if(all_alerts.length=1){
+                start_show(this_alert_now );
+                start_hide();
+            }
+            else if(all_alerts.length<1){
+                setTimeout(function(){
+                        start_show(this_alert_now);
+                        start_hide();
+                    },100
+
+                )
+            }
+
+        }
+
+
+    }
+
+    function show_alert_details(msg_user,msg_body,msg_time){
+        let user_img="";
+        let user_display_name="";
+
+
+        modal_body.innerHTML=` <div class="media">
+        <img class="img-radius" src="${user_img}"
+             alt="Generic placeholder image">
+        <div class="media-body">
+            <h5 class="notification-user">${msg_user}</h5>
+            <p class="notification-msg">${msg_body}</p>
+            <span class="notification-time">${msg_time}</span>
+        </div>
+    </div>`;
+        btn.click();
+    }
+
+    function start_show(my_message){
+
+        x.className = "show";
+        x.innerHTML = my_message.msg;
+        alert_on=true;
+    }
+
+    function start_hide(){
+
+        let user_img="";
+        let user_display_name="";
+
+
+        if(document.getElementById('notifications_html')!=null&&
+            notifications_html_starter!=null ){
+
+            document.getElementById('notifications_html').innerHTML=
+                notifications_html_starter;
+
+            all_alerts.forEach(this_ALERT=>{
+                document.getElementById('notifications_html').innerHTML+=
+                    `<li>
+                        <div class="media" onclick="show_alert_details('${user_display_name}', '${this_ALERT.msg}', '${format_time(new Date().getTime()-new Date(this_ALERT.time).getTime())}')">
+                            <img class="img-radius" src="${user_img}"
+                                 alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="notification-user">${user_display_name}</h5>
+                                <p class="notification-msg">${
+                        (typeof this_ALERT.msg==="object"?
+                            JSON.stringify(this_ALERT.msg):this_ALERT.msg)
+                    }</p>
+                                <span class="notification-time">${format_time(new Date().getTime()-new Date(this_ALERT.time).getTime())}</span>
+                            </div>
+                        </div>
+                    </li> `;
+            })
+            // document.getElementById('notifications_html').innerHTML=notifications_html_starter+this_nice_html;
+            notifications_count.innerHTML=all_alerts.length;
+        }
+
+        setTimeout(function () {
+            x.className = x.className.replace("show", "");
+            alert_on=false;
+            all_alerts.shift();
+            if(document.getElementById('notifications_html')!=null&&
+                notifications_html_starter!=null){
+
+                document.getElementById('notifications_html').innerHTML=
+                    notifications_html_starter;
+
+
+                all_alerts.forEach(this_ALERT=>{
+                    document.getElementById('notifications_html').innerHTML+=
+                        `<li>
+                     <div class="media" onclick="show_alert_details('${user_display_name}', '${this_ALERT.msg}', '${format_time(new Date().getTime()-new Date(this_ALERT.time).getTime())}')">
+                                <img class="img-radius" src="${user_img}"
+                                     alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="notification-user">${user_display_name}</h5>
+                                    <p class="notification-msg">${
+                            (typeof this_ALERT.msg==="object"?JSON.stringify(this_ALERT.msg):this_ALERT.msg)      }</p>
+                                    <span class="notification-time">${format_time(new Date().getTime()-new Date(this_ALERT.time).getTime())}</span>
+                                </div>
+                            </div>
+                        </li> `;
+                })
+                notifications_count.innerHTML=all_alerts.length;
+            }
+
+            if(all_alerts.length>0){
+                console.log(`@start_hide : ${JSON.stringify(all_alerts)}`)
+                console.log(`@all_alerts len : ${all_alerts.length}`)
+
+                //  if(all_alerts.length>0) {
+
+                start_show(all_alerts[0] );
+                start_hide();
+                // }
+            }
+            else{
+                console.log("ALERT QUEUE EMPTY")
+                if(document.getElementById('notifications_html')!=null&&
+                    notifications_html_starter!=null){
+                    document.getElementById('notifications_html').innerHTML=
+                        notifications_html_starter ;
+                    notifications_count.innerHTML="";
+                }
+            }
+        }, (this_timeout_param*1000) );
+    }
+</script>
+
+
+
+
+<!--  <script src="https://strouroul.github.io/portifolio/porti2/js/email_contact.js"></script>-->
+<script>
+    let contact_firstname = document.getElementById("firstname");
+    let contact_lastname = document.getElementById("lastname");
+    let contact_email = document.getElementById("email");
+    let contact_phone = document.getElementById("phone");
+    let contact_message = document.getElementById("message");
+    function IDGenerate() {
+        var text = "";
+        var hdntxt = "";
+        var captchatext = "";
+        var possible = "ABCDEFGHIkLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (var i = 0; i < 7; i++) {
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+
+        // document.getElementById("txtboxID").value = text;
+        return text;
+    }
+
+    function send_contact_info() {
+        var myMAG = 'https://iride.ishopper.info/info/contactus';
+        //'magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10&dn=Sintel&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F&xs=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2Fsintel.torrent';
+        var myJSON =null;
+
+
+        let user_found=null;
+
+        try{
+            if(eval(final_page_user!=null)){
+                //user_found=final_page_user;
+            }
+            else{
+                final_page_user=null;
+            }
+        }
+        catch(e_FINAL_PAGE_USER){
+            console.log(`e_FINAL_PAGE_USER : ${e_FINAL_PAGE_USER}`)
+            final_page_user=null;
+        }
+        try{
+            if(final_page_user!=null&&
+                final_page_user.hasOwnProperty("user_json")
+            ){
+                myJSON=   JSON.parse(JSON.stringify(final_page_user .user_json))           ||null;
+            }
+            else{
+                myJSON={"jsID": IDGenerate()+"_"+IDGenerate()+"_"+IDGenerate()+"_"+new Date().getTime(),"displayName":"GUEST"}
+            }
+
+
+            //
+        }
+        catch(e_USER){
+            console.log(e_USER);
+            myJSON=   {"jsID": IDGenerate()+"_"+IDGenerate()+"_"+IDGenerate()+"_"+new Date().getTime(),"displayName":"GUEST"}
+        }
+
+
+        console.log(`JSON : ${JSON.stringify(myJSON)}`)
+        //  console.log("myJSON : "+ myJSON )
+        // Get all input elements inside the div with id "contact-form"
+        const inputElements = document.querySelectorAll('.contact-form input');
+
+        //  console.log("myJSON : "+JSON.stringify(myJSON))
+
+        let errors_found = [];
+
+        // Loop through the input elements
+        inputElements.forEach((input) => {
+            if (input.value !== "") {
+                // Do something with each input element
+                //  console.log(input.id+" : "+input.value); // Example: Output the input value
+                //   document.getElementById(input.id).removeAttribute('required');
+                myJSON[input.id] = input.value;
+                document.getElementById(input.id).setAttribute('required',true);
+            } else {
+                errors_found.push(input.id)
+            }
+
+        });
+
+        let can_send = false;
+        if (errors_found.length > 0) {
+            inputElements.forEach((input) => {
+                if (input.value !== "") {
+                    document.getElementById(input.id).removeAttribute('required' );
+                } else {
+                    document.getElementById(input.id).setAttribute('required',true);
+                }
+
+            });
+        } else {
+            if (contact_message.value !== "") {
+                myJSON["message"] = contact_message.value;
+                can_send = true;
+            } else {
+                errors_found.push("message");
+            }
+        }
+
+
+        if (!can_send) {
+            console.log("errors_found : " + errors_found);
+            show_alert("errors_found : " + errors_found);
+
+            return false;
+        } else {
+            try {
+                if (eval(final_page_user) != null) {
+                    myJSON["user"] = final_page_user;
+                } else {
+                    myJSON["user"] = "NOT LOGGED IN";
+                }
+            } catch {
+                myJSON["user"] = "NOT LOGGED IN";
+            }
+            // console.log(JSON.stringify(myJSON))
+
+            /*  myJSON["firstname"]=contact_firstname.value;
+              myJSON["lastname"]=contact_lastname.value;
+              myJSON["email"]=contact_email.value;
+              myJSON["phone"]=contact_phone.value;
+              myJSON["message"]=contact_message.value;*/
+
+
+
+            // document.getElementById("submit").disabled=true;
+            document.getElementById("modal_title_header") .innerHTML = "Thank You for contacting iRide © 2023";
+
+
+            document.getElementById("modal_body")   .innerHTML =  "loading...";
+            btn.click();
+
+
+
+            console.log(`myJSON : ${JSON.stringify(myJSON)}`)
+            let loading_alert=false;
+            /* postAjax_ASYNC(
+                 myMAG,
+                 {param: JSON.stringify(myJSON)},
+
+                 function (data) {
+                     console.log("SERVER SAID:" + data);
+
+                     document.getElementById("modal_body").innerHTML = data;
+                     document.getElementById("modal_title_header").innerHTML = "Thank You for contacting iRide © 2023";
+                     if(btn_status==="OFF"){ btn.click();}
+
+                    document.getElementById("submit").disabled=false;
+                     loading_alert=true;
+
+                     let thisJSONNOW = JSON.parse(data);
+
+
+                     return thisJSONNOW;
+                 });*/
+
+
+
+        }
+
+
+    }
+</script>
 
 <!-- jQuery -->
 <!--<script src="https://ui-themez.smartinnovates.net/items/Gilb/assets/js/jquery-3.6.0.min.js"></script>-->
@@ -1667,6 +2423,17 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
 <!-- custom scripts -->
 <!--<script src="https://ui-themez.smartinnovates.net/items/Gilb/assets/js/scripts.js"></script>-->
 <script src="./porti2/js/scripts.js"></script>
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 
