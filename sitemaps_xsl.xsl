@@ -193,13 +193,13 @@
                             // Remove line breaks from the string
                             const stringWithoutLineBreaks = txt.replace(/(\r\n|\n|\r)/gm, "");
 
-                            console.log(`stringWithoutLineBreaks : ${stringWithoutLineBreaks}`);
+                          //  console.log(`stringWithoutLineBreaks : ${stringWithoutLineBreaks}`);
 
                             let this_str= JSON.parse(stringWithoutLineBreaks)
                             //const json = await response.json(); // Parse the JSON string
                             // const files = json; // Access the 'data' key which contains the array
 
-                            console.log(`this_str : ${stringWithoutLineBreaks}`)
+                           // console.log(`this_str : ${stringWithoutLineBreaks}`)
                             //  console.log(`this_str.length : ${this_str.length}`)
 
 
@@ -213,7 +213,7 @@
                             let domain_name=  'https://strouroul.github.io'
 
                             this_ARR_NOW.forEach(file_found => {
-                                console.log(`file_found : ${file_found}`)
+                            //    console.log(`file_found : ${file_found}`)
                                 const listItem = document.createElement('li');
                                 let this_url_now=domain_name+ file_found.path;
                                 let this_TEXT_now= file_found.name ;
@@ -224,7 +224,7 @@
                                 let link = document.createElement('a');
                                 link.href = this_url_now;
                                 link.innerHTML =this_ICON_now+ this_TEXT_now;
-                                console.log(`listItem.innerHTML : ${  link.href }`)
+                          //      console.log(`listItem.innerHTML : ${  link.href }`)
                                 listItem.appendChild(link);
 
                                 fragment.appendChild(listItem);
