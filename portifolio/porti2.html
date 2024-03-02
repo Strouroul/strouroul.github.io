@@ -130,6 +130,14 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
                 })
             }*/
     </script>
+
+
+    <link rel="stylesheet" href="./porti2/css/snackbar_alert.css"/>
+
+
+    <link rel="stylesheet" href="./porti2/css/final_modal_style.css">
+
+
 </head>
 
 <body>
@@ -196,35 +204,8 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
                     <a href="mailto:kool_egypt@hotmail.com?Subject=Github Contact&body=%0A%0A%0A%0AFrom GitHub">kool_egypt@hotmail.com</a>
                     -->
 
-                    <a href="javascript:void(0)" id="emailLink">Click to Send an Email</a>
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            var emailLink = document.getElementById('emailLink');
+                    <a href="javascript:void(0)" id="emailLink" class="emailLink">Click to Send an Email</a>
 
-                            emailLink.addEventListener('click', function(e) {
-                                e.preventDefault(); // Prevent the default link behavior
-
-                                var date = new Date(); // Get the current date and time
-                                var formattedDate = date.getFullYear() + "-" +
-                                    ("0" + (date.getMonth() + 1)).slice(-2) + "-" +
-                                    ("0" + date.getDate()).slice(-2) + " " +
-                                    ("0" + date.getHours()).slice(-2) + ":" +
-                                    ("0" + date.getMinutes()).slice(-2) + ":" +
-                                    ("0" + date.getSeconds()).slice(-2); // Format the date and time
-
-                                var subject = encodeURIComponent("Github Contact");
-                                var body = encodeURIComponent("\n\n\n\nFrom GitHub\n\n" + "Sent at: " +date.toLocaleString() // formattedDate
-
-                                );
-
-                                // Construct the mailto link with the subject and body
-                                var mailtoLink = "mailto:kool_egypt@hotmail.com?Subject=" + subject + "&body=" + body;
-
-                                // Set the href of the link
-                                window.location.href = mailtoLink;
-                            });
-                        });
-                    </script>
                 </div>
             </div>
         </div>
@@ -1656,7 +1637,7 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
                                                     <h6 class="opacity-7">Phone</h6>
                                                 </div>
                                                 <div class="ml-auto">
-                                                    <h4>+1 840 841 25 69</h4>
+                                                    <h4>+20 102 548 0106</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -1670,7 +1651,39 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
                                                 </div>
                                                 <div class="ml-auto">
                                                     <h4>
-                                                        <a href="mailto:abc@example.com">Andrew@website.com</a>
+                                                        <a href="javascript:void(0)" id="emailLink1" class="emailLink">Click to Send an Email</a>
+                                                        <script>
+                                                            document.addEventListener('DOMContentLoaded', function() {
+
+                                                                var emailLinks = document.querySelectorAll('.emailLink');
+                                                                emailLinks.forEach(emailLink=>{
+                                                                    console.log(`emailLink : ${emailLink.id}`)
+                                                                    emailLink.addEventListener('click', function(e) {
+                                                                        e.preventDefault(); // Prevent the default link behavior
+
+                                                                        var date = new Date(); // Get the current date and time
+                                                                        var formattedDate = date.getFullYear() + "-" +
+                                                                            ("0" + (date.getMonth() + 1)).slice(-2) + "-" +
+                                                                            ("0" + date.getDate()).slice(-2) + " " +
+                                                                            ("0" + date.getHours()).slice(-2) + ":" +
+                                                                            ("0" + date.getMinutes()).slice(-2) + ":" +
+                                                                            ("0" + date.getSeconds()).slice(-2); // Format the date and time
+
+                                                                        var subject = encodeURIComponent("Github Contact");
+                                                                        var body = encodeURIComponent("\n\n\n\nFrom GitHub\n\n" + "Sent at: " +date.toLocaleString() // formattedDate
+
+                                                                        );
+
+                                                                        // Construct the mailto link with the subject and body
+                                                                        var mailtoLink = "mailto:kool_egypt@hotmail.com?Subject=" + subject + "&body=" + body;
+
+                                                                        // Set the href of the link
+                                                                        window.location.href = mailtoLink;
+                                                                    });
+                                                                })
+
+                                                            });
+                                                        </script>
                                                     </h4>
                                                 </div>
                                             </div>
@@ -1684,7 +1697,7 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
                                                     <h6 class="opacity-7">Address</h6>
                                                 </div>
                                                 <div class="ml-auto">
-                                                    <h4>Amsterdam, The Netherland</h4>
+                                                    <h4>Cairo, Egypt</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -1733,9 +1746,6 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
 
 
 
-<link rel="stylesheet" href="./porti2/css/final_modal_style.css">
-
-
 <!-- INVISIBLE MODAL TRIGGER -->
 <span id="myBtn" style="display: none;"></span>
 <span id="myBtn_modal" style="display: none;"></span>
@@ -1746,11 +1756,11 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title"  ><b id="modal_title_header"></b></h5>
+                <h5 class="modal-title"  ><b id="modal_title_header" style="color: red;"></b></h5>
                 <!-- <button type="button" class="btn-close" id="modal_close_btn" data-bs-dismiss="modal" aria-label="Close"></button> -->
                 <span id="modal_close_btn" class="close">&times;</span>
             </div>
-            <div class="modal-body" id="modal_body">
+            <div class="modal-body" id="modal_body" style="color: red;">
                 ...
             </div>
             <!--  <div class="modal-footer" id="modal_footer" style="display: none;">
@@ -1797,6 +1807,20 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
 
     let modal_in_modal_close_footer_btn=document.getElementById("modal_in_modal_close_footer_btn");
     let modal_in_modal_close_btn=document.getElementById("modal_in_modal_close_btn");
+
+
+    var btn = document.getElementById("myBtn");
+    var btn_status="OFF";
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    var modal_in_modal=document.getElementById("modal_in_modal");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementById("modal_close_btn");
+    var span_modal = document.getElementById("modal_in_modal_close_btn");
+
+    var myBtn_modal = document.getElementById("myBtn_modal");
 
     window.addEventListener('resize', function(event) {
         //    console.log('Page was resized');
@@ -1872,16 +1896,6 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
         // console.log("done css : "+my_element.id);
     }
 
-    // Get the modal
-    var modal = document.getElementById("myModal");
-
-    var modal_in_modal=document.getElementById("modal_in_modal");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementById("modal_close_btn");
-    var span_modal = document.getElementById("modal_in_modal_close_btn");
-
-    var myBtn_modal = document.getElementById("myBtn_modal");
     myBtn_modal.onclick = function () {
         if (modal_in_modal.classList.contains("w3-animate-hide")) {
             modal_in_modal.classList.remove('w3-animate-hide');
@@ -1889,8 +1903,7 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
         modal_in_modal.classList.add('w3-animate-show')
         modal_in_modal.style.display = "flex";
     }
-    var btn = document.getElementById("myBtn");
-    var btn_status="OFF";
+
     // When the user clicks the button, open the modal
     btn.onclick = function () {
         if (modal.classList.contains("w3-animate-hide")) {
@@ -1921,7 +1934,7 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
         },800)
         //
 
-        modal_body.innerHTML="";
+        //modal_body.innerHTML="";
     }
     span_modal.onclick = function() {
         if( modal_in_modal.classList.contains("w3-animate-show")){
@@ -1991,9 +2004,6 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
     }.bind(modal))
 
 
-
-
-
     modal_in_modal_close_footer_btn=span_modal.onclick;
     // modal_close_footer_btn.onclick=span.onclick;
 
@@ -2006,12 +2016,6 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
 </script>
 
 
-
-
-
-
-
-<link rel="stylesheet" href="./porti2/css/snackbar_alert.css"/>
 
 <div id="snackbar">Some text some message..</div>
 
@@ -2279,7 +2283,7 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
             }
         }
         catch(e_FINAL_PAGE_USER){
-            console.log(`e_FINAL_PAGE_USER : ${e_FINAL_PAGE_USER}`)
+            //console.log(`e_FINAL_PAGE_USER : ${e_FINAL_PAGE_USER}`)
             final_page_user=null;
         }
         try{
@@ -2344,12 +2348,10 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
         }
 
 
-        if (!can_send) {
-            console.log("errors_found : " + errors_found);
-            show_alert("errors_found : " + errors_found);
+        if (can_send) {
+            // document.getElementById("submit").disabled=true;
 
-            return false;
-        } else {
+
             try {
                 if (eval(final_page_user) != null) {
                     myJSON["user"] = final_page_user;
@@ -2367,20 +2369,16 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
               myJSON["phone"]=contact_phone.value;
               myJSON["message"]=contact_message.value;*/
 
-
-
-            // document.getElementById("submit").disabled=true;
-            document.getElementById("modal_title_header") .innerHTML = "Thank You for contacting iRide © 2023";
-
-
-            document.getElementById("modal_body")   .innerHTML =  "loading...";
-            btn.click();
-
-
-
+            document.getElementById("submit").disabled=true;
             console.log(`myJSON : ${JSON.stringify(myJSON)}`)
             let loading_alert=false;
-            /* postAjax_ASYNC(
+
+            modal_title_header.innerHTML = "Thank You for contacting iRide © 2023";
+
+
+            modal_body.innerHTML =  "loading...";
+            btn.click();
+           postAjax_ASYNC(
                  myMAG,
                  {param: JSON.stringify(myJSON)},
 
@@ -2398,7 +2396,16 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
 
 
                      return thisJSONNOW;
-                 });*/
+                 });
+
+
+
+        } else {
+            console.log("errors_found : " + errors_found);
+            show_alert("errors_found : " + errors_found);
+
+            return false;
+
 
 
 
@@ -2407,6 +2414,7 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
 
     }
 </script>
+
 
 <!-- jQuery -->
 <!--<script src="https://ui-themez.smartinnovates.net/items/Gilb/assets/js/jquery-3.6.0.min.js"></script>-->
