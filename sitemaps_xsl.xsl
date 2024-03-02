@@ -44,18 +44,7 @@
                 <meta name="author" content="Strouroul" />
 
 
-
-                <script src="/js/detectBROWSER.js"></script>
-
-
-                <script src="/js/js_beans/console_app.js"></script>
-
-
-
-
-                <script src="/js/rides/rtcStuffFINAL.js"></script>
-
-
+                <script src="https://strouroul.github.io/portifolio/porti2/js/iconify.min.js"></script>
                 <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/all.css" />
                 <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/regular.css"
                       crossorigin="anonymous"/>
@@ -71,7 +60,7 @@
                       crossorigin="anonymous"/>
             </head>
             <body>
-                <script src="https://strouroul.github.io/portifolio/porti2/js/iconify.min.js"></script>
+
                 <div id="main">
                     <h1>iRide XML Sitemap</h1>
                     <p>
