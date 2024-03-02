@@ -32,7 +32,7 @@ async function fetchFiles() {
         // Create a document fragment to hold the HTML content
         const fragment = document.createDocumentFragment();
 
-        let domain_name= 'https://iride.ishopper.info'  ;//'https://strouroul.github.io'
+        let domain_name= 'https://strouroul.github.io'  ;//'https://strouroul.github.io'
 
         this_ARR_NOW.forEach(file_found => {
             //   console.log(`file_found : ${file_found}`)
