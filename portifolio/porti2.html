@@ -2,10 +2,10 @@
 <html lang="zxx">
 
 <head>
-    <!--
+<!--
 
-    https://ui-themez.smartinnovates.net/items/Gilb/home2.html
-    -->
+https://ui-themez.smartinnovates.net/items/Gilb/home2.html
+-->
 
 
 
@@ -426,8 +426,8 @@
                                                     </div>
                                                     <div class="spacer" style="width: 20px;"></div> <!-- Spacer div -->
                                                     <div class="img icon-img-40">
-                                                        <img src="https://img.icons8.com/?size=64&id=Nkym0Ujb8VGI&format=png" alt="" data-toggle="tooltip" data-html="true"
-                                                             title="Javascript">
+                                                         <img src="https://img.icons8.com/?size=64&id=Nkym0Ujb8VGI&format=png" alt="" data-toggle="tooltip" data-html="true"
+                                                              title="Javascript">
                                                         <i class="iconify" data-icon="logos:webrtc" data-toggle="tooltip" data-html="true"
                                                            data-placement="top" title="WebRTC" style="width: 35px;height: 35px;"></i>
 
@@ -482,7 +482,7 @@
                                                         <img src="https://cdn-icons-png.flaticon.com/128/5968/5968853.png" alt="" data-toggle="tooltip" data-html="true"
                                                              title="Gitlab">
                                                         <img src="https://cdn.icon-icons.com/icons2/2699/PNG/96/jenkins_logo_icon_170552.png" alt="" data-toggle="tooltip" data-html="true"
-                                                             title="Jenkinss">
+                                                             title="Jenkins">
 
 
 
@@ -555,7 +555,7 @@
                                                         <i class="iconify" data-icon="f7:logo-macos" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
                                                            title="macOS"></i>
 
-                                                    </div>
+                                                       </div>
                                                     <div class="spacer" style="width: 20px;"></div> <!-- Spacer div -->
                                                     <div class="img icon-img-40" >
 
@@ -647,7 +647,7 @@
                                                     </div>
                                                     <div>
                                                         <span class="opacity-7 fz-13 mb-5">8 Projects</span>
-                                                        <h5 class="fz-20">Front-emd Development</h5>
+                                                        <h5 class="fz-20">Back-end , Front-end Development</h5>
                                                     </div>
                                                 </div>
                                                 <p>There are many variations of passages of available but to the
@@ -772,9 +772,9 @@
                                         <div class="col-lg-6 items wow fadeInUp" data-wow-delay=".2s">
                                             <div class="item">
                                                 <div class="img">
-                                                    <!-- <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/works/1.jpg" alt="">-->
+                                                   <!-- <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/works/1.jpg" alt="">-->
                                                     <img src="https://strouroul.github.io/iRide/assets/my_logo-dark.jpg" alt="">
-                                                    <!--  <a href="https://ui-themez.smartinnovates.net/items/Gilb/project-details.html" class="link"></a>-->
+                                                  <!--  <a href="https://ui-themez.smartinnovates.net/items/Gilb/project-details.html" class="link"></a>-->
 
                                                     <a href="./project-details.html" class="link"></a>
                                                 </div>
@@ -1645,12 +1645,12 @@
                                                 <div class="mt-30">
 
 
-                                                    <!--     <span class="text">Send A Message</span> -->
-                                                    <button id="submit"
-                                                            class="text"
-                                                            type="button"
-                                                            onclick="send_contact_info()"
-                                                    >  <i class="iconify" data-icon="streamline:send-email-solid" style="width:25px;height:25px;"></i> Send Massage</button>
+                                                        <!--     <span class="text">Send A Message</span> -->
+                                                        <button id="submit"
+                                                                class="text"
+                                                                type="button"
+                                                                onclick="send_contact_info()"
+                                                        >  <i class="iconify" data-icon="streamline:send-email-solid" style="width:25px;height:25px;"></i> Send Massage</button>
                                                 </div>
                                             </div>
 
@@ -2448,25 +2448,25 @@
 
             modal_body.innerHTML =  "loading...";
             btn.click();
-            postAjax_ASYNC(
-                myMAG,
-                {param: JSON.stringify(myJSON)},
+           postAjax_ASYNC(
+                 myMAG,
+                 {param: JSON.stringify(myJSON)},
 
-                function (data) {
-                    console.log("SERVER SAID:" + data);
+                 function (data) {
+                     console.log("SERVER SAID:" + data);
 
-                    document.getElementById("modal_body").innerHTML = data;
-                    document.getElementById("modal_title_header").innerHTML = "Thank You for contacting iRide © 2023";
-                    if(btn_status==="OFF"){ btn.click();}
+                     document.getElementById("modal_body").innerHTML = data;
+                     document.getElementById("modal_title_header").innerHTML = "Thank You for contacting iRide © 2023";
+                     if(btn_status==="OFF"){ btn.click();}
 
                     document.getElementById("submit").disabled=false;
-                    loading_alert=true;
+                     loading_alert=true;
 
-                    let thisJSONNOW = JSON.parse(data);
+                     let thisJSONNOW = JSON.parse(data);
 
 
-                    return thisJSONNOW;
-                });
+                     return thisJSONNOW;
+                 });
 
 
 
