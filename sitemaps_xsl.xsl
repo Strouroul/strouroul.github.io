@@ -8,7 +8,7 @@
     <xsl:template match="/">
         <html xmlns="http://www.w3.org/1999/xhtml">
             <head>
-                <title>XML Sitemap</title>
+                <title>iRide XML Sitemap</title>
 
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
                 <style type="text/css">
@@ -18,8 +18,8 @@
                 <link rel="stylesheet" type="text/css" href="/sitemap.css" />
                 <meta property="og:title" content="iRide" />
                 <meta property="og:type" content="text/html" />
-                <meta property="og:url" content="https://strouroul.github.io/" />
-                <meta property="og:image" content="https://iride.glitch.me/favicon.png" />
+                <meta property="og:url" content="https://iride.ishopper.info/" />
+                <meta property="og:image" content="https://iride.ishopper.info/favicon.png" />
 
                 <!-- https://livedemo00.template-help.com/wt_prod-27536/ -->
 
@@ -76,11 +76,17 @@
                     <p>
 
                       <span>
-                          <a href="/"><i class="fa-solid fa-house"></i> HOME </a> |
-                          <a href="/sitemap.xml">Index Sitemap</a> |
-                          <a href="/sitemap_crypto.xml">Exchange sitemap</a>
+                      <!--    <a href="https://iride.ishopper.info/"><i class="fa-solid fa-house"></i> HOME </a> |
+                          <a href="https://iride.ishopper.info/sitemap.xml">Index sitemap</a> -->
+
+                       <!--   <a href="/"><i class="fa-solid fa-house"></i> HOME </a> |
+                          <a href="/sitemap.xml">Index sitemap</a> |
+                          <a href="/sitemap_crypto.xml">Exchange sitemap</a> -->
+
+
                       </span>
                     </p>
+                    <ul id="filesList"></ul>
                <!--     <xsl:if test="sitemap:sitemapindex/sitemap:url">
                         <p>This XML Sitemap Index file contains
                             <xsl:value-of select="count(sitemap:sitemapindex/sitemap:url)"/> sitemaps.
@@ -167,6 +173,77 @@
                         </ul>
                     </div>
                 </div>
+
+
+                <script>
+           // Function to fetch files and display them
+   async function fetchFiles() {
+                    try {
+                    //   const response = await fetch('./index.txt');
+                    //  const files = await response.json();
+
+                    const response = await fetch('/sitemaps_list.txt');
+                    const txt = await response.text(); // Parse the JSON string
+                    if (!response.ok) {
+                    // If response is not ok, throw an error
+                         throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+
+                    // Remove line breaks from the string
+                    const stringWithoutLineBreaks = txt.replace(/(\r\n|\n|\r)/gm, "");
+
+                     console.log(`stringWithoutLineBreaks : ${stringWithoutLineBreaks}`);
+
+                  let this_str= JSON.parse(stringWithoutLineBreaks)
+                    //const json = await response.json(); // Parse the JSON string
+                   // const files = json; // Access the 'data' key which contains the array
+
+                    console.log(`this_str : ${stringWithoutLineBreaks}`)
+                  //  console.log(`this_str.length : ${this_str.length}`)
+
+
+                    let this_ARR_NOW=this_str.data;
+
+                    // Display each file in the list
+                    const list = document.getElementById('filesList');
+                    // Create a document fragment to hold the HTML content
+                    const fragment = document.createDocumentFragment();
+
+                    let domain_name= 'https://strouroul.github.io'  ;//'https://strouroul.github.io'
+
+                    this_ARR_NOW.forEach(file_found => {
+                        console.log(`file_found : ${file_found}`)
+                        const listItem = document.createElement('li');
+                        let this_url_now=domain_name+ file_found.path;
+                        let this_TEXT_now= file_found.name ;
+
+
+
+                        let link = document.createElement('a');
+                        link.href = this_url_now;
+                        link.textContent = this_TEXT_now;
+                        console.log(`listItem.innerHTML : ${  link.href }`)
+                        listItem.appendChild(link);
+
+                        fragment.appendChild(listItem);
+                    });
+                    list.appendChild(fragment);
+                    } catch (error) {
+                         console.error('Error fetching files:', error);
+                    }
+    }
+
+                    // Call fetchFiles when the page loads
+                    fetchFiles();
+                 /*   document.addEventListener('DOMContentLoaded', async function () {
+
+                    }) */
+
+
+
+                    //   window.location='./home.html';
+                </script>
             </body>
         </html>
     </xsl:template>

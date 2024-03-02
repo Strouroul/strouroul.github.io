@@ -1,0 +1,9 @@
+{"status":true,
+"data":[
+        {"name":"iRide","path":"/sitemap_iride.xml"},
+           {"name":"Github","path":"/sitemap_github.xml"},
+        {"name":"Crypto Exchange","path":"/sitemap_crypto.xml"},
+        {"name":"Portfoilio","path":"/portifolio/sitemap_portfolio.xml"}
+    ]
+}
+
