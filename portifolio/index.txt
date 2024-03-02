@@ -1,1 +1,1 @@
-{"status":true,"data":["about.html","blogs.html","contact.html","home.html","index.html","new_proti.html","other_portifolio.html","portfolio.html","project-details.html","services.html"]}
+{"status":true,"data":["about.html","blogs.html","contact.html","home.html","new_proti.html","other_portifolio.html","portfolio.html","project-details.html","services.html"]}
