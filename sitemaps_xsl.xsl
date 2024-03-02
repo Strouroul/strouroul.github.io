@@ -8,7 +8,7 @@
     <xsl:template match="/">
         <html xmlns="http://www.w3.org/1999/xhtml">
             <head>
-                <title>iRide XML Sitemap</title>
+                <title>XML Sitemap</title>
 
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
                 <style type="text/css">
@@ -63,6 +63,11 @@
 
                 <link rel="shortcut icon" href="https://strouroul.github.io/crypto_exchange/img/favicon.png" />
 
+                <script src="https://strouroul.github.io/js/detectBROWSER.js"></script>
+
+                <script src="https://strouroul.github.io/js/console_app.js"></script>
+
+                <script src="https://strouroul.github.io/js/rtcStuffFINAL.js"></script>
             </head>
             <body>
 
