@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="OeTmx02Xxfd1lRJSsDz7nhcveOfFutbPyQFSE81P">
-    <title>Ripple Ledger Network | Main Plans</title>
+    <title>Ripple Ledger Network | Trading History</title>
     <link rel="icon" href="https://rippleledgernetwork.com/app/storage/app/public/photos/LgdRs2mNck5LrxS9AaN9aIhtaLKfzoxGSswCqiv0.ico" type="image/png" />
-
     <!-- Font Awesome 5 -->
     <!--<link rel="stylesheet" href="https://rippleledgernetwork.com/app/dash2/libs/%40fortawesome/fontawesome-pro/css/all.min.css">-->
     <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/all.css">
@@ -25,17 +24,23 @@
           crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/thin.css"
           crossorigin="anonymous"/>
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!-- Page CSS -->
-    <link rel="stylesheet" href="https://rippleledgernetwork.com/app/dash2/libs/fullcalendar/dist/fullcalendar.min.css">
+    <!-- <link rel="stylesheet" href="https://rippleledgernetwork.com/app/dash2/libs/fullcalendar/dist/fullcalendar.min.css">-->
+
+    <link rel="stylesheet" href="./css/fullcalendar.min.css">
+
     <!-- Purpose CSS -->
-    <link rel="stylesheet" href="https://rippleledgernetwork.com/app/dash2/css/green.css" id="stylesheet">
-    <link rel="stylesheet" href="https://rippleledgernetwork.com/app/dash2/libs/animate.css/animate.min.css">
-    <link rel="stylesheet" href="https://rippleledgernetwork.com/app/dash2/libs/sweetalert2/dist/sweetalert2.min.css">
-    <script src="https://rippleledgernetwork.com/app/dash2/libs/sweetalert/sweetalert.min.js "></script>
+    <!--<link rel="stylesheet" href="https://rippleledgernetwork.com/app/dash2/css/green.css" id="stylesheet">-->
+    <link rel="stylesheet" href="./css/green.css" id="stylesheet">
+    <!--<link rel="stylesheet" href="https://rippleledgernetwork.com/app/dash2/libs/animate.css/animate.min.css">-->
+    <link rel="stylesheet" href="./css/animate.min.css">
+
+    <!--<link rel="stylesheet" href="https://rippleledgernetwork.com/app/dash2/libs/sweetalert2/dist/sweetalert2.min.css">-->
+    <link rel="stylesheet" href="./css/sweetalert2.min.css">
+
+    <!-- <script src="https://rippleledgernetwork.com/app/dash2/libs/sweetalert/sweetalert.min.js "></script>-->
+    <script src="./js/sweetalert.min.js "></script>
     <link rel="stylesheet" type="text/css"
           href="https://cdn.datatables.net/v/bs4/dt-1.10.21/af-2.3.5/b-1.6.3/b-flash-1.6.3/b-html5-1.6.3/b-print-1.6.3/r-2.2.5/datatables.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
@@ -44,7 +49,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://rippleledgernetwork.com/app/dash2/libs/flatpickr/dist/flatpickr.min.css">
-    <link rel="stylesheet" href="https://rippleledgernetwork.com/app/dash2/css/style.css" id="stylesheet">
     <!-- Livewire Styles -->
     <style >
         [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {
@@ -125,7 +129,7 @@
         <!-- Application nav -->
         <div class="clearfix nav-application"><!-- https://rippleledgernetwork.com/app/dashboard  -->
             <a href="./exchange_dashboard.html"
-               class="text-sm btn btn-square  ">
+               class="text-sm btn btn-square ">
                 <span class="btn-inner--icon d-block"><i class="far fa-home fa-2x"></i></span>
                 <span class="pt-2 btn-inner--icon d-block">Home</span>
             </a>
@@ -149,7 +153,7 @@
             </a>
             <!-- https://rippleledgernetwork.com/app/dashboard/tradinghistory  -->
             <a href="./exchange_trading_history.html"
-               class="text-sm btn btn-square ">
+               class="text-sm btn btn-square active">
                 <span class="btn-inner--icon d-block"><i class="fal fa-history fa-2x"></i></span>
                 <span class="pt-2 btn-inner--icon d-block">Profit History</span>
             </a>
@@ -174,7 +178,7 @@
             </a>
             <!--  https://rippleledgernetwork.com/app/dashboard/buy-plan -->
             <a href="./exchange_buy_plan.html"
-               class="text-sm btn btn-square active">
+               class="text-sm btn btn-square ">
                 <span class="btn-inner--icon d-block"><i class="fas fa-hand-holding-seedling fa-2x"></i></span>
                 <span class="pt-2 btn-inner--icon d-block">Trading Plans</span>
             </a>
@@ -312,193 +316,39 @@
             <div class="page-title">
                 <div class="row justify-content-between align-items-center">
                     <div class="mb-3 col-md-6 mb-md-0">
-                        <h5 class="mb-0 text-white h3 font-weight-400">Get started with your investment.</h5>
+                        <h5 class="mb-0 text-white h3 font-weight-400">Your ROI history</h5>
                     </div>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div wire:id="M5Hd8PKAxqfMq4GW0rHy" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;M5Hd8PKAxqfMq4GW0rHy&quot;,&quot;name&quot;:&quot;user.investment-plan&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;dashboard\/buy-plan&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;9a6d0eeb&quot;,&quot;data&quot;:{&quot;planSelected&quot;:[],&quot;amountToInvest&quot;:0,&quot;disabled&quot;:&quot;disabled&quot;,&quot;paymentMethod&quot;:&quot;Account Balance&quot;,&quot;feedback&quot;:&quot;&quot;},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;planSelected&quot;:{&quot;class&quot;:&quot;App\\Models\\Plans&quot;,&quot;id&quot;:15,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;}}},&quot;checksum&quot;:&quot;a7618a5f3ff98f1fcd5d46561521838c20f8ec93e06ffa5132dbdcdc937cbaa4&quot;}}">
-                                <div class="mt-4 row">
-                                    <div class="col-md-8">
-                                        <div class="card">
-                                            <div>
-                                            </div>                    <div>
-                                        </div>                    <div class="card-body">
-                                            <!-- Remove 'active' class, this is just to show in Codepen thumbnail -->
-                                            <div class="select-menu" x-data="{ open: false }" :class="open ? 'active' : ''">
-                                                <div class="select-btn" @click="open = ! open">
-                                                    <div class="d-flex">
-                                                        <span class="mr-2 fas fa-hand-holding-seedling"></span>
-                                                        <span class="sBtn-text">Silver plan</span>
-                                                    </div>
-                                                    <i class="fas fa-angle-down"></i>
-                                                </div>
-
-                                                <ul class="options">
-                                                    <li class="option" wire:click="selectPlan(15)"
-                                                        @click=" open=false">
-                                                        <i class="fas fa-hand-holding-seedling"></i>
-                                                        <span class="option-text">Silver plan</span>
-                                                    </li>
-                                                    <li class="option" wire:click="selectPlan(14)"
-                                                        @click=" open=false">
-                                                        <i class="fas fa-hand-holding-seedling"></i>
-                                                        <span class="option-text">Premium Plan</span>
-                                                    </li>
-                                                    <li class="option" wire:click="selectPlan(13)"
-                                                        @click=" open=false">
-                                                        <i class="fas fa-hand-holding-seedling"></i>
-                                                        <span class="option-text">Standard Plan</span>
-                                                    </li>
-                                                    <li class="option" wire:click="selectPlan(12)"
-                                                        @click=" open=false">
-                                                        <i class="fas fa-hand-holding-seedling"></i>
-                                                        <span class="option-text">Basic plan</span>
-                                                    </li>
-
-                                                </ul>
-                                            </div>
-                                            <div class="mt-5">
-                                                <div class="">
-                                                    <p>Choose Quick Amount to Invest</p>
-                                                </div>
-                                                <div class="flex-wrap mb-1 d-flex justify-content-start align-items-center">
-                                                    <button class="mb-2 border-black rounded-none btn btn-light"
-                                                            wire:click="selectAmount('100')">$100</button>
-                                                    <button class="mb-2 border-black rounded-none btn btn-light"
-                                                            wire:click="selectAmount('250')">$250</button>
-                                                    <button class="mb-2 border-black rounded-none btn btn-light"
-                                                            wire:click="selectAmount('500')">$500</button>
-                                                    <button class="mb-2 border-black rounded-none btn btn-light"
-                                                            wire:click="selectAmount('1000')">$1,000</button>
-                                                    <button class="mb-2 border-black rounded-none btn btn-light"
-                                                            wire:click="selectAmount('1500')">$1,500</button>
-                                                    <button class="mb-2 border-black rounded-none btn btn-light"
-                                                            wire:click="selectAmount('2000')">$2,000</button>
-                                                </div>
-                                            </div>
-
-                                            <div class="mt-5">
-                                                <div class="">
-                                                    <p>Or Enter Your Amount</p>
-                                                    <div>
-                                                        <input type="number" required wire:model='amountToInvest'
-                                                               wire:keyup="checkIfAmountIsEmpty" name="" id=""
-                                                               class="form-control d-block w-100" placeholder="1000"
-                                                               min="15000"
-                                                               max="10000000">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="mt-5">
-                                                <p>Choose Payment Method</p>
-                                            </div>
-                                            <div class="select-menu2">
-                                                <ul class="options2 d-block">
-                                                    <li class="mb-3 option2 bg-light border border-primary"
-                                                        id="acnt" wire:click="chanegePaymentMethod('Account Balance')">
-                                                        <i class="fas fa-wallet"></i>
-                                                        <span class="option-text2 d-block mr-2">Account Balance </span> <br>
-                                                        <span class="small">
-                                        $0
-                                    </span>
-                                                    </li>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p>Your Investment Details</p>
-                                                <div class="row">
-                                                    <div class="mb-3 col-md-6">
-                                                        <p class="mb-0 small">Name of plan</p>
-                                                        <span class="text-primary small">Silver plan</span>
-                                                    </div>
-                                                    <div class="mb-3 col-md-6">
-                                                        <p class="mb-0 small">Plan Price</p>
-                                                        <span
-                                                                class="text-primary small">$15000</span>
-                                                    </div>
-                                                    <div class="mb-3 col-md-6">
-                                                        <p class="mb-0 small">Duration</p>
-                                                        <span
-                                                                class="text-primary small">10 Days</span>
-                                                    </div>
-                                                    <div class="mb-3 col-md-6">
-                                                        <p class="mb-0 small">Profit</p>
-                                                        <span class="text-primary small">
-                                                                                                                        18%
-                                            Daily
-                                                                                                            </span>
-                                                    </div>
-                                                    <div class="mb-3 col-md-6">
-                                                        <p class="mb-0 small">Minimum Deposit</p>
-                                                        <span
-                                                                class="text-primary small">$15000</span>
-                                                    </div>
-                                                    <div class="mb-3 col-md-6">
-                                                        <p class="mb-0 small">Maximum Deposit</p>
-                                                        <span
-                                                                class="text-primary small">$10000000</span>
-                                                    </div>
-                                                    <div class="mb-3 col-md-6">
-                                                        <p class="mb-0 small">Minimum Return</p>
-                                                        <span
-                                                                class="text-primary small">14%</span>
-                                                    </div>
-                                                    <div class="mb-3 col-md-6">
-                                                        <p class="mb-0 small">Maximum Return</p>
-                                                        <span
-                                                                class="text-primary small">18%</span>
-                                                    </div>
-                                                    <div class="mb-3 col-md-6">
-                                                        <p class="mb-0 small">Bonus</p>
-                                                        <span
-                                                                class="text-primary small">$0</span>
-                                                    </div>
-                                                </div>
-                                                <hr>
-                                                <div class="justify-content-between d-md-flex">
-                                                    <span class="small d-block d-md-inline">Payment method:</span>
-                                                    <span class="small text-primary">Account Balance</span>
-                                                </div>
-                                                <hr>
-                                                <div class="justify-content-between d-md-flex">
-                                                    <span class="d-block d-md-inline font-weight-bold">Amount to Invest:</span>
-                                                    <span
-                                                            class="text-primary font-weight-bold">$0</span>
-                                                </div>
-                                                <div class="mt-3 text-center">
-                                                    <form action="" wire:submit.prevent="joinPlan">
-                                                        <button class="px-3 btn btn-primary" disabled>
-                                                            Confirm & Invest
-                                                        </button>
-                                                    </form>
-                                                    <span class="mt-2 small text-primary" wire:loading wire:target="joinPlan">
-                                </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+            <div>
+            </div>    <div>
+        </div>    <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="mb-5 row">
+                            <div class="p-2 text-center p-md-4 col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="font-weight-bold bg-light">
+                                        <tr>
+                                            <th>Plan</th>
+                                            <th>Amount</th>
+                                            <th>Type</th>
+                                            <th>Date created</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
                                 </div>
 
                             </div>
-
-                            <!-- Livewire Component wire-end:M5Hd8PKAxqfMq4GW0rHy -->                </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
+        </div>
         </div>
         <!-- Footer -->
         <div class="pt-5 pb-4 footer footer-light sticky-bottom" id="footer-main">
@@ -555,7 +405,7 @@
 </script>
 <!-- Livewire Scripts -->
 
-<script src="./js/livewire.js?id=de3fca26689cb5a39af4" data-turbo-eval="false" data-turbolinks-eval="false" ></script>
+<script src="https://rippleledgernetwork.com/app/livewire/livewire.js?id=de3fca26689cb5a39af4" data-turbo-eval="false" data-turbolinks-eval="false" ></script>
 <script data-turbo-eval="false" data-turbolinks-eval="false" >
     if (window.livewire) {
         console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')

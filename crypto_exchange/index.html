@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exchange Index</title>
+</head>
+<body>
+<h1>Exchange Index</h1>
+<ul id="filesList"></ul>
+
+<script>
+    // Function to fetch files and display them
+    async function fetchFiles() {
+        try {
+         //   const response = await fetch('./index.txt');
+          //  const files = await response.json();
+
+            const response = await fetch('./index.txt');
+            if (!response.ok) {
+                // If response is not ok, throw an error
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const json = await response.json(); // Parse the JSON string
+            const files = json.data; // Access the 'data' key which contains the array
+
+            console.log(`response : ${JSON.stringify(files)}`)
+            // Display each file in the list
+            const list = document.getElementById('filesList');
+            files.forEach(file => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML =`<a href='./${file}'>${file.toString().replace('exchange_','')}</a>` ;
+                list.appendChild(listItem);
+            });
+        } catch (error) {
+            console.error('Error fetching files:', error);
+        }
+    }
+
+    // Call fetchFiles when the page loads
+    fetchFiles();
+</script>
+</body>
+</html>
