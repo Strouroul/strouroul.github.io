@@ -1,0 +1,14 @@
+{
+  "projects": [
+    {
+      "name": "Video /Audio Chat",
+      "language": ["java","perl","node.js"],
+      "status": ["working"]
+    },
+    {
+      "name": "QR Code Generator",
+      "language": ["java","perl","node.js"],
+      "status": ["working"]
+    }
+  ]
+}

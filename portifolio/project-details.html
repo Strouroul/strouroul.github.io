@@ -12,10 +12,10 @@
     <meta name="author" content="">
 
     <!-- Title  -->
-    <title>Andrew</title>
+    <title>Haytham Meiz</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="https://strouroul.github.io/crypto_exchange/img/favicon.png">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
@@ -27,11 +27,11 @@
     <!-- Plugins -->
     <!--<link rel="stylesheet" href="https://ui-themez.smartinnovates.net/items/Gilb/assets/css/plugins.css">-->
 
-    <link rel="stylesheet" href="./porti2/css/plugins.css">
+    <link rel="stylesheet" href="./home/css/plugins.css">
 
     <!-- Core Style Css -->
     <!--<link rel="stylesheet" href="https://ui-themez.smartinnovates.net/items/Gilb/assets/css/style.css">-->
-    <link rel="stylesheet" href="./porti2/css/style.css">
+    <link rel="stylesheet" href="./home/css/style.css">
 
 
 
@@ -352,20 +352,69 @@
 
 <!-- jQuery -->
 <!--<script src="https://ui-themez.smartinnovates.net/items/Gilb/assets/js/jquery-3.6.0.min.js"></script>-->
-<script src="./porti2/js/jquery-3.6.0.min.js"></script>
+<script src="./home/js/jquery-3.6.0.min.js"></script>
 
 <!--<script src="https://ui-themez.smartinnovates.net/items/Gilb/assets/js/jquery-migrate-3.4.0.min.js"></script>-->
 
-<script src="./porti2/js/jquery-migrate-3.4.0.min.js"></script>
+<script src="./home/js/jquery-migrate-3.4.0.min.js"></script>
 
 <!-- plugins -->
 <!--<script src="https://ui-themez.smartinnovates.net/items/Gilb/assets/js/plugins.js"></script>-->
-<script src="./porti2/js/plugins.js"></script>
+<script src="./home/js/plugins.js"></script>
 
 <!-- custom scripts -->
 <!--<script src="https://ui-themez.smartinnovates.net/items/Gilb/assets/js/scripts.js"></script>-->
-<script src="./porti2/js/scripts.js"></script>
+<script src="./home/js/scripts.js"></script>
 
+
+
+
+
+
+
+<script>
+    async function fetchFiles() {
+        try {
+            //   const response = await fetch('./index.txt');
+            //  const files = await response.json();
+
+            const response = await fetch('./index.txt');
+            if (!response.ok) {
+                // If response is not ok, throw an error
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const json = await response.json(); // Parse the JSON string
+            const files = json.data; // Access the 'data' key which contains the array
+
+            console.log(`response : ${JSON.stringify(files)}`)
+            // Display each file in the list
+            const list = document.getElementById('filesList');
+            files.forEach(file => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML =`<a href='./${file}'>${file.toString().replace('exchange_','')}</a>` ;
+                list.appendChild(listItem);
+            });
+        } catch (error) {
+            console.error('Error fetching files:', error);
+        }
+    }
+
+    // Call fetchFiles when the page loads
+    fetchFiles();
+
+
+    // Function to get the value of a parameter from the URL
+    function getQueryParam(parameter) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(parameter);
+    }
+
+    // Example usage
+    const codeValue = getQueryParam('code');
+
+    // Log the value to the console (you can use it as needed)
+    console.log('Code:', codeValue);
+</script>
 </body>
 
 </html>
