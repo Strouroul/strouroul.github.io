@@ -175,7 +175,7 @@
                 </div>
 
 
-                <script src="https://strouroul.github.io/js/xsl_utl.js">  </script>
+                <script src="https://strouroul.github.io/js/xsl_util.js">  </script>
             </body>
         </html>
     </xsl:template>
