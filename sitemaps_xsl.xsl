@@ -16,10 +16,10 @@
                 </style>
 
                 <link rel="stylesheet" type="text/css" href="/sitemap.css" />
-                <meta property="og:title" content="iRide" />
+                <meta property="og:title" content="Strouroul" />
                 <meta property="og:type" content="text/html" />
-                <meta property="og:url" content="https://iride.ishopper.info/" />
-                <meta property="og:image" content="https://iride.ishopper.info/favicon.png" />
+                <meta property="og:url" content="https://strouroul.github.io/" />
+                <meta property="og:image" content="https://strouroul.github.io/crypto_exchange/img/favicon.png" />
 
                 <!-- https://livedemo00.template-help.com/wt_prod-27536/ -->
 
@@ -45,6 +45,7 @@
 
 
                 <script src="https://strouroul.github.io/portifolio/porti2/js/iconify.min.js"></script>
+
                 <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/all.css" />
                 <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/regular.css"
                       crossorigin="anonymous"/>
@@ -58,11 +59,15 @@
                       crossorigin="anonymous"/>
                 <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/thin.css"
                       crossorigin="anonymous"/>
+
+
+                <link rel="shortcut icon" href="https://strouroul.github.io/crypto_exchange/img/favicon.png" />
+
             </head>
             <body>
 
                 <div id="main">
-                    <h1>iRide XML Sitemap</h1>
+                    <h1>XML Sitemap</h1>
                     <p>
 
                         <span>
