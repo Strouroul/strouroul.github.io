@@ -9,9 +9,9 @@
   <!-- Favicon -->
   <link rel="icon" href="https://strouroul.github.io/crypto_exchange/img/favicon.png">
 
-  <title>Simone - Personal Portfolio Template</title>
-  <meta name="description" content="Simone is responsive bootstrap 5 one page personal portfolio html template.">
-  <meta name="author" content="harnishdesign.net">
+  <title>Haytham - Personal Portfolio</title>
+  <meta name="description" content="Haytham is responsive bootstrap 5 one page personal portfolio html template.">
+  <meta name="author" content="strouroul.github.io">
 
   <!-- Web Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -19,9 +19,10 @@
   <!-- Stylesheet
   ============================== -->
   <!-- Bootstrap -->
-  <link rel="stylesheet" type="text/css" href="https://harnishdesign.net/demo/html/simone/vendor/bootstrap/css/bootstrap.min.css" />
+  <!--<link rel="stylesheet" type="text/css" href="https://harnishdesign.net/demo/html/simone/vendor/bootstrap/css/bootstrap.min.css" />-->
+  <link rel="stylesheet" type="text/css" href="./other_port/css/bootstrap.min.css" />
   <!-- Font Awesome Icon -->
-  <link rel="stylesheet" type="text/css" href="https://harnishdesign.net/demo/html/simone/vendor/font-awesome/css/all.min.css" />
+  <!--<link rel="stylesheet" type="text/css" href="https://harnishdesign.net/demo/html/simone/vendor/font-awesome/css/all.min.css" />-->
 
   <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/all.css">
   <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/regular.css"
@@ -39,13 +40,32 @@
 
 
   <!-- Owl Carousel -->
-  <link rel="stylesheet" type="text/css" href="https://harnishdesign.net/demo/html/simone/vendor/owl.carousel/assets/owl.carousel.min.css" />
+<!--  <link rel="stylesheet" type="text/css" href="https://harnishdesign.net/demo/html/simone/vendor/owl.carousel/assets/owl.carousel.min.css" />-->
+  <link rel="stylesheet" type="text/css" href="./other_port/css/owl.carousel.min.css" />
   <!-- Magnific Popup -->
-  <link rel="stylesheet" type="text/css" href="https://harnishdesign.net/demo/html/simone/vendor/magnific-popup/magnific-popup.min.css" />
+  <!--<link rel="stylesheet" type="text/css" href="https://harnishdesign.net/demo/html/simone/vendor/magnific-popup/magnific-popup.min.css" />-->
+  <link rel="stylesheet" type="text/css" href="./other_port/css/magnific-popup.min.css" />
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://harnishdesign.net/demo/html/simone/css/stylesheet.css" />
+  <!--<link rel="stylesheet" type="text/css" href="https://harnishdesign.net/demo/html/simone/css/stylesheet.css" />-->
+  <link rel="stylesheet" type="text/css" href="./other_port/css/stylesheet.css" />
+
   <!-- Colors Css -->
-  <link id="color-switcher" type="text/css" rel="stylesheet" href="#" />
+
+ <!-- <link id="color-switcher" type="text/css" rel="stylesheet" href="#" />-->
+  <script>
+    // Create the link element
+    var link = document.createElement("link");
+
+    // Set its attributes
+    link.id = "color-switcher";
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    link.href = "./css/color-blue.css";
+
+    // Append the link element to the head of the document
+    document.head.appendChild(link);
+
+  </script>
 </head>
 
 <body class="side-header" data-bs-spy="scroll" data-bs-target="#header-nav" data-bs-offset="1">
@@ -527,14 +547,14 @@
               Cairo, Egypt </p>
             <p class="text-3 mb-1"><span class="text-primary text-4 me-2"><i class="fas fa-phone"></i></span>+20(102) 548 0106</p>
             <p class="text-3 mb-1"><span class="text-primary text-4 me-2"><i class="fas fa-fax"></i></span>+20(102) 548 0106</p>
-            <p class="text-3 mb-4"><span class="text-primary text-4 me-2"><i class="fas fa-envelope"></i></span>kool_egypt@hotmail.com</p>
+            <p class="text-3 mb-4"><span class="text-primary text-4 me-2"><i class="fas fa-envelope"></i></span> <a href="javascript:void(0)" id="emailLink" class="emailLink">Click to Send an Email</a></p>
             <h2 class="mb-3 text-5 text-uppercase">Follow Me</h2>
             <ul class="social-icons justify-content-center justify-content-md-start">
-              <li class="social-icons-dribbble"><a data-bs-toggle="tooltip" href="http://www.dribbble.com/harnishdesign/" target="_blank" title="Dribbble"><i class="fab fa-dribbble"></i></a></li>
-              <li class="social-icons-twitter"><a data-bs-toggle="tooltip" href="https://twitter.com/harnishdesign/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-              <li class="social-icons-facebook"><a data-bs-toggle="tooltip" href="http://www.facebook.com/harnishdesign/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-              <li class="social-icons-google"><a data-bs-toggle="tooltip" href="http://www.google.com/" target="_blank" title="Google"><i class="fab fa-google"></i></a></li>
-              <li class="social-icons-github"><a data-bs-toggle="tooltip" href="http://www.github.com/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></li>
+              <li class="social-icons-linkedIn"><a data-bs-toggle="tooltip" href="https://www.linkedin.com/in/haytham-meiz/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+              <li class="social-icons-twitter"><a data-bs-toggle="tooltip" href="https://https://www.facebook.com/KoolEgypt" target="_blank" title="Outlook"><i class="fab fa-microsoft"></i></a></li>
+              <li class="social-icons-facebook"><a data-bs-toggle="tooltip" href="https://www.facebook.com/KoolEgypt" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+              <li class="social-icons-google"><a data-bs-toggle="tooltip" href="https://www.google.com/search?q=iRide" target="_blank" title="Google"><i class="fab fa-google"></i></a></li>
+              <li class="social-icons-github"><a data-bs-toggle="tooltip" href="https://github.com/Strouroul/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></li>
             </ul>
           </div>
           <div class="col-md-8 col-xl-9 order-0 order-md-1">
@@ -543,11 +563,20 @@
 
               <div class="row g-4">
                 <div class="col-xl-6">
-                  <input name="name" type="text" class="form-control" required placeholder="Name">
+                  <input id="firstname" type="text" name="firstname" class="form-control"
+                       placeholder="Your First Name" required="required">
+                </div>
+                <div class="col-xl-6">
+                  <input id="lastname" type="text" name="lastname"class="form-control"
+                         placeholder="Your Last Name" required="required">
                 </div>
                 <div class="col-xl-6">
                   <input name="email" type="email" class="form-control" required placeholder="Email">
                 </div>
+                <div class="col-xl-6">
+                  <input name="phone" type="text" class="form-control" required placeholder="Phone Number">
+                </div>
+
                 <div class="col">
                   <textarea name="form-message" class="form-control" rows="5" required placeholder="Tell us more about your needs........"></textarea>
                 </div>
