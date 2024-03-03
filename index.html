@@ -32,9 +32,9 @@
 
 
 Github Build : <!--<img src="https://github.com/Strouroul/iRide/actions/workflows/node.js.yml/badge.svg">--><img src="https://strouroul.github.io/assets/images/passing_badge.svg">
-<BR>Gitlab Build : <img src="https://ishopper.info:9898/gitlab/strouroul/iRide/badges/main/pipeline.svg">
+<BR>Gitlab Build : <!--<img src="https://ishopper.info:9898/gitlab/strouroul/iRide/badges/main/pipeline.svg">--><img src="https://strouroul.github.io/assets/images/passing_badge.svg">
 <BR>
-<a href="/portifolio/home.html">About Me</a><BR>
+<a href="https://strouroul.github.io/portifolio/home.html">About Me</a><BR>
 
 
 <!--
@@ -194,15 +194,26 @@ Github Build : <!--<img src="https://github.com/Strouroul/iRide/actions/workflow
                     return {status: "Error", time: new Date().getTime(), type: "HTTPS", error};
                 });
 
-            const fetchWss = fetch(`wss://${host}:${port}`)
-                .then(response => {
-                    if (response.ok) {
-                        return {status: "Online", time: new Date().getTime(), type: "WS"};
-                    } else {
-                        return {status: "Offline", time: new Date().getTime(), type: "WS"};
-                    }
+            /*  const fetchWss = fetch(`ws://${host}:80`)
+                  .then(response => {
+                      if (response.ok) {
+                          return {status: "Online", time: new Date().getTime(), type: "WS"};
+                      } else {
+                          return {status: "Offline", time: new Date().getTime(), type: "WS"};
+                      }
+                  })
+                  .catch(error => {
+                      return {status: "Error", time: new Date().getTime(), type: "WS", error};
+                  });*/
+
+            // Example usage:
+            //   const host = 'example.com';
+            //   const port = 1234;
+            const fetchWss =await checkWebSocketConnection(host, port)
+                .then(status => {console.log(`WebSocket Status: ${status}`)
+                    return {status: "Online", time: new Date().getTime(), type: "WS"};
                 })
-                .catch(error => {
+                .catch(error => {console.log(`WebSocket Error: ${error}`)
                     return {status: "Error", time: new Date().getTime(), type: "WS", error};
                 });
 
@@ -220,6 +231,40 @@ Github Build : <!--<img src="https://github.com/Strouroul/iRide/actions/workflow
                 });
         });
     }
+
+
+
+    function checkWebSocketConnection(host, port, timeout = 5000) {
+        return new Promise((resolve, reject) => {
+            // Construct WebSocket URL
+            const wsUrl = `wss://${host}`;
+            const ws = new WebSocket(wsUrl);
+
+            // Set up a timer to reject the promise if connection takes too long
+            const timer = setTimeout(() => {
+                ws.close(); // Close the connection attempt
+                reject('Timeout');
+            }, timeout);
+
+            ws.onopen = () => {
+                clearTimeout(timer); // Clear the timeout on successful connection
+                ws.close(); // Close the connection as we just wanted to check if it's possible
+                resolve('Online'); // Resolve promise with success
+            };
+
+            ws.onerror = (error) => {
+                clearTimeout(timer); // Clear the timeout on error
+                reject('Offline'); // Reject promise as connection failed
+            };
+
+            // Note: You might not need to handle ws.onclose depending on your use case
+            ws.onclose = (event) => {
+                // Handle close event if needed
+            };
+        });
+    }
+
+
 </script>
 </body>
 </html>
