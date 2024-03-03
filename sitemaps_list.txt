@@ -1,9 +1,11 @@
 {"status":true,
 "data":[
+   {"name":"Portfolio","path":"/portifolio/sitemap_portfolio.xml","icon":"<i class=\"iconify\" data-icon=\"dashicons:portfolio\" style=\"width:15px;height:15px;\"  data-toggle=\"tooltip\" data-html=\"true\" title=\"HTML 5\" ></i>"},
+     {"name":"Github","path":"/sitemap_github.xml","icon":"<i class=\"fa-brands fa-github\"></i>"},
         {"name":"iRide","path":"/sitemap_iride.xml","icon":"<i class=\"fa-duotone fa-car-side\"></i>"},
-           {"name":"Github","path":"/sitemap_github.xml","icon":"<i class=\"fa-brands fa-github\"></i>"},
-        {"name":"Crypto Exchange","path":"/sitemap_crypto.xml","icon":"<i class=\"iconify\" data-icon=\"devicon:java-wordmark\" style=\"width:15px;height:15px;\"  data-toggle=\"tooltip\" data-html=\"true\" title=\"Crypto\" ></i><i class=\"iconify\" data-icon=\"logos:nodejs\" style=\"width:15px;height:15px;\"  data-toggle=\"tooltip\" data-html=\"true\" title=\"Node.js\" ></i>"},
-        {"name":"Portfolio","path":"/portifolio/sitemap_portfolio.xml","icon":"<i class=\"iconify\" data-icon=\"dashicons:portfolio\" style=\"width:15px;height:15px;\"  data-toggle=\"tooltip\" data-html=\"true\" title=\"HTML 5\" ></i>"}
+
+        {"name":"Crypto Exchange","path":"/sitemap_crypto.xml","icon":"<i class=\"iconify\" data-icon=\"devicon:java-wordmark\" style=\"width:15px;height:15px;\"  data-toggle=\"tooltip\" data-html=\"true\" title=\"Crypto\" ></i><i class=\"iconify\" data-icon=\"logos:nodejs\" style=\"width:15px;height:15px;\"  data-toggle=\"tooltip\" data-html=\"true\" title=\"Node.js\" ></i>"}
+
     ]
 }
 
