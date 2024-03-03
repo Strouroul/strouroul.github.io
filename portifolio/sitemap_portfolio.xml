@@ -3,6 +3,12 @@
 <sitemapindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd"
               xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>https://strouroul.github.io/portifolio/</loc>
+      <lastmod>3/3/2024, 1:01:54 PM</lastmod>
+      <changefreq>hourly</changefreq>
+      <priority>1.0</priority>
+   </url>
 <url>
    <loc>https://strouroul.github.io/portifolio/about.html</loc>
    <lastmod>3/3/2024, 1:01:54 PM</lastmod>
