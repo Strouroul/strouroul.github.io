@@ -20,13 +20,9 @@
           crossorigin="anonymous"/>
 
     <script src="./home/js/iconify.min.js"></script>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="https://strouroul.github.io/crypto_exchange/img/favicon.png">
-
 </head>
 <body>
 <h1>Portfolio Index</h1>
-
 <!-- Include the library. -->
 <script
         src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js">
@@ -38,67 +34,53 @@
         href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
 />
 
-<!-- Prepare a container for your calendar. -->
-<div class="calendar">
-    <!-- Loading stuff -->
-    Loading the data just for you.
-</div>
-
-<script>
-    GitHubCalendar(".calendar", "your-username");
-
-    // or enable responsive functionality:
-    GitHubCalendar(".calendar", "your-username", { responsive: true });
-
-    // Use a proxy
-    GitHubCalendar(".calendar", "your-username", {
-        proxy (username) {
-            return fetch(`https://your-proxy.com/github?user=${username}`)
-        }
-    }).then(r => r.text())
-</script>
-
 <div>
 
     <div style="float: left;display: inline-block;">
 
 
         <a href="/sitemap_github.xml"> <i class="fa-brands fa-github" data-toggle="tooltip" data-html="true"  title="Github" ></i>   Github Sitemap <img src="https://img.icons8.com/?size=80&id=FBycNmdwUQz1&format=png" alt=""
-                                                                                                                                                         data-toggle="tooltip" data-html="true"    title="Java, JSP" style="width: 25px;height: 25px;"></a>
+                                                                                                                                                            data-toggle="tooltip" data-html="true"    title="Java, JSP" style="width: 25px;height: 25px;"></a>
         <ul id="filesList"></ul>
+        <div>
+            Strouroul's Github chart:<BR>
+            <img src="https://ghchart.rshah.org/Strouroul" alt="Strouroul's Github chart" />
+        </div>
     </div>
     <div style="float: right">
         <img src="https://strouroul.github.io/haytham.jpg" style="width: 100px;height: 100px;"><BR>
-        <div style="float: right">
-            <ul>
-                <li><i class="iconify" data-icon="fa6-brands:bots" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
-                       title="Trading Crypto BOTS"></i>
-                    <i class="iconify" data-icon="simple-icons:blockchaindotcom" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
-                       title="BlockChain"></i></li>
-                <li><i class="iconify" data-icon="cryptocurrency-color:usdt" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
-                       title="USDT"></i>
-                    <i class="iconify" data-icon="cryptocurrency-color:eth" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
-                       title="Etherum"></i></li>
+       <div style="float: right">
+           <ul>
+               <li><i class="iconify" data-icon="fa6-brands:bots" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
+                      title="Trading Crypto BOTS"></i>
+                   <i class="iconify" data-icon="simple-icons:blockchaindotcom" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
+                      title="BlockChain"></i></li>
+               <li><i class="iconify" data-icon="cryptocurrency-color:usdt" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
+                      title="USDT"></i>
+                   <i class="iconify" data-icon="cryptocurrency-color:eth" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
+                      title="Etherum"></i></li>
 
-                <li><img src="https://strouroul.github.io/images/utorrent.png" style="width: 40px;height: 40px;" data-toggle="tooltip" data-html="true"
-                         title="uTorrent" />
-                    <i class="iconify" data-icon="fa6-brands:bots" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
-                       title="Search BOT for movies, tv and music"></i></li>
-                <li><img src="https://strouroul.github.io/images/web_crawler_no_bg.png" style="width: 40px;height: 40px;" data-toggle="tooltip" data-html="true"
-                         title="Web Crawler" /></li>
-                <li><i class="iconify" data-icon="fluent:movies-and-tv-24-regular" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
-                       title="Movies & TV"></i>
+               <li><img src="https://strouroul.github.io/images/utorrent.png" style="width: 40px;height: 40px;" data-toggle="tooltip" data-html="true"
+                        title="uTorrent" />
+                   <i class="iconify" data-icon="fa6-brands:bots" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
+                      title="Search BOT for movies, tv and music"></i></li>
+               <li><img src="https://strouroul.github.io/images/web_crawler_no_bg.png" style="width: 40px;height: 40px;" data-toggle="tooltip" data-html="true"
+                        title="Web Crawler" /></li>
+               <li><i class="iconify" data-icon="fluent:movies-and-tv-24-regular" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
+                      title="Movies & TV"></i>
 
-                    <i class="iconify" data-icon="icon-park:music" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
-                       title="Music & MP3s"></i></li>
-            </ul>
+                   <i class="iconify" data-icon="icon-park:music" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
+                      title="Music & MP3s"></i></li>
+           </ul>
 
 
 
-        </div>
+       </div>
 
 
     </div>
+
+    <BR><BR>
 
 
 
@@ -138,5 +120,7 @@
 
     //   window.location='./home.html';
 </script>
+<BR><BR>
+
 </body>
 </html>

@@ -49,6 +49,9 @@
     <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/thin.css"
           crossorigin="anonymous"/>
 
+
+
+    <script src="./home/js/iconify.min.js"></script>
 </head>
 
 <body>
@@ -265,23 +268,23 @@
                                 <div class="info" >
                                     <ul>
                                         <li class="mb-30">
-                                            <span class="sub-title"><i class="far fa-calendar-alt mr-10"></i> Logo :</span>
+                                                <span class="sub-title"><i class="far fa-calendar-alt mr-10"></i> Logo :</span>
                                             <img id="project_logo" style="width: 70px;height: 70px;" src="data:image/png;base64,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"/>
                                         </li>
                                         <li class="mb-30">
-                                            <span class="sub-title"><i class="far fa-calendar-alt mr-10"></i> Date :</span>
+                                                <span class="sub-title"><i class="far fa-calendar-alt mr-10"></i> Date :</span>
                                             <p id="project_date">6, August 2022</p>
                                         </li>
                                         <li class="mb-30">
-                                            <span class="sub-title"><i class="fas fa-list-ul mr-10"></i> Categories :</span>
+                                                <span class="sub-title"><i class="fas fa-list-ul mr-10"></i> Categories :</span>
                                             <p id="project_categories">Web Design</p>
                                         </li>
                                         <li class="mb-30">
-                                            <span class="sub-title"><i class="far fa-user mr-10"></i> Client :</span>
+                                                <span class="sub-title"><i class="far fa-user mr-10"></i> Client :</span>
                                             <p id="project_client">iShopper.info</p>
                                         </li>
                                         <li>
-                                            <span class="sub-title"><i class="fas fa-globe mr-10"></i> Website :</span>
+                                                <span class="sub-title"><i class="fas fa-globe mr-10"></i> Website :</span>
                                             <p id="project_website">iride.ishopper.info</p>
                                         </li>
 
@@ -387,7 +390,7 @@
     let project_client_html=document.getElementById("project_client");
     let project_categories_html=document.getElementById("project_categories");
 
-    let project_status_html=document.getElementById("project_status")
+let project_status_html=document.getElementById("project_status")
 
 
     let project_image_html=document.getElementById("project_image");
@@ -410,7 +413,7 @@
 
     let lang_icons={
         "java":'<img src="https://img.icons8.com/?size=80&id=FBycNmdwUQz1&format=png" style="width:35px;height:35px;" alt="" data-toggle="tooltip" data-html="true"\n title="Java, JSP">',
-        "perl":'<i class="iconify" data-icon="skill-icons:perl" style="width:35px;height:35px;"\n data-toggle="tooltip" data-html="true"\n  title="Perl" ></i>',
+        "perl":'<i class="iconify" data-icon="skill-icons:perl" style="width:35px;height:35px;" data-toggle="tooltip" data-html="true" title="Perl" ></i>',
         "node.js": '<img src="https://img.icons8.com/?size=48&id=54087&format=png" alt="" style="width:35px;height:35px;" data-toggle="tooltip" data-html="true"\n title="Node.js">'
     }
 
@@ -486,11 +489,11 @@
 
         let resultString = "";
 
-        Object.keys(project.status ).forEach(lang=>{
-            resultString+=`${lang_icons[lang]} : ${project.status[lang]}<BR>`;
-        })
-        // Object.keys(project.status).join(', '); // JSON.stringify(Object.keys(project.status));
-        project_status_html.innerHTML=resultString;
+            Object.keys(project.status ).forEach(lang=>{
+                resultString+=`${lang_icons[lang]} : ${project.status[lang]}<BR>`;
+            })
+            // Object.keys(project.status).join(', '); // JSON.stringify(Object.keys(project.status));
+             project_status_html.innerHTML=resultString;
     }
 </script>
 
