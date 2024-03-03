@@ -15,4 +15,11 @@
         <changefreq>hourly</changefreq>
         <priority>2.0</priority>
     </url>
+    <url>
+        <loc>https://strouroul.github.io/portifolio/sitemap_portfolio.xml</loc>
+        <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+        <changefreq>hourly</changefreq>
+        <priority>2.0</priority>
+    </url>
+
 </sitemapindex>
