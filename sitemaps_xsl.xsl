@@ -62,6 +62,7 @@
 
 
                 <link rel="shortcut icon" href="https://strouroul.github.io/crypto_exchange/img/favicon.png" />
+                <link rel="icon" href="https://strouroul.github.io/crypto_exchange/img/favicon.png" />
 
                 <script src="https://strouroul.github.io/js/detectBROWSER.js"></script>
 
