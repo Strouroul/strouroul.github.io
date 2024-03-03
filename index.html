@@ -148,22 +148,74 @@
         function checkConnection(host, port, timeout) {
             timeout = timeout || 10000; // default of 10 seconds
 
-            return new Promise(function (resolve, reject) {
+            return new Promise(async function (resolve, reject) {
                 var timer = setTimeout(function () {
-                    reject({ status: "Offline", time: new Date().getTime() });
+                    reject({status: "Offline", time: new Date().getTime()});
                 }, timeout);
 
-                fetch(`https://${host}:${port}`)
+                let my_stats={};
+             /*   await fetch(`https://${host}:${port}`)
                     .then(function (response) {
                         clearTimeout(timer);
                         if (response.ok) {
-                            resolve({ status: "Online", time: new Date().getTime() });
+                            my_stats.https={status: "Online", time: new Date().getTime(),type:"HTTPS"};
                         } else {
-                            reject({ status: "Offline", time: new Date().getTime() });
+                            my_stats.https=({status: "Offline", time: new Date().getTime(),type:"HTTPS"});
                         }
                     })
                     .catch(function (error) {
                         clearTimeout(timer);
+                        reject(error);
+                    });
+
+                await fetch(`wss://${host}:${port}`)
+                    .then(function (response) {
+                        clearTimeout(timer);
+                        if (response.ok) {
+                            my_stats.wss=({status: "Online", time: new Date().getTime(),type:"WS"});
+                        } else {
+                            my_stats.wss=({status: "Offline", time: new Date().getTime(),type:"WS"});
+                        }
+                    })
+                    .catch(function (error) {
+                        clearTimeout(timer);
+                        reject(error);
+                    });*/
+                // Prepare the fetch promises
+                const fetchHttps = fetch(`https://${host}:${port}`)
+                    .then(response => {
+                        if (response.ok) {
+                            return {status: "Online", time: new Date().getTime(), type: "HTTPS"};
+                        } else {
+                            return {status: "Offline", time: new Date().getTime(), type: "HTTPS"};
+                        }
+                    })
+                    .catch(error => {
+                        return {status: "Error", time: new Date().getTime(), type: "HTTPS", error};
+                    });
+
+                const fetchWss = fetch(`wss://${host}:${port}`)
+                    .then(response => {
+                        if (response.ok) {
+                            return {status: "Online", time: new Date().getTime(), type: "WS"};
+                        } else {
+                            return {status: "Offline", time: new Date().getTime(), type: "WS"};
+                        }
+                    })
+                    .catch(error => {
+                        return {status: "Error", time: new Date().getTime(), type: "WS", error};
+                    });
+
+                // Wait for all fetches to complete
+                Promise.allSettled([fetchHttps, fetchWss])
+                    .then(results => {
+                        clearTimeout(timer); // Clear the timeout upon completion
+                        my_stats.https = results[0].value || results[0].reason;
+                        my_stats.wss = results[1].value || results[1].reason;
+                        resolve(my_stats); // Resolve with all stats
+                    })
+                    .catch(error => {
+                        clearTimeout(timer); // It's good practice to clear the timer in catch too, but in this case, it's not strictly necessary since Promise.allSettled doesn't reject.
                         reject(error);
                     });
             });
