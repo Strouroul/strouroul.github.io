@@ -52,6 +52,13 @@
 
 
     <script src="./home/js/iconify.min.js"></script>
+
+
+
+
+   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -365,58 +372,12 @@
 <!-- ==================== End Footer ==================== -->
 
 
-
-
-
 <script>
-
-    let my_project_data=[];
-    let my_project_choosen_index=-1;
-
-
     // Function to get the value of a parameter from the URL
     function getQueryParam(parameter) {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(parameter);
     }
-
-
-
-    let project_title_html=document.getElementById("project_title");
-    let project_description_html=document.getElementById("project_description");
-    let project_description_extended_html=document.getElementById("project_description_extended");
-    let project_date_html=document.getElementById("project_date");
-    let project_website_html=document.getElementById("project_website");
-    let project_client_html=document.getElementById("project_client");
-    let project_categories_html=document.getElementById("project_categories");
-
-let project_status_html=document.getElementById("project_status")
-
-
-    let project_image_html=document.getElementById("project_image");
-
-    let project_pic_2_html=document.getElementById("project_pic_2");
-    let project_pic_1_html=document.getElementById("project_pic_1");
-
-    let project_logo_html=document.getElementById("project_logo");
-
-    // Example usage
-    const project_name = getQueryParam('project_name')||null;
-    const project_id = getQueryParam('project_id')||null;
-
-    let type=project_name!=null?"NAME": (project_id!=null?"ID":"UNKNOWN") ;
-    let project=project_name!=null?project_name: (project_id!=null?project_id:"UNKNOWN") ;
-    // Log the value to the console (you can use it as needed)
-    console.log('type:', type);
-    console.log('project:', project);
-
-
-    let lang_icons={
-        "java":'<img src="https://img.icons8.com/?size=80&id=FBycNmdwUQz1&format=png" style="width:35px;height:35px;" alt="" data-toggle="tooltip" data-html="true"\n title="Java, JSP">',
-        "perl":'<i class="iconify" data-icon="skill-icons:perl" style="width:35px;height:35px;" data-toggle="tooltip" data-html="true" title="Perl" ></i>',
-        "node.js": '<img src="https://img.icons8.com/?size=48&id=54087&format=png" alt="" style="width:35px;height:35px;" data-toggle="tooltip" data-html="true"\n title="Node.js">'
-    }
-
 
 
     async function fetchFiles() {
@@ -462,11 +423,6 @@ let project_status_html=document.getElementById("project_status")
         }
     }
 
-    // Call fetchFiles when the page loads
-    fetchFiles();
-
-
-
     function     adjust_project_details(project){
 
         project_image_html.src=project.bg_img;
@@ -489,12 +445,73 @@ let project_status_html=document.getElementById("project_status")
 
         let resultString = "";
 
-            Object.keys(project.status ).forEach(lang=>{
-                resultString+=`${lang_icons[lang]} : ${project.status[lang]}<BR>`;
-            })
-            // Object.keys(project.status).join(', '); // JSON.stringify(Object.keys(project.status));
-             project_status_html.innerHTML=resultString;
+        Object.keys(project.status ).forEach(lang=>{
+            resultString+=`${lang_icons[lang]} : ${project.status[lang]}<BR>`;
+        })
+        // Object.keys(project.status).join(', '); // JSON.stringify(Object.keys(project.status));
+        project_status_html.innerHTML=resultString;
     }
+</script>
+
+
+<script>
+    let lang_icons={
+        "java":'<img src="https://img.icons8.com/?size=80&id=FBycNmdwUQz1&format=png" style="width:35px;height:35px;" alt="" data-toggle="tooltip" data-html="true" title="Java, JSP">',
+        "perl":'<i class="iconify" data-icon="skill-icons:perl" style="width:35px;height:35px;" data-toggle="tooltip" data-html="true" title="Perl" ></i>',
+        "node.js": '<img src="https://img.icons8.com/?size=48&id=54087&format=png" alt="" style="width:35px;height:35px;" data-toggle="tooltip" data-html="true"  title="Node.js">'
+    }
+
+
+
+    let my_project_data=[];
+    let my_project_choosen_index=-1;
+
+
+    let project_title_html=document.getElementById("project_title");
+    let project_description_html=document.getElementById("project_description");
+    let project_description_extended_html=document.getElementById("project_description_extended");
+    let project_date_html=document.getElementById("project_date");
+    let project_website_html=document.getElementById("project_website");
+    let project_client_html=document.getElementById("project_client");
+    let project_categories_html=document.getElementById("project_categories");
+
+    let project_status_html=document.getElementById("project_status")
+
+
+    let project_image_html=document.getElementById("project_image");
+
+    let project_pic_2_html=document.getElementById("project_pic_2");
+    let project_pic_1_html=document.getElementById("project_pic_1");
+
+    let project_logo_html=document.getElementById("project_logo");
+
+    // Example usage
+    const project_name = getQueryParam('project_name')||null;
+    const project_id = getQueryParam('project_id')||null;
+
+    let type=project_name!=null?"NAME": (project_id!=null?"ID":"UNKNOWN") ;
+    let project=project_name!=null?project_name: (project_id!=null?project_id:"UNKNOWN") ;
+    // Log the value to the console (you can use it as needed)
+    console.log('type:', type);
+    console.log('project:', project);
+
+
+    try{
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+
+        });
+    }
+    catch(e_LISTER){
+        console.log(`e_LISTER : ${e_LISTER}`)
+    }
+
+
+    // Call fetchFiles when the page loads
+    fetchFiles();
+
+
+
 </script>
 
 
