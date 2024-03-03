@@ -2,18 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Exchange Index</title>
+    <title>Portfolio Index</title>
+    <!-- Font Awesome 5 -->
+    <!--<link rel="stylesheet" href="https://rippleledgernetwork.com/app/dash2/libs/%40fortawesome/fontawesome-pro/css/all.min.css">-->
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/all.css">
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/regular.css"
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/solid.css"
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/brands.css"
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/light.css"
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/duotone.css"
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/thin.css"
+          crossorigin="anonymous"/>
+
+    <script src="./home/js/iconify.min.js"></script>
 </head>
 <body>
-<h1>Exchange Index</h1>
-<ul id="filesList"></ul>
+<h1>Portfolio Index</h1>
+<div>
+    <div style="float: left;display: inline-block;">
+        <a href="/sitemap_github.xml"> <i class="fa-brands fa-github" data-toggle="tooltip" data-html="true"  title="Github" ></i>   Github Sitemap <img src="https://img.icons8.com/?size=80&id=FBycNmdwUQz1&format=png" alt=""
+                                                                                                                                                         data-toggle="tooltip" data-html="true"    title="Java, JSP" style="width: 25px;height: 25px;"></a>
+        <ul id="filesList"></ul>
+    </div>
+    <div style="float: right">
+        <img src="https://strouroul.github.io/haytham.jpg" style="width: 100px;height: 100px;">
+    </div>
+</div>
+
 
 <script>
     // Function to fetch files and display them
     async function fetchFiles() {
         try {
-         //   const response = await fetch('./index.txt');
-          //  const files = await response.json();
+            //   const response = await fetch('./index.txt');
+            //  const files = await response.json();
 
             const response = await fetch('./index.txt');
             if (!response.ok) {
@@ -40,7 +67,7 @@
     fetchFiles();
 
 
-  //   window.location='./home.html';
+    //   window.location='./home.html';
 </script>
 </body>
 </html>
