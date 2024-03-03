@@ -185,7 +185,7 @@
                             //   const response = await fetch('./index.txt');
                             //  const files = await response.json();
 
-                            const response = await fetch('/sitemaps_list.txt');
+                            const response = await fetch('/sitemaps_list.json');
                             const txt = await response.text(); // Parse the JSON string
                             if (!response.ok) {
                                 // If response is not ok, throw an error
