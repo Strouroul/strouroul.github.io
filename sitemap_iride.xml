@@ -3,6 +3,19 @@
 <sitemapindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd"
               xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+   <url>
+      <loc>https://iride.glitch.me/</loc>
+      <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+      <changefreq>hourly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://iride.glitch.me/new_home</loc>
+      <lastmod>2/29/2024, 1:52:55 AM</lastmod>
+      <changefreq>hourly</changefreq>
+      <priority>1.0</priority>
+   </url>
 <url>
    <loc>https://iride.glitch.me/index.js</loc>
    <lastmod>2/29/2024, 1:52:55 AM</lastmod>
