@@ -59,6 +59,7 @@ Github Build : <!--<img src="https://github.com/Strouroul/iRide/actions/workflow
 
 
 
+
 <script>
 
 
@@ -150,37 +151,11 @@ Github Build : <!--<img src="https://github.com/Strouroul/iRide/actions/workflow
 
         return new Promise(async function (resolve, reject) {
             var timer = setTimeout(function () {
-                reject({status: "Offline", time: new Date().getTime()});
+                reject({status: "Offline", time: new Date().getTime(),reason:"Timeout"});
             }, timeout);
 
             let my_stats={};
-            /*   await fetch(`https://${host}:${port}`)
-                   .then(function (response) {
-                       clearTimeout(timer);
-                       if (response.ok) {
-                           my_stats.https={status: "Online", time: new Date().getTime(),type:"HTTPS"};
-                       } else {
-                           my_stats.https=({status: "Offline", time: new Date().getTime(),type:"HTTPS"});
-                       }
-                   })
-                   .catch(function (error) {
-                       clearTimeout(timer);
-                       reject(error);
-                   });
 
-               await fetch(`wss://${host}:${port}`)
-                   .then(function (response) {
-                       clearTimeout(timer);
-                       if (response.ok) {
-                           my_stats.wss=({status: "Online", time: new Date().getTime(),type:"WS"});
-                       } else {
-                           my_stats.wss=({status: "Offline", time: new Date().getTime(),type:"WS"});
-                       }
-                   })
-                   .catch(function (error) {
-                       clearTimeout(timer);
-                       reject(error);
-                   });*/
             // Prepare the fetch promises
             const fetchHttps = fetch(`https://${host}:${port}`)
                 .then(response => {
@@ -194,21 +169,7 @@ Github Build : <!--<img src="https://github.com/Strouroul/iRide/actions/workflow
                     return {status: "Error", time: new Date().getTime(), type: "HTTPS", error};
                 });
 
-            /*  const fetchWss = fetch(`ws://${host}:80`)
-                  .then(response => {
-                      if (response.ok) {
-                          return {status: "Online", time: new Date().getTime(), type: "WS"};
-                      } else {
-                          return {status: "Offline", time: new Date().getTime(), type: "WS"};
-                      }
-                  })
-                  .catch(error => {
-                      return {status: "Error", time: new Date().getTime(), type: "WS", error};
-                  });*/
 
-            // Example usage:
-            //   const host = 'example.com';
-            //   const port = 1234;
             const fetchWss =await checkWebSocketConnection(host, port)
                 .then(status => {console.log(`WebSocket Status: ${status}`)
                     return {status: "Online", time: new Date().getTime(), type: "WS"};
@@ -249,20 +210,25 @@ Github Build : <!--<img src="https://github.com/Strouroul/iRide/actions/workflow
             ws.onopen = () => {
                 clearTimeout(timer); // Clear the timeout on successful connection
                 ws.close(); // Close the connection as we just wanted to check if it's possible
+                // console.log(`TEST OPEN DONE`)
                 resolve('Online'); // Resolve promise with success
             };
 
             ws.onerror = (error) => {
-                clearTimeout(timer); // Clear the timeout on error
+                //   clearTimeout(timer); // Clear the timeout on error
+                console.log(`TEST ERROR DONE`)
                 reject('Offline'); // Reject promise as connection failed
             };
 
             // Note: You might not need to handle ws.onclose depending on your use case
             ws.onclose = (event) => {
                 // Handle close event if needed
+                // console.log(`TEST CLOSE DONE`)
             };
         });
     }
+
+
 
 
 </script>
