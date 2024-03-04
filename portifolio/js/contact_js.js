@@ -213,7 +213,10 @@ function send_contact_info(my_btn) {
             document.getElementById("submit").disabled=true;
             console.log(`myJSON : ${JSON.stringify(myJSON)}`)
             let loading_alert=false;
+            document.getElementById("modal_body").style.backgroundColor ='#a6e7ff';
+            document.getElementById("modal_body").style.color="green";
 
+            document.getElementById("modal_title_header").style.backgroundColor ='blue';
             modal_title_header.innerHTML = "Thank You for contacting iRide © 2023";
 
 
@@ -236,13 +239,21 @@ function send_contact_info(my_btn) {
                     let status_found=false;
 
                     if(this_JSON.hasOwnProperty("status")){
-                        if(this_JSON.status===true){status_found=true;}
+                        if(this_JSON.status===true||this_JSON.status==="success"){status_found=true;}
                     }
 
                     document.getElementById("modal_title_header").innerHTML = "Thank You for contacting iRide © 2023";
+
+
+
+
                     if(status_found){
+                        document.getElementById("modal_body").style.backgroundColor ='#a6e7ff';
+                        document.getElementById("modal_body").style.color="green";
                         document.getElementById("modal_body").innerHTML = status_HTML;//JSON.stringify(this_JSON);
                     }else{
+                        document.getElementById("modal_body").style.backgroundColor ='red';
+                        document.getElementById("modal_body").style.color="black";
                         document.getElementById("modal_body").innerHTML =  JSON.stringify(this_JSON);
                     }
 
