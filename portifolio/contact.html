@@ -32,7 +32,197 @@
     <!-- Core Style Css -->
     <!--<link rel="stylesheet" href="https://ui-themez.smartinnovates.net/items/Gilb/assets/css/style.css">-->
     <link rel="stylesheet" href="./home/css/style.css">
+    <script src="./home/js/iconify.min.js"></script>
+    <link rel="stylesheet" href="./home/css/snackbar_alert.css"/>
 
+
+    <link rel="stylesheet" href="./home/css/final_modal_style.css">
+
+
+    <style>
+        .loader {
+            width: 25px;
+            height: 25px;
+            border: 5px solid #FFF;
+            border-bottom-color: #FF3D00;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+
+
+    <style>
+       /* body {
+            background: #1488EA;
+        }*/
+
+        #card {
+            position: relative;
+            top: 110px;
+            width: 320px;
+            display: block;
+            margin: auto;
+            text-align: center;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        #upper-side {
+            padding: 2em;
+            background-color: #8BC34A;
+            display: block;
+            color: #fff;
+            border-top-right-radius: 8px;
+            border-top-left-radius: 8px;
+        }
+
+        #checkmark {
+            font-weight: lighter;
+            fill: #fff;
+            margin: -3.5em auto auto 20px;
+        }
+
+        #status {
+            font-weight: lighter;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1em;
+            margin-top: -.2em;
+            margin-bottom: 0;
+        }
+
+        #lower-side {
+            padding: 2em 2em 5em 2em;
+            background: #fff;
+            display: block;
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+
+        #message {
+            margin-top: -.5em;
+            color: #757575;
+            letter-spacing: 1px;
+        }
+
+        #contBtn {
+            position: relative;
+            top: 1.5em;
+            text-decoration: none;
+            background: #8bc34a;
+            color: #fff;
+            margin: auto;
+            padding: .8em 3em;
+            -webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+            -moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+            box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
+            border-radius: 25px;
+            -webkit-transition: all .4s ease;
+            -moz-transition: all .4s ease;
+            -o-transition: all .4s ease;
+            transition: all .4s ease;
+        }
+
+        #contBtn:hover {
+            -webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
+            -moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
+            box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
+            -webkit-transition: all .4s ease;
+            -moz-transition: all .4s ease;
+            -o-transition: all .4s ease;
+            transition: all .4s ease;
+        }
+    </style>
+    <style>
+
+        .success-icon {
+            display: inline-block;
+            width: 8em;
+            height: 8em;
+            font-size: 20px;
+            border-radius: 50%;
+            border: 4px solid #96df8f;
+            background-color: #fff;
+            position: relative;
+            overflow: hidden;
+            transform-origin: center;
+            animation: showSuccess 180ms ease-in-out;
+            transform: scale(1);
+        }
+        .success-icon__tip, .success-icon__long {
+            display: block;
+            position: absolute;
+            height: 4px;
+            background-color: #96df8f;
+            border-radius: 10px;
+        }
+        .success-icon__tip {
+            width: 2.4em;
+            top: 4.3em;
+            left: 1.4em;
+            transform: rotate(45deg);
+            animation: tipInPlace 300ms ease-in-out;
+            animation-fill-mode: forwards;
+            animation-delay: 180ms;
+            visibility: hidden;
+        }
+        .success-icon__long {
+            width: 4em;
+            transform: rotate(-45deg);
+            top: 3.7em;
+            left: 2.75em;
+            animation: longInPlace 140ms ease-in-out;
+            animation-fill-mode: forwards;
+            visibility: hidden;
+            animation-delay: 440ms;
+        }
+        @keyframes showSuccess {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        @keyframes tipInPlace {
+            from {
+                width: 0em;
+                top: 0em;
+                left: -1.6em;
+            }
+            to {
+                width: 2.4em;
+                top: 4.3em;
+                left: 1.4em;
+                visibility: visible;
+            }
+        }
+        @keyframes longInPlace {
+            from {
+                width: 0em;
+                top: 5.1em;
+                left: 3.2em;
+            }
+            to {
+                width: 4em;
+                top: 3.7em;
+                left: 2.75em;
+                visibility: visible;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
@@ -227,8 +417,8 @@
                 </div>
 
                 <div class="col-lg-7 valign">
-                    <div class="full-width">
-                        <form id="contact-form" method="post" action="contact.php">
+                    <div class="full-width contact-form">
+                        <form  id="contact-form" method="post" action="https://iride.glitch.me/info/contactus">
 
                             <div class="messages"></div>
 
@@ -254,7 +444,7 @@
                                 <div class="col-lg-6">
                                     <div class="form-group mb-30">
                                         <label>Your Email</label>
-                                        <input id="form_email" type="email" name="email" required="required">
+                                        <input id="email" type="email" name="email" required="required">
                                     </div>
                                 </div>
 
@@ -268,12 +458,18 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label>Your Message</label>
-                                        <textarea id="form_message" name="message" required="required"></textarea>
+                                        <textarea id="message" name="message" required="required"></textarea>
                                     </div>
                                     <div class="mt-30">
-                                        <button type="submit">
+                                      <!--  <button type="submit">
                                             <span class="text">Send A Message</span>
-                                        </button>
+                                        </button>-->
+                                        <!--     <span class="text">Send A Message</span> -->
+                                        <button id="submit"
+                                                class="text"
+                                                type="button"
+                                                onclick="send_contact_info()"
+                                        >  <i class="iconify" data-icon="streamline:send-email-solid" style="width:25px;height:25px;"></i> Send Massage</button>
                                     </div>
                                 </div>
 
@@ -311,6 +507,11 @@
 
 
 
+<!--  <script src="https://strouroul.github.io/portifolio/home/js/email_contact.js"></script>-->
+<script src="./js/contact_js.js">
+
+</script>
+
 
 
 
@@ -347,6 +548,503 @@
     });
 </script>
 
+
+<!-- INVISIBLE MODAL TRIGGER -->
+<span id="myBtn" style="display: none;"></span>
+<span id="myBtn_modal" style="display: none;"></span>
+<!-- END OF INVISIBLE MODAL TRIGGER -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"  ><b id="modal_title_header" style="color: red;"></b></h5>
+                <!-- <button type="button" class="btn-close" id="modal_close_btn" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                <span id="modal_close_btn" class="close">&times;</span>
+            </div>
+            <div class="modal-body" id="modal_body" style="color: red;">
+                ...
+            </div>
+            <!--  <div class="modal-footer" id="modal_footer" style="display: none;">
+
+                 <button type="button" class="btn btn-primary" id="modal_close_footer_btn" style="display: none;">Done</button>
+             </div> -->
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modal_in_modal" tabindex="-1" aria-labelledby="modal_in_modal_Label"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal_in_modal-title"  ><b id="modal_in_modal_title_header"></b></h5>
+                <!-- <button type="button" class="btn-close" id="modal_close_btn" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                <span id="modal_in_modal_close_btn" class="close">&times;</span>
+            </div>
+            <div class="modal-body" id="modal_in_modal_body">
+                ...
+            </div>
+            <div class="modal-footer" id="modal_in_modal_footer">
+                <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="modal_close_footer_btn_grey" >Close</button> -->
+                <button type="button" class="btn btn-primary" id="modal_in_modal_close_footer_btn" onclick="modal_in_modal_close_btn.click()">Done</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let modal_close_footer_btn=document.getElementById("modal_close_footer_btn");
+
+    let modal_title_header=document.getElementById("modal_title_header");
+    let modal_body=document.getElementById("modal_body");
+    let modal_footer=document.getElementById("modal_footer");
+
+
+
+
+    let modal_in_modal_title_header=document.getElementById("modal_in_modal_title_header");
+    let modal_in_modal_body=document.getElementById("modal_in_modal_body");
+    let modal_in_modal_footer=document.getElementById("modal_in_modal_footer");
+
+    let modal_in_modal_close_footer_btn=document.getElementById("modal_in_modal_close_footer_btn");
+    let modal_in_modal_close_btn=document.getElementById("modal_in_modal_close_btn");
+
+
+    var btn = document.getElementById("myBtn");
+    var btn_status="OFF";
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    var modal_in_modal=document.getElementById("modal_in_modal");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementById("modal_close_btn");
+    var span_modal = document.getElementById("modal_in_modal_close_btn");
+
+    var myBtn_modal = document.getElementById("myBtn_modal");
+
+    window.addEventListener('resize', function(event) {
+        //    console.log('Page was resized');
+        // Additional code to handle resize event
+        check_resize();
+
+
+
+    });
+
+    check_resize();
+
+
+    function check_resize(){
+        let isSmallScreen = window.innerWidth <= 768; // Adjust the threshold as needed
+        var modalContents = document.querySelectorAll('.modal-content');
+        if (isSmallScreen) {
+
+            //  document.querySelector('.modal-content').style.width = "350px";
+            //   document.querySelector('.modal-content').style.minHeight = "200px";
+            modalContents.forEach(function(modalContent) {
+                // Your code to handle each modal-content element goes here
+
+                // Example: Log the text content of each modal-content element
+                //    console.log(modalContent.textContent);
+                if(modalContent.id.toString().includes('modal_in_modal')){  modalContent.style.width = "300px";}
+                else{  modalContent.style.width = "350px";}
+
+                modalContent.style.minHeight = "200px";
+            });
+            console.log("This is a small screen (phone).");
+            modal_body.style.width = "100%";
+            modal_body.style.height = "250px";
+            modal_body.style.overflowY = "auto";
+            modal_body.style.wordWrap = "break-word";
+
+            modal_in_modal_body.style.width = "100%";
+            modal_in_modal_body.style.height = "200px";
+            modal_in_modal_body.style.overflowY = "auto";
+            modal_in_modal_body.style.wordWrap = "break-word";
+        } else {
+            console.log("This is a larger screen (laptop/desktop).");
+            // document.querySelector('.modal-content').style.width = "600px";
+            // document.querySelector('.modal-content').style.minHeight = "300px";
+            modalContents.forEach(function(modalContent) {
+                // Your code to handle each modal-content element goes here
+
+                // Example: Log the text content of each modal-content element
+                //  console.log(modalContent.textContent);
+                if(modalContent.id.toString().includes('modal_in_modal')){  modalContent.style.width = "550px";}
+                else{  modalContent.style.width = "600px";}
+
+                modalContent.style.minHeight = "300px";
+                modalContent.style.maxHeight = "400px";
+            });
+            modal_body.style.height = "300px";
+            modal_body.style.width = "600px";
+            modal_body.style.overflowY = "auto";
+            modal_body.style.wordWrap = "break-word";
+
+
+            modal_in_modal_body.style.height = "250px";
+            modal_in_modal_body.style.width = "600px";
+            modal_in_modal_body.style.overflowY = "auto";
+            modal_in_modal_body.style.wordWrap = "break-word";
+        }
+    }
+
+
+
+    function set_listner_stuff(my_element){
+        // console.log("done css : "+my_element.className);
+        // console.log("done css : "+my_element.id);
+    }
+
+    myBtn_modal.onclick = function () {
+        if (modal_in_modal.classList.contains("w3-animate-hide")) {
+            modal_in_modal.classList.remove('w3-animate-hide');
+        }
+        modal_in_modal.classList.add('w3-animate-show')
+        modal_in_modal.style.display = "flex";
+    }
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function () {
+        if (modal.classList.contains("w3-animate-hide")) {
+            modal.classList.remove('w3-animate-hide');
+
+        }
+        modal.classList.add('w3-animate-show')
+        modal.style.display = "flex";
+        if(btn_status==="OFF"){
+            btn_status="ON";
+        }else{
+            btn_status="OFF";
+        }
+    }
+
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        if (modal.classList.contains("w3-animate-show")) {
+            modal.classList.remove('w3-animate-show');
+            btn_status="OFF";
+        }
+        modal.classList.add('w3-animate-hide');
+
+        setTimeout(function(){
+            modal.style.display = "none";
+            modal.classList.remove('w3-animate-hide');
+        },800)
+        //
+
+        //modal_body.innerHTML="";
+    }
+    span_modal.onclick = function() {
+        if( modal_in_modal.classList.contains("w3-animate-show")){
+            modal_in_modal.classList.remove('w3-animate-show');
+        }
+        modal_in_modal.classList.add('w3-animate-hide');
+
+        setTimeout(function(){
+            modal_in_modal.style.display = "none";
+            modal_in_modal.classList.remove('w3-animate-hide');
+        },800)
+        //
+
+
+    }
+
+    /*For when object has fully faded*/
+    modal.addEventListener("animationend", function() {
+        set_listner_stuff(this)
+        if (this.className === "w3-animate-hide") {
+            this.style.display = "none";
+            this.classList.remove('w3-animate-hide');
+        }
+        if (this.className == "w3-animate-show") {
+            this.style.display = "block";
+            this.classList.remove('w3-animate-show');
+        }
+        //this.style.display="none";
+    }.bind(modal));
+    modal.addEventListener("transitionend", function() {
+        set_listner_stuff(this)
+        if (this.className === "w3-animate-hide") {
+            this.style.display = "none";
+            this.classList.remove('w3-animate-hide');
+        }
+        if (this.className == "w3-animate-show") {
+            this.style.display = "block";
+            this.classList.remove('w3-animate-show');
+        }
+    }.bind(modal));
+    // Get the button that opens the modal
+
+    modal_in_modal.addEventListener("animationend", function() {
+        set_listner_stuff(this)
+        if (this.className === "w3-animate-hide") {
+            this.style.display = "none";
+            this.classList.remove('w3-animate-hide');
+        }
+        if (this.className == "w3-animate-show") {
+            this.style.display = "block";
+            this.classList.remove('w3-animate-show');
+        }
+        //this.style.display="none";
+    }.bind(modal))
+
+
+    modal_in_modal.addEventListener("transitionend", function() {
+        set_listner_stuff(this)
+        if (this.className === "w3-animate-hide") {
+            this.style.display = "none";
+            this.classList.remove('w3-animate-hide');
+        }
+        if (this.className == "w3-animate-show") {
+            this.style.display = "block";
+            this.classList.remove('w3-animate-show');
+        }
+    }.bind(modal))
+
+
+    modal_in_modal_close_footer_btn=span_modal.onclick;
+    // modal_close_footer_btn.onclick=span.onclick;
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        /*  if (event.target == modal) {
+              modal.style.display = "none";
+          }*/
+    }
+</script>
+
+
+
+<div id="snackbar">Some text some message..</div>
+
+
+<script>
+
+    function format_time(timeDIFF){
+
+        let seconds = Math.floor(timeDIFF / 1000);
+        let days = Math.floor(seconds / (3600 * 24));
+        let hours = Math.floor((seconds % (3600 * 24)) / 3600);
+        let minutes = Math.floor((seconds % 3600) / 60);
+        seconds = seconds % 60;
+
+        let elapsed_time = '';
+
+        if (days > 0) {
+            elapsed_time += days + 'd ';
+        }
+        if (hours > 0) {
+            elapsed_time += hours + 'h ';
+        }
+        if (minutes > 0) {
+            elapsed_time += minutes + 'm ';
+        }
+        if (seconds > 0 && minutes < 1) {
+            elapsed_time += seconds + 's ';
+        }
+
+        return elapsed_time.trim(); // Trim any trailing whitespace
+
+    }
+
+    let all_alerts=[];
+    let alert_on=false;
+    let this_timeout_param=parseInt(8)||8;
+
+    // notifications_html=document.getElementById("notifications_html");
+
+
+    notifications_html_starter=' <li>\n' +
+        '                    <h6>Notifications</h6>\n' +
+        '                    <label class="label label-danger">New</label>\n' +
+        '                </li>';
+    var x = document.getElementById("snackbar");
+
+    function show_alert(my_message) {
+
+        //  console.log(`alert timeout : ${this_timeout_param}`)
+        //  console.log(`all_alerts : ${all_alerts}`)
+
+        let this_alert_now={msg:my_message,time:new Date()};
+        let user_img="";
+        let user_display_name="";
+
+
+
+
+
+
+        if( !all_alerts.some(obj => obj.msg.includes(my_message)?true:false ) ){
+            // console.log("MSG NOT IN QUEUE");
+            all_alerts.push(this_alert_now)
+        }
+        else{
+            console.log("MSG IN QUEUE")
+
+        }
+        if(document.getElementById('notifications_html')!=null &&
+            notifications_html_starter!=null ){
+
+            document.getElementById('notifications_html').innerHTML=
+                notifications_html_starter;
+
+            let msg_found_in_queue=false;
+            all_alerts.forEach(this_ALERT=>{
+
+
+                document.getElementById('notifications_html').innerHTML+=
+                    `<li>
+                 <div class="media" onclick="show_alert_details('${user_display_name}', '${this_ALERT.msg}', '${format_time(new Date().getTime()-new Date(this_ALERT.time).getTime())}')">
+                            <img class="img-radius" src="${user_img}"
+                                 alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="notification-user">${user_display_name}</h5>
+                                <p class="notification-msg">${
+                        (typeof this_ALERT.msg==="object"?JSON.stringify(this_ALERT.msg):this_ALERT.msg)      }</p>
+                                <span class="notification-time">${format_time(new Date().getTime()-new Date(this_ALERT.time).getTime())}</span>
+                            </div>
+                        </div>
+                    </li> `;
+            })
+
+            notifications_count.innerHTML=all_alerts.length;
+        }
+
+        if(!alert_on){
+            if(all_alerts.length>1){
+
+            }
+            else     if(all_alerts.length=1){
+                start_show(this_alert_now );
+                start_hide();
+            }
+            else if(all_alerts.length<1){
+                setTimeout(function(){
+                        start_show(this_alert_now);
+                        start_hide();
+                    },100
+
+                )
+            }
+
+        }
+
+
+    }
+
+    function show_alert_details(msg_user,msg_body,msg_time){
+        let user_img="";
+        let user_display_name="";
+
+
+        modal_body.innerHTML=` <div class="media">
+        <img class="img-radius" src="${user_img}"
+             alt="Generic placeholder image">
+        <div class="media-body">
+            <h5 class="notification-user">${msg_user}</h5>
+            <p class="notification-msg">${msg_body}</p>
+            <span class="notification-time">${msg_time}</span>
+        </div>
+    </div>`;
+        btn.click();
+    }
+
+    function start_show(my_message){
+
+        x.className = "show";
+        x.innerHTML = my_message.msg;
+        alert_on=true;
+    }
+
+    function start_hide(){
+
+        let user_img="";
+        let user_display_name="";
+
+
+        if(document.getElementById('notifications_html')!=null&&
+            notifications_html_starter!=null ){
+
+            document.getElementById('notifications_html').innerHTML=
+                notifications_html_starter;
+
+            all_alerts.forEach(this_ALERT=>{
+                document.getElementById('notifications_html').innerHTML+=
+                    `<li>
+                        <div class="media" onclick="show_alert_details('${user_display_name}', '${this_ALERT.msg}', '${format_time(new Date().getTime()-new Date(this_ALERT.time).getTime())}')">
+                            <img class="img-radius" src="${user_img}"
+                                 alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h5 class="notification-user">${user_display_name}</h5>
+                                <p class="notification-msg">${
+                        (typeof this_ALERT.msg==="object"?
+                            JSON.stringify(this_ALERT.msg):this_ALERT.msg)
+                    }</p>
+                                <span class="notification-time">${format_time(new Date().getTime()-new Date(this_ALERT.time).getTime())}</span>
+                            </div>
+                        </div>
+                    </li> `;
+            })
+            // document.getElementById('notifications_html').innerHTML=notifications_html_starter+this_nice_html;
+            notifications_count.innerHTML=all_alerts.length;
+        }
+
+        setTimeout(function () {
+            x.className = x.className.replace("show", "");
+            alert_on=false;
+            all_alerts.shift();
+            if(document.getElementById('notifications_html')!=null&&
+                notifications_html_starter!=null){
+
+                document.getElementById('notifications_html').innerHTML=
+                    notifications_html_starter;
+
+
+                all_alerts.forEach(this_ALERT=>{
+                    document.getElementById('notifications_html').innerHTML+=
+                        `<li>
+                     <div class="media" onclick="show_alert_details('${user_display_name}', '${this_ALERT.msg}', '${format_time(new Date().getTime()-new Date(this_ALERT.time).getTime())}')">
+                                <img class="img-radius" src="${user_img}"
+                                     alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="notification-user">${user_display_name}</h5>
+                                    <p class="notification-msg">${
+                            (typeof this_ALERT.msg==="object"?JSON.stringify(this_ALERT.msg):this_ALERT.msg)      }</p>
+                                    <span class="notification-time">${format_time(new Date().getTime()-new Date(this_ALERT.time).getTime())}</span>
+                                </div>
+                            </div>
+                        </li> `;
+                })
+                notifications_count.innerHTML=all_alerts.length;
+            }
+
+            if(all_alerts.length>0){
+                console.log(`@start_hide : ${JSON.stringify(all_alerts)}`)
+                console.log(`@all_alerts len : ${all_alerts.length}`)
+
+                //  if(all_alerts.length>0) {
+
+                start_show(all_alerts[0] );
+                start_hide();
+                // }
+            }
+            else{
+                console.log("ALERT QUEUE EMPTY")
+                if(document.getElementById('notifications_html')!=null&&
+                    notifications_html_starter!=null){
+                    document.getElementById('notifications_html').innerHTML=
+                        notifications_html_starter ;
+                    notifications_count.innerHTML="";
+                }
+            }
+        }, (this_timeout_param*1000) );
+    }
+</script>
 
 
 
