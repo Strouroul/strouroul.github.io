@@ -82,7 +82,7 @@
 
                             <!--   <a href="/"><i class="fa-solid fa-house"></i> HOME </a> |
                                <a href="/sitemap.xml">Index sitemap</a> |
-                               <a href="/sitemap_crypto.xml">Exchange sitemap</a> -->
+                               <a href="/sitemap_exchange.xml">Exchange sitemap</a> -->
 
 
                         </span>
