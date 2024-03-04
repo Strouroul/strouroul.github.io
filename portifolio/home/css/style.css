@@ -1968,6 +1968,81 @@ body.loaded {
     -ms-transform: rotate(-10deg);
     transform: rotate(-10deg);
 }
+.about .profile-img .icon:nth-of-type(5) {
+    top: 50%;
+    left: -5px;
+    -webkit-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    transform: rotate(20deg);
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    z-index: -1;
+}
+
+.about .profile-img .icon:nth-of-type(6) {
+    top: 10%;
+    right: 15px;
+    -webkit-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+    z-index: -1;
+}
+
+.about .profile-img .icon:nth-of-type(7) {
+    bottom: 20px;
+    left: 30px;
+    -webkit-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    transform: rotate(5deg);
+}
+
+.about .profile-img .icon:nth-of-type(8) {
+    bottom: 60%;
+    right: 0;
+    -webkit-transform: rotate(25deg);
+    -ms-transform: rotate(25deg);
+    transform: rotate(25deg);
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    z-index: -1;
+}
+.about .profile-img .icon:nth-of-type(9) {
+    top: 20%;
+    left: 10px;
+    -webkit-transform: rotate(12deg);
+    -ms-transform: rotate(12deg);
+    transform: rotate(12deg);
+}
+
+.about .profile-img .icon:nth-of-type(10) {
+    top: 60px;
+    right: 25%;
+    -webkit-transform: rotate(8deg);
+    -ms-transform: rotate(8deg);
+    transform: rotate(8deg);
+}
+
+.about .profile-img .icon:nth-of-type(11) {
+    bottom: 40px;
+    left: 20%;
+    -webkit-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+}
+
+.about .profile-img .icon:nth-of-type(12) {
+    bottom: 70%;
+    right: 15px;
+    -webkit-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    z-index: -1;
+}
+
+
+
 
 .about .img {
     border-radius: 500px;
@@ -3539,6 +3614,29 @@ body.loaded {
     transition: all .4s;
 }
 
+.portfolio .item .cont .tag_green {
+    color: rgba(28, 121, 17, 0.7);
+    font-size: 12px;
+    padding: 4px 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 30px;
+    margin-bottom: 15px;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}
+
+.portfolio .item .cont .tag_red {
+    color: rgba(172, 26, 26, 0.7);
+    font-size: 12px;
+    padding: 4px 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 30px;
+    margin-bottom: 15px;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}
 .portfolio .item .cont h6 {
     margin-bottom: 10px;
 }

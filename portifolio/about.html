@@ -34,7 +34,7 @@
     <!--<link rel="stylesheet" href="https://ui-themez.smartinnovates.net/items/Gilb/assets/css/style.css">-->
     <link rel="stylesheet" href="./home/css/style.css">
 
-
+    <script src="./home/js/iconify.min.js"></script>
 </head>
 
 <body>
@@ -174,16 +174,40 @@
                             <img src="https://strouroul.github.io/haytham.jpg" alt="Haytham Meiz">
                         </div>
                         <span class="icon">
-                                <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/header/icon1.png" alt="">
+                              <!--  <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/header/icon1.png" alt="">-->
+                            <img src="https://img.icons8.com/?size=80&id=FBycNmdwUQz1&format=png"   alt="" data-toggle="tooltip" data-html="true"
+                                 title="Java, JSP">
                             </span>
                         <span class="icon">
-                                <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/header/icon2.png" alt="">
+                              <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/header/icon2.png" alt="">
+
                             </span>
                         <span class="icon">
-                                <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/header/icon3.png" alt="">
+                               <!-- <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/header/icon3.png" alt="">-->
+                               <img src="https://img.icons8.com/?size=48&id=54087&format=png" alt=""
+                                    data-toggle="tooltip" data-html="true"
+                                    title="Node.js">
                             </span>
                         <span class="icon">
-                                <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/header/icon4.png" alt="">
+                               <!-- <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/header/icon3.png" alt="">-->
+                            <i class="iconify" data-icon="skill-icons:perl" style="width:35px;height:35px;"
+                               data-toggle="tooltip" data-html="true"
+                               title="Perl" ></i>
+                            </span>
+                        <span class="icon">
+                             <!--   <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/header/icon4.png" alt="">-->
+                             <img src="https://cdn-icons-png.flaticon.com/128/1051/1051277.png" alt="" style="display: inline-block" data-toggle="tooltip" data-html="true"
+                                  title="HTML 5">
+                            </span>
+                        <span class="icon">
+                                <!--<img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/header/icon4.png" alt="">-->
+                            <img src="https://img.icons8.com/?size=48&id=21278&format=png" alt="" data-toggle="tooltip" data-html="true"
+                                 title="CSS">
+                            </span>
+                        <span class="icon">
+                                <!--<img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/header/icon4.png" alt="">-->
+                              <img src="https://img.icons8.com/?size=64&id=Nkym0Ujb8VGI&format=png" alt="" data-toggle="tooltip" data-html="true"
+                                   title="Javascript">
                             </span>
                     </div>
                 </div>
@@ -194,8 +218,7 @@
                             <h6>About Me</h6>
                         </div>
                         <div class="text">
-                            <h4 class="mb-30">I'm <span class="main-color">Creative Director and UI-UX
-                                        Designer</span> from Sydney, Australia, working in web development and print
+                            <h4 class="mb-30">I'm <span class="main-color">Creative CEO and Full-Stack Developer</span> from Cairo, Egypt, working in web development and logistics
                                 media.</h4>
                             <p>I enjoy turning complex problems into simple, beautiful and intuitive designs. My aim
                                 is to bring across your message and identity in the most creative way. I created web
@@ -237,7 +260,39 @@
                                             </div>
                                             <div>
                                                 <span class="opacity-7 mb-5">Email Us</span>
-                                                <h6>Support@Gmail.com</h6>
+                                                <h6>  <a href="javascript:void(0)" id="emailLink1" class="emailLink">Click to Send an Email</a>
+                                                    <script>
+                                                        document.addEventListener('DOMContentLoaded', function() {
+
+                                                            var emailLinks = document.querySelectorAll('.emailLink');
+                                                            emailLinks.forEach(emailLink=>{
+                                                                console.log(`emailLink : ${emailLink.id}`)
+                                                                emailLink.addEventListener('click', function(e) {
+                                                                    e.preventDefault(); // Prevent the default link behavior
+
+                                                                    var date = new Date(); // Get the current date and time
+                                                                    var formattedDate = date.getFullYear() + "-" +
+                                                                        ("0" + (date.getMonth() + 1)).slice(-2) + "-" +
+                                                                        ("0" + date.getDate()).slice(-2) + " " +
+                                                                        ("0" + date.getHours()).slice(-2) + ":" +
+                                                                        ("0" + date.getMinutes()).slice(-2) + ":" +
+                                                                        ("0" + date.getSeconds()).slice(-2); // Format the date and time
+
+                                                                    var subject = encodeURIComponent("Github Contact");
+                                                                    var body = encodeURIComponent("\n\n\n\nFrom GitHub\n\n" + "Sent at: " +date.toLocaleString() // formattedDate
+
+                                                                    );
+
+                                                                    // Construct the mailto link with the subject and body
+                                                                    var mailtoLink = "mailto:kool_egypt@hotmail.com?Subject=" + subject + "&body=" + body;
+
+                                                                    // Set the href of the link
+                                                                    window.location.href = mailtoLink;
+                                                                });
+                                                            })
+
+                                                        });
+                                                    </script></h6>
                                             </div>
                                         </div>
                                     </div>
@@ -248,7 +303,7 @@
                                             </div>
                                             <div>
                                                 <span class="opacity-7 mb-5">Call Us</span>
-                                                <h6>+1 840 841 25 69</h6>
+                                                <h6>+20 102 548 0106</h6>
                                             </div>
                                         </div>
                                     </div>
