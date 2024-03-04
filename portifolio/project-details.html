@@ -113,8 +113,8 @@
                     <a class="logo icon-img-70" href="#">
                         <!-- <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/logo-light.png" alt="logo">-->
 
-                        <img src="https://strouroul.github.io/crypto_exchange/img/favicon.png" style="width: 25px;height: 25px;" alt="logo">
-
+                        <img src="https://strouroul.github.io/crypto_exchange/img/favicon.png" style="width: 25px;height: 25px;display: inline-block;" alt="logo" >
+                        <img id="project_logo_icon" style="width: 80px;height:50px;" src=""/>
                     </a>
                 </div>
             </div>
@@ -432,6 +432,9 @@
         project_pic_2_html.src=project.pic_2;
 
         project_logo_html.src=project.logo;
+
+        document.getElementById("project_logo_icon").src=project.logo;
+
 
         project_title_html.innerHTML=project.name;
         project_description_html.innerHTML=project.description;

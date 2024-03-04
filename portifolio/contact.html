@@ -181,7 +181,7 @@
                 <div class="col-lg-12">
                     <div class="google-map mb-80">
                         <iframe id="gmap_canvas"
-                                src="https://maps.google.com/maps?q=hollwood&t=&z=11&ie=UTF8&iwloc=&output=embed">
+                                src="https://maps.google.com/maps?q=New%20Cairo&t=&z=11&ie=UTF8&iwloc=&output=embed">
                         </iframe>
                     </div>
                 </div>
@@ -195,7 +195,7 @@
                                 <h6 class="opacity-7">Phone</h6>
                             </div>
                             <div class="ml-auto">
-                                <h4>+1 840 841 25 69</h4>
+                                <h4>+20 102 548 0106</h4>
                             </div>
                         </div>
                         <div class="item mb-30 d-flex align-items-center">
@@ -207,7 +207,8 @@
                             </div>
                             <div class="ml-auto">
                                 <h4>
-                                    <a href="mailto:abc@example.com">Andrew@website.com</a>
+                                    <a href="javascript:void(0)" id="emailLink1" class="emailLink">Click to Send an Email</a>
+
                                 </h4>
                             </div>
                         </div>
@@ -219,11 +220,12 @@
                                 <h6 class="opacity-7">Address</h6>
                             </div>
                             <div class="ml-auto">
-                                <h4>Amsterdam, The Netherland</h4>
+                                <h4>Cairo , Egypt</h4>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-7 valign">
                     <div class="full-width">
                         <form id="contact-form" method="post" action="contact.php">
@@ -234,15 +236,32 @@
 
                                 <div class="col-lg-6">
                                     <div class="form-group mb-30">
-                                        <label>Your Name</label>
-                                        <input id="form_name" type="text" name="name" required="required">
+                                        <label>First Name</label>
+                                        <input id="firstname" type="text" name="firstname" required="required">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-6">
                                     <div class="form-group mb-30">
+                                        <label>Last Name</label>
+                                        <input id="lastname" type="email" name="lastname" required="required">
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="col-lg-6">
+                                    <div class="form-group mb-30">
                                         <label>Your Email</label>
                                         <input id="form_email" type="email" name="email" required="required">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group mb-30">
+                                        <label>Phome</label>
+                                        <input id="phone" type="text" name="phone" required="required">
                                     </div>
                                 </div>
 
@@ -295,7 +314,38 @@
 
 
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
 
+        var emailLinks = document.querySelectorAll('.emailLink');
+        emailLinks.forEach(emailLink=>{
+            console.log(`emailLink : ${emailLink.id}`)
+            emailLink.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent the default link behavior
+
+                var date = new Date(); // Get the current date and time
+                var formattedDate = date.getFullYear() + "-" +
+                    ("0" + (date.getMonth() + 1)).slice(-2) + "-" +
+                    ("0" + date.getDate()).slice(-2) + " " +
+                    ("0" + date.getHours()).slice(-2) + ":" +
+                    ("0" + date.getMinutes()).slice(-2) + ":" +
+                    ("0" + date.getSeconds()).slice(-2); // Format the date and time
+
+                var subject = encodeURIComponent("Github Contact");
+                var body = encodeURIComponent("\n\n\n\nFrom GitHub\n\n" + "Sent at: " +date.toLocaleString() // formattedDate
+
+                );
+
+                // Construct the mailto link with the subject and body
+                var mailtoLink = "mailto:kool_egypt@hotmail.com?Subject=" + subject + "&body=" + body;
+
+                // Set the href of the link
+                window.location.href = mailtoLink;
+            });
+        })
+
+    });
+</script>
 
 
 
