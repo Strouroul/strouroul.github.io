@@ -330,12 +330,12 @@
                         <div class="d-flex align-items-center mt-80 pt-80 bord-thin-top">
                             <div class="prev">
                                 <h6 class="sub-title">
-                                    <a href="#"><i class="fas fa-long-arrow-alt-left"></i> Prev Project</a>
+                                    <a href="#" id="previous_project_link"><i class="fas fa-long-arrow-alt-left"></i> Prev Project</a>
                                 </h6>
                             </div>
                             <div class="next ml-auto">
                                 <h6 class="sub-title">
-                                    <a href="#">next Project <i class="fas fa-long-arrow-alt-right"></i></a>
+                                    <a href="#" id="next_project_link">next Project <i class="fas fa-long-arrow-alt-right"></i></a>
                                 </h6>
                             </div>
                         </div>
@@ -400,19 +400,27 @@
             // console.log(`response : ${JSON.stringify(files)}`)
             // Display each file in the list
             //    const list = document.getElementById('filesList');
+           let counter_index=-1;
+            my_project_data=[];
             all_projects.forEach(project_found => {
+                counter_index++;
                 //  const listItem = document.createElement('li');
                 //    listItem.innerHTML =`<a href='./${file}'>${file.name}</a>` ;
                 //  list.appendChild(listItem);
                 //    console.log(`file : ${JSON.stringify(project_found)}`)
-                my_project_data.push(project_found);
+             // my_project_data.push(project_found);
 
                 if(project_found.id===project){
-                    adjust_project_details(project_found);
-                    my_project_choosen_index=my_project_data.length-1;
-                }
-            });
+                    my_project_choosen_index=counter_index;
+                    adjust_project_details(project_found,all_projects );
 
+                   //  console.log(`my_project_choosen_index  : ${my_project_choosen_index}`)
+                }
+
+
+            });
+           my_project_data= all_projects;
+            //console.log(`ALL PRJECTS : ${my_project_data}`)
             if(my_project_choosen_index>-1){
                 console.log(`Project Data found at index(${my_project_choosen_index})  `) //${JSON.stringify(my_project_data[my_project_choosen_index])}
             }else{
@@ -423,8 +431,9 @@
         }
     }
 
-    function     adjust_project_details(project){
+    function     adjust_project_details(project,all_projects ){
 
+        let all_projects_len=all_projects.length-1;
         project_image_html.src=project.bg_img;
         //project_image_html.style.width="500px";
         project_image_html.style.height="200px";
@@ -445,6 +454,39 @@
         project_client_html.innerHTML=project.client;
         project_categories_html.innerHTML=project.categories;
 
+
+        let temp_IND=my_project_choosen_index;
+        //let prev_IND=temp_IND-1 ; //(my_project_choosen_index-1<0?my_project_choosen_index=my_project_data.length-1:my_project_choosen_index-1);;
+        //console.log(`my_project_data.length : ${all_projects_len }`)
+     //   console.log(`prev_IND : ${prev_IND}`)
+
+
+    //let next_IND=temp_IND+1; //my_project_choosen_index+1>=my_project_data.length?my_project_choosen_index=0:my_project_choosen_index+1;
+        // Calculating next index
+        var next_index = temp_IND + 1;
+        if (next_index > all_projects_len - 1) {
+            next_index = 0; // Wrap around to the first project
+        }
+
+// Calculating previous index
+        var prev_index = temp_IND - 1;
+        if (prev_index < 0) {
+            prev_index = all_projects_len - 1; // Wrap around to the last project
+        }
+
+// You can use next_index and prev_index to update your links
+        console.log("Next project index: ", next_index);
+        console.log("Previous project index: ", prev_index);
+
+
+
+
+
+    //console.log(`prev link : ${"./project-details.html?project_id="+all_projects[prev_index].id}`)
+     // console.log(`prev link : ${"./project-details.html?project_id="+all_projects[next_index].id}`)
+
+        previous_project_link.href="./project-details.html?project_id="+all_projects[prev_index].id
+        next_project_link.href="./project-details.html?project_id="+all_projects[next_index].id
 
         let resultString = "";
 
@@ -487,6 +529,13 @@
     let project_pic_1_html=document.getElementById("project_pic_1");
 
     let project_logo_html=document.getElementById("project_logo");
+
+    let previous_project_link=document.getElementById("previous_project_link");
+    let next_project_link=document.getElementById("next_project_link");
+
+
+
+
 
     // Example usage
     const project_name = getQueryParam('project_name')||null;
