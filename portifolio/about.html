@@ -3,6 +3,9 @@
 
 <head>
 
+    <!-- jQuery -->
+    <!--<script src="https://ui-themez.smartinnovates.net/items/Gilb/assets/js/jquery-3.6.0.min.js"></script>-->
+    <script src="./home/js/jquery-3.6.0.min.js"></script>
     <!-- Metas -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -240,7 +243,7 @@
                                         </div>
                                         <div class="item sm-mb15">
                                             <h6 class="sub-title ls1"><span class="fz-13 mr-10 main-color"><i
-                                                    class="fas fa-check"></i></span> Website Design</h6>
+                                                    class="fas fa-check"></i></span> Website Functionalities + Simple Layouts</h6>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
@@ -251,7 +254,7 @@
                                         </div>
                                         <div class="item">
                                             <h6 class="sub-title ls1"><span class="fz-13 mr-10 main-color"><i
-                                                    class="fas fa-check"></i></span> Design Retainer
+                                                    class="fas fa-check"></i></span> Back-End Development
                                             </h6>
                                         </div>
                                     </div>
@@ -369,11 +372,11 @@
                         <div class="d-flex align-items-center mb-30">
                             <div class="mr-30">
                                 <div class="img icon-img-40">
-                                    <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/resume/s2.png" alt="">
+                                    <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/resume/s2.png" alt="" data-toggle="tooltip" data-html="true"   title="Back-end Development">
                                 </div>
                             </div>
                             <div>
-                                <h6 class="fz-18">Development</h6>
+                                <h6 class="fz-18">Back-end Development</h6>
                             </div>
                         </div>
                         <div class="skill-progress">
@@ -387,7 +390,7 @@
                         <div class="d-flex align-items-center mb-30">
                             <div class="mr-30">
                                 <div class="img icon-img-40">
-                                    <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/resume/s3.png" alt="">
+                                    <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/resume/s3.png" alt="" data-toggle="tooltip" data-html="true"   title="Front-end Development">
                                 </div>
                             </div>
                             <div>
@@ -407,8 +410,7 @@
                                 <div class="img icon-img-40">
                                     <!--  <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/resume/s4.png" alt="">-->
                                     <i class="iconify" data-icon="skill-icons:perl" style="width:35px;height:35px;"
-                                       data-toggle="tooltip" data-html="true"
-                                       title="Perl" ></i>
+                                       data-toggle="tooltip" data-html="true"   title="Perl" ></i>
                                 </div>
                             </div>
                             <div>
@@ -542,12 +544,21 @@
 
 
 
+<script>
+    // set the tooltip content
+    //$('.tooltip.perl').attr('data-tooltip', 'Perl');
+
+
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
 
 
 
-<!-- jQuery -->
-<!--<script src="https://ui-themez.smartinnovates.net/items/Gilb/assets/js/jquery-3.6.0.min.js"></script>-->
-<script src="./home/js/jquery-3.6.0.min.js"></script>
+    });
+</script>
+
+
+
 
 <!--<script src="https://ui-themez.smartinnovates.net/items/Gilb/assets/js/jquery-migrate-3.4.0.min.js"></script>-->
 
