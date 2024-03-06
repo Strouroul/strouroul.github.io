@@ -370,7 +370,6 @@
 <!-- ==================== End progress-scroll-button ==================== -->
 
 
-
 <!-- ==================== Start Navbar ==================== -->
 
 <nav class="navbar navbar-chang navbar-expand-lg">
@@ -379,8 +378,11 @@
             <div class="col-lg-3 col-6 order1">
                 <div class="bord">
                     <!-- Logo -->
-                    <a class="logo icon-img-70" href="#">
-                        <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/logo-light.png" alt="logo">
+
+                    <a class="logo icon-img-70" href="/">
+                        <!-- <img src="https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/logo-light.png" alt="logo">-->
+                        <img src="https://strouroul.github.io/crypto_exchange/img/favicon.png" alt="logo">
+
                     </a>
                 </div>
             </div>
@@ -674,11 +676,12 @@
                             <div class="sec-head mb-60">
                                 <h5>Leave a comment</h5>
                             </div>
-                            <form id="contact-form" class="contact-form" method="post" action="contact.php">
+                            <form id="contact-form" method="post" action="contact.php">
 
                                 <div class="messages"></div>
 
                                 <div class="controls row">
+
                                     <div class="col-lg-6">
                                         <div class="form-group mb-30">
                                             <input id="firstname" type="text" name="firstname"
@@ -692,19 +695,15 @@
                                         </div>
                                     </div>
 
-
-
                                     <div class="col-lg-6">
                                         <div class="form-group mb-30">
                                             <input id="email" type="email" name="email" placeholder="Email"
                                                    required="required">
                                         </div>
                                     </div>
-
-
                                     <div class="col-lg-6">
                                         <div class="form-group mb-30">
-                                            <input id="phone" type="text" name="phone" placeholder="Phone"
+                                            <input id="phone" type="email" name="phone" placeholder="Phone"
                                                    required="required">
                                         </div>
                                     </div>
@@ -716,14 +715,12 @@
                                     </div>
 
                                     <div class="col-12 text-center mt-20">
-
                                         <!--     <span class="text">Send A Message</span> -->
                                         <button id="submit"
                                                 class="text"
                                                 type="button"
                                                 onclick="send_contact_info(this)"
                                         >  <i class="iconify" data-icon="streamline:send-email-solid" style="width:25px;height:25px;"></i> Send Massage</button>
-                                        </button>
                                     </div>
                                 </div>
                             </form>
