@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- jQuery -->
+    <!--<script src="https://ui-themez.smartinnovates.net/items/Gilb/assets/js/jquery-3.6.0.min.js"></script>-->
+    <script src="https://strouroul.github.io/portifolio/home/js/jquery-3.6.0.min.js"></script>
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
@@ -157,6 +160,13 @@
             }
         }
     </style>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+ -->
+    <link href="https://strouroul.github.io/iRide/assets/bootstrap/5.3.0/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/all.css">
     <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/regular.css"
@@ -171,6 +181,13 @@
           crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/thin.css"
           crossorigin="anonymous"/>
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css'>
+
+
+    <script src="https://strouroul.github.io/iRide/assets/bootstrap/5.3.0/bootstrap.bundle.min.js"></script>
+
+
 
     <link rel="icon" href="/favicon.ico">
 </head>
@@ -187,16 +204,41 @@
 </section>
 <section class="location-section">
     <h1>Where I'm From</h1>
-    <p>I'm originally from Ottawa, Ontario. </p>
+    <p>I'm originally from Ottawa, Ontario Canada <span class="flag-icon flag-icon-ca"></span>  , But now in Cairo, Egypt <span class="flag-icon flag-icon-eg"></span></p>
 </section>
 <section class="questions-section">
     <h1>More About Me</h1>
     <h2>What are your favorite hobbies?</h2>
-    <p>My favorite hobby is building things on the internet like ecommerce sites and email marketing campaigns.</p>
+    <p>My favorite hobby is building things on the internet like ecommerce sites ,
+        trading bots ( <i class="iconify" data-icon="fa6-brands:bots" style="width:15px;height:15px;" data-toggle="tooltip" data-html="true"
+                          title="Trading Crypto BOTS"></i>
+        <i class="iconify" data-icon="simple-icons:blockchaindotcom" style="width:15px;height:15px;" data-toggle="tooltip" data-html="true"
+           title="BlockChain"></i><i class="iconify" data-icon="cryptocurrency-color:usdt" style="width:15px;height:15px;" data-toggle="tooltip" data-html="true"
+                                     title="USDT"></i>
+        <i class="iconify" data-icon="cryptocurrency-color:eth" style="width:15px;height:15px;" data-toggle="tooltip" data-html="true"
+           title="Etherum"></i>
+        <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1762.png" alt="" data-toggle="tooltip" data-html="true"
+             title="ERGO" style="width:15px;height:15px;">)
+        , chat bots ( <i class="iconify" data-icon="logos:messenger" style="width:15px;height:15px;" data-toggle="tooltip" data-html="true"
+                         title="Messenger"></i>
+        <i class="iconify" data-icon="logos:whatsapp-icon" style="width:15px;height:15px;" data-toggle="tooltip" data-html="true"
+           title="WhatsApp"></i>
+
+        )
+        , social media website,ERP System,
+        and all kinds of new ideas (ex : encrypted js for the client side    <i class="iconify" data-icon="openmoji:javascript" data-toggle="tooltip" data-html="true"
+                                                                                title="Javascript"></i> ,
+        Video Chat : <i class="iconify" data-icon="logos:html-5" data-toggle="tooltip" data-html="true"
+                        title="HTML5"></i>
+        <i class="iconify" data-icon="ion:logo-javascript" data-toggle="tooltip" data-html="true"
+           title="Javascript"></i>
+        <i class="iconify" data-icon="logos:webrtc" data-toggle="tooltip" data-html="true"
+           title="WebRTC"></i> ).</p>
     <h2>What's your dream job?</h2>
     <p>My dream job is similar to my current job except I would like to be building buildings instead of software.</p>
     <h2>Where do you live?</h2>
-    <p>I live on a rural acreage, but I'm close to Toronto and Montreal.</p>
+    <p>I live in Cairo close to the pyramids  <i class="iconify" data-icon="game-icons:egyptian-pyramids" data-toggle="tooltip" data-html="true"
+                                                 title="Pyramids of Egypt" style="width: 40px;height: 40px;"></i>.</p>
     <h2>Why do you want to be a web developer?</h2>
     <p>Because programming is awesome and programming for the internet is even more awesome.</p>
 
@@ -417,5 +459,25 @@
     </ul>
 
 </footer>
+
+
+<script>
+    try{
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+
+            /* try{
+                 get_all_users_online();
+             }
+             catch(e_LIST_ONLINE){
+                 console.log(`e_LIST_ONLINE : ${e_LIST_ONLINE}`)
+             }*/
+
+        });
+    }
+    catch(e_LISTER){
+        console.log(`e_LISTER : ${e_LISTER}`)
+    }
+</script>
 </body>
 </html>
