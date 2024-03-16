@@ -190,6 +190,44 @@
 
 
     <link rel="icon" href="/favicon.ico">
+
+
+
+    <style>
+        .animated-progress {
+            width: 300px;
+            height: 30px;
+            border-radius: 5px;
+            margin: 20px 10px;
+            border: 1px solid rgb(189, 113, 113);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .animated-progress span {
+            height: 100%;
+            display: block;
+            width: 0;
+            color: rgb(255, 251, 251);
+            line-height: 30px;
+            position: absolute;
+            text-align: end;
+            padding-right: 5px;
+        }
+
+        .progress-blue span {
+            background-color: blue;
+        }
+        .progress-green span {
+            background-color: green;
+        }
+        .progress-purple span {
+            background-color: indigo;
+        }
+        .progress-red span {
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
 <script src="https://strouroul.github.io/portifolio/home/js/iconify.min.js"></script>
@@ -209,19 +247,22 @@
 <section class="questions-section">
     <h1>More About Me</h1>
     <h2>What are your favorite hobbies?</h2>
-    <p>My favorite hobby is building things on the internet like ecommerce sites ,
-        trading bots ( <i class="iconify" data-icon="fa6-brands:bots" style="width:15px;height:15px;" data-toggle="tooltip" data-html="true"
+    <p>My favorite hobby is building things on the internet like ecommerce sites
+        <img src="https://thumbs.dreamstime.com/b/ecommerce-icon-vector-isolated-white-background-your-web-mobile-app-design-ecommerce-logo-concept-ecommerce-icon-vector-133828682.jpg" alt="" data-toggle="tooltip" data-html="true"
+             title="E-Commerce" style="width:25px;height:25px;">
+        ,
+        trading bots ( <i class="iconify" data-icon="fa6-brands:bots" style="width:25px;height:25px;" data-toggle="tooltip" data-html="true"
                           title="Trading Crypto BOTS"></i>
-        <i class="iconify" data-icon="simple-icons:blockchaindotcom" style="width:15px;height:15px;" data-toggle="tooltip" data-html="true"
+        <i class="iconify" data-icon="simple-icons:blockchaindotcom" style="width:25px;height:25px;" data-toggle="tooltip" data-html="true"
            title="BlockChain"></i><i class="iconify" data-icon="cryptocurrency-color:usdt" style="width:15px;height:15px;" data-toggle="tooltip" data-html="true"
                                      title="USDT"></i>
-        <i class="iconify" data-icon="cryptocurrency-color:eth" style="width:15px;height:15px;" data-toggle="tooltip" data-html="true"
+        <i class="iconify" data-icon="cryptocurrency-color:eth" style="width:25px;height:25px;" data-toggle="tooltip" data-html="true"
            title="Etherum"></i>
         <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1762.png" alt="" data-toggle="tooltip" data-html="true"
-             title="ERGO" style="width:15px;height:15px;">)
-        , chat bots ( <i class="iconify" data-icon="logos:messenger" style="width:15px;height:15px;" data-toggle="tooltip" data-html="true"
+             title="ERGO" style="width:25px;height:25px;">)
+        , chat bots ( <i class="iconify" data-icon="logos:messenger" style="width:25px;height:25px;" data-toggle="tooltip" data-html="true"
                          title="Messenger"></i>
-        <i class="iconify" data-icon="logos:whatsapp-icon" style="width:15px;height:15px;" data-toggle="tooltip" data-html="true"
+        <i class="iconify" data-icon="logos:whatsapp-icon" style="width:25px;height:25px;" data-toggle="tooltip" data-html="true"
            title="WhatsApp"></i>
 
         )
@@ -233,7 +274,13 @@
         <i class="iconify" data-icon="ion:logo-javascript" data-toggle="tooltip" data-html="true"
            title="Javascript"></i>
         <i class="iconify" data-icon="logos:webrtc" data-toggle="tooltip" data-html="true"
-           title="WebRTC"></i> ).</p>
+           title="WebRTC"></i> /  <img src="https://img.icons8.com/?size=80&id=FBycNmdwUQz1&format=png"
+                                       alt="" data-toggle="tooltip" data-html="true"
+                                       title="Java, JSP" style="display: inline-block;width: 25px;height: 25px;">  <i class="iconify" data-icon="devicon:nodejs-wordmark"  data-toggle="tooltip" data-html="true"
+                                                                                                                      title="Node.js" style="display: inline-block;width: 25px;height: 25px;"></i>
+        <i class="iconify" data-icon="skill-icons:perl" style="width:25px;height:25px;"
+           data-toggle="tooltip" data-html="true"
+           title="Perl" ></i> ).</p>
     <h2>What's your dream job?</h2>
     <p>My dream job is similar to my current job except I would like to be building buildings instead of software.</p>
     <h2>Where do you live?</h2>
@@ -241,6 +288,80 @@
                                                  title="Pyramids of Egypt" style="width: 40px;height: 40px;"></i>.</p>
     <h2>Why do you want to be a web developer?</h2>
     <p>Because programming is awesome and programming for the internet is even more awesome.</p>
+
+
+    <h2>  Skills :</h2>
+
+
+    <!--Start Animated Progress Bar-->
+
+
+    <i class="iconify" data-icon="devicon:nodejs-wordmark"  data-toggle="tooltip" data-html="true"
+       title="Node.js" style="display: inline-block;width: 25px;height: 25px;"></i>
+    <i class="iconify" data-icon="skill-icons:perl" style="width:35px;height:35px;"
+       data-toggle="tooltip" data-html="true"
+       title="Perl" ></i>
+    <div class="animated-progress progress-green">
+        <span data-progress="95"></span>
+    </div>
+
+
+    <img src="https://img.icons8.com/?size=80&id=FBycNmdwUQz1&format=png"
+         alt="" data-toggle="tooltip" data-html="true"
+         title="Java, JSP" style="display: inline-block;width: 25px;height: 25px;">
+    <div class="animated-progress progress-blue">
+        <span data-progress="90"></span>
+    </div>
+
+
+    <i class="iconify" data-icon="devicon:html5"  data-toggle="tooltip" data-html="true"
+       title="HTML 5" style="display: inline-block;width: 25px;height: 25px;"></i>
+    <i class="iconify" data-icon="logos:css-3"  data-toggle="tooltip" data-html="true"
+       title="CSS" style="display: inline-block;width: 25px;height: 25px;"></i>
+    <i class="iconify" data-icon="openmoji:javascript"  data-toggle="tooltip" data-html="true"
+       title="JavaScript" style="display: inline-block;width: 25px;height: 25px;"></i>
+    <i class="iconify" data-icon="logos:webrtc" data-toggle="tooltip" data-html="true"
+       data-placement="top" title="WebRTC" style="width: 25px;height: 25px;"></i>
+
+    <div class="animated-progress progress-green">
+        <span data-progress="95"></span>
+    </div>
+
+
+    <i class="iconify" data-icon="cib:dot-net" data-toggle="tooltip" data-html="true"
+       data-placement="top" title=".NET Framework" style="width: 25px;height: 25px;"></i>
+
+    <i class="iconify" data-icon="vscode-icons:file-type-vbproj" data-toggle="tooltip" data-html="true"
+       data-placement="top" title="Visual Basic .NET" style="width: 25px;height: 25px;"></i>
+    <i class="iconify" data-icon="vscode-icons:file-type-csharp2" data-toggle="tooltip" data-html="true"
+       data-placement="top" title="C# .NET" style="width: 25px;height: 25px;"></i>
+
+
+    <div class="animated-progress progress-purple">
+        <span data-progress="80"></span>
+    </div>
+
+
+    <img src="https://strouroul.github.io/images/web_crawler_no_bg.png" style="width: 40px;height: 40px;" data-toggle="tooltip" data-html="true"
+         title="Web Crawler" />
+    <i class="iconify" data-icon="fa6-brands:bots" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
+       title="Trading Crypto BOTS"></i>
+    <div class="animated-progress progress-red">
+        <span data-progress="70"></span>
+    </div>
+
+    <!--
+
+       <div class="animated-progress progress-green">
+          <span data-progress="95"></span>
+      </div>
+      <div class="animated-progress progress-purple">
+          <span data-progress="70"></span>
+      </div>
+      <div class="animated-progress progress-red">
+          <span data-progress="85"></span>
+      </div>-->
+    <!--End Animated Progress Bar-->
 
 
     <div>
@@ -461,6 +582,18 @@
 </footer>
 
 
+
+<script>
+    $(".animated-progress span").each(function () {
+        $(this).animate(
+            {
+                width: $(this).attr("data-progress") + "%",
+            },
+            1000
+        );
+        $(this).text($(this).attr("data-progress") + "%");
+    });
+</script>
 <script>
     try{
         $(document).ready(function(){
