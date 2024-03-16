@@ -242,7 +242,9 @@
 </section>
 <section class="location-section">
     <h1>Where I'm From</h1>
-    <p>I'm originally from Ottawa, Ontario Canada <span class="flag-icon flag-icon-ca"></span>  , But now in Cairo, Egypt <span class="flag-icon flag-icon-eg"></span></p>
+    <p>I'm originally from Ottawa, Ontario  <span class="flag-icon flag-icon-ca" data-toggle="tooltip" data-html="true"
+                                                  title="Canada"></span>  , But now in Cairo <span class="flag-icon flag-icon-eg" data-toggle="tooltip" data-html="true"
+                                                                                                   title="Egypt"></span></p>
 </section>
 <section class="questions-section">
     <h1>More About Me</h1>
@@ -382,6 +384,38 @@
     <!--End Animated Progress Bar-->
 
 
+
+
+    <!-- Include the library. -->
+    <script
+            src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js">
+    </script>
+
+    <!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
+    />
+
+    <!-- Prepare a container for your calendar. -->
+    <div class="calendar">
+        <!-- Loading stuff -->
+        Loading the data just for you.
+    </div>
+
+    <script>
+        GitHubCalendar(".calendar", "Strouroul");
+
+        // or enable responsive functionality:
+        GitHubCalendar(".calendar", "Strouroul", { responsive: true });
+
+        // Use a proxy
+        GitHubCalendar(".calendar", "Strouroul", {
+            proxy (username) {
+                return fetch(`https://your-proxy.com/github?user=${username}`)
+            }
+        }).then(r => r.text())
+    </script>
     <div>
         Github Build : <!--<img src="https://github.com/Strouroul/iRide/actions/workflows/node.js.yml/badge.svg">--><img src="https://strouroul.github.io/assets/images/passing_badge.svg">
         <BR>Gitlab Build : <!--<img src="https://ishopper.info:9898/gitlab/strouroul/iRide/badges/main/pipeline.svg">--><img src="https://strouroul.github.io/assets/images/passing_badge.svg">
