@@ -38,7 +38,7 @@
 
         .masthead-heading {
             /* Layout Declarations */
-            color: #F1C863;
+            color: #d6d9e0;
             margin-top: -0.2em;
             /* Typography Declarations */
             font-family: "Open Sans", "Helvetica Neue", sans-serif;
@@ -86,16 +86,18 @@
 
         .masthead {
             padding: 6em 0;
-            background-image: url('https://i.imgur.com/yGmrlyg.jpg');
+            /*background-image: url('https://i.imgur.com/yGmrlyg.jpg');*/
+            background-image: url('https://www.webhopers.com/wp-content/uploads/2022/02/website-design-company-in-yamuna-nagar.jpg');
             background-size: cover;
             background-repeat: no-repeat;
-            border-top: solid 1em #FFCF33;
+            border-top: solid 1em #1d7578;
         }
 
         .masthead-intro {
             margin-bottom: 0.1em;
             font-family: "Gentium Book Basic", Georgia, serif;
             font-size: 2em;
+            color: #d6d9e0;
         }
 
         .masthead-heading {
@@ -228,11 +230,23 @@
             background-color: red;
         }
     </style>
+
+
+    <!-- Include the library. -->
+    <script
+            src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js">
+    </script>
+
+    <!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
+    />
 </head>
 <body>
 <script src="https://strouroul.github.io/portifolio/home/js/iconify.min.js"></script>
 <header class='masthead'>
-    <p class='masthead-intro'>Hi I'm</p>
+    <p class='masthead-intro' style="   ">Hi I'm</p>
     <h1 class='masthead-heading'>Haytham!</h1>
 </header>
 <section class="introduction-section">
@@ -271,15 +285,17 @@
         , social media website,ERP System,
         and all kinds of new ideas (ex : encrypted js for the client side    <i class="iconify" data-icon="openmoji:javascript" data-toggle="tooltip" data-html="true"
                                                                                 title="Javascript"></i> ,
-        Video Chat : <i class="iconify" data-icon="logos:html-5" data-toggle="tooltip" data-html="true"
-                        title="HTML5"></i>
-        <i class="iconify" data-icon="ion:logo-javascript" data-toggle="tooltip" data-html="true"
+        Video Chat : Front-end :<i class="iconify" data-icon="logos:html-5" data-toggle="tooltip" data-html="true"
+                                   title="HTML5"></i>
+        <i class="iconify" data-icon="logos:css-3"  data-toggle="tooltip" data-html="true"
+           title="CSS" ></i>
+        <i class="iconify" data-icon="openmoji:javascript" data-toggle="tooltip" data-html="true"
            title="Javascript"></i>
         <i class="iconify" data-icon="logos:webrtc" data-toggle="tooltip" data-html="true"
-           title="WebRTC"></i> /  <img src="https://img.icons8.com/?size=80&id=FBycNmdwUQz1&format=png"
-                                       alt="" data-toggle="tooltip" data-html="true"
-                                       title="Java, JSP" style="display: inline-block;width: 25px;height: 25px;">  <i class="iconify" data-icon="devicon:nodejs-wordmark"  data-toggle="tooltip" data-html="true"
-                                                                                                                      title="Node.js" style="display: inline-block;width: 25px;height: 25px;"></i>
+           title="WebRTC"></i> / Back-Ends : <img src="https://img.icons8.com/?size=80&id=FBycNmdwUQz1&format=png"
+                                                  alt="" data-toggle="tooltip" data-html="true"
+                                                  title="Java, JSP" style="display: inline-block;width: 25px;height: 25px;">  <i class="iconify" data-icon="devicon:nodejs-wordmark"  data-toggle="tooltip" data-html="true"
+                                                                                                                                 title="Node.js" style="display: inline-block;width: 25px;height: 25px;"></i>
         <i class="iconify" data-icon="skill-icons:perl" style="width:25px;height:25px;"
            data-toggle="tooltip" data-html="true"
            title="Perl" ></i> ).</p>
@@ -386,36 +402,32 @@
 
 
 
-    <!-- Include the library. -->
-    <script
-            src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js">
-    </script>
 
-    <!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
-    <link
-            rel="stylesheet"
-            href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-    />
 
     <!-- Prepare a container for your calendar. -->
-    <div class="calendar">
-        <!-- Loading stuff -->
-        Loading the data just for you.
-    </div>
+    Github Chart : <div class="calendar">
+    <!-- Loading stuff -->
+    Loading the data just for you.
+</div>
 
     <script>
-        GitHubCalendar(".calendar", "Strouroul");
+        // GitHubCalendar(".calendar", "Strouroul");
 
         // or enable responsive functionality:
-        GitHubCalendar(".calendar", "Strouroul", { responsive: true });
+        GitHubCalendar(".calendar", "Strouroul",
+            { responsive: true,global_stats :true,tooltips :true }
+        );
 
         // Use a proxy
-        GitHubCalendar(".calendar", "Strouroul", {
-            proxy (username) {
-                return fetch(`https://your-proxy.com/github?user=${username}`)
-            }
-        }).then(r => r.text())
+        /*  GitHubCalendar(".calendar", "Strouroul", {
+              proxy (username) {
+                  return fetch(`https://your-proxy.com/github?user=${username}`)
+              }
+          }).then(r => r.text())*/
     </script>
+
+
+    Github Chart : <img src="https://ghchart.rshah.org/Strouroul" alt="Strouroul's Github chart" />
     <div>
         Github Build : <!--<img src="https://github.com/Strouroul/iRide/actions/workflows/node.js.yml/badge.svg">--><img src="https://strouroul.github.io/assets/images/passing_badge.svg">
         <BR>Gitlab Build : <!--<img src="https://ishopper.info:9898/gitlab/strouroul/iRide/badges/main/pipeline.svg">--><img src="https://strouroul.github.io/assets/images/passing_badge.svg">
