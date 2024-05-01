@@ -1,6 +1,104 @@
+function IDGenerate() {
+    var text = "";
+    var hdntxt = "";
+    var captchatext = "";
+    var possible = "ABCDEFGHIkLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for (var i = 0; i < 7; i++) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+    // document.getElementById("txtboxID").value = text;
+    return text;
+}
+class GUEST_IFLIX {
+    constructor() {
+
+        this.id=null;
+        this.provider="iFlix";
+        this.displayName="";
+        this.picture="";
+
+        this.last_login=null;
+        this.last_refresh=null;
+
+        this.set_init_guest_user();
+    }
+    get get_GUEST_JSON(){
+        let this_return={
+            id:this.id,
+            provider:this.provider,
+            displayName:this.displayName ,
+            picture: this.picture ,
+            last_login: this.last_login,
+            last_refresh: this.last_refresh,
+
+        }
+        return (this_return)
+    }
+
+    get get_GUEST_JSON_STR(){
+        let this_return={
+            id:this.id,
+            provider:this.provider,
+            displayName:this.displayName ,
+            picture: this.picture ,
+            last_login: this.last_login,
+            last_refresh: this.last_refresh,
+        }
+        return JSON.stringify(this_return)
+    }
+    set_found_guest_user(cookie_found_str){
+        let this_JSON=null;
+        try{
+            this_JSON=JSON.parse(cookie_found_str)
+        }
+        catch(err_JSON_set_found_guest_user){
+            console.log(`err_JSON_set_found_guest_user : ${err_JSON_set_found_guest_user}`)
+            this_JSON= (cookie_found_str)
+        }
+
+        this.id=this_JSON.id;
+        this.provider=this_JSON.provider;
+        this.displayName=this_JSON.displayName;
+        this.picture=this_JSON.picture;
+        this.last_login=this_JSON.last_login;
 
 
-  cookie_domain="iflix.ishopper.info"
+        this.last_refresh=new Date().getTime();
+        console.log(`last_login : ${this.last_login}`)
+        console.log(`last_refresh : ${this.last_refresh}`)
+        // console.log(`set_found_guest_user success`)
+    }
+    set_init_guest_user(){
+
+
+        let cookie_found=readCookie("iflix_user");
+        if(cookie_found!=null){
+            console.log(`cookie_found : ${ cookie_found}`);
+            this.set_found_guest_user(cookie_found);
+            createCookie('iflix_user',JSON.stringify(this.get_GUEST_JSON))
+        }
+        else{
+            // Initialize guest user here
+            console.log("Initializing guest user");
+            let this_INIT_ID=IDGenerate()+"_"+IDGenerate()+"_"+IDGenerate()+"_"+IDGenerate();  // Set a unique ID based on current time
+            // Example of setting properties
+            this.id ="iFlix_GUEST_"+this_INIT_ID;
+            this.provider ="iFlix"; //  "iFlix_GUEST_"+this_INIT_ID;
+            this.displayName = "iFlix_GUEST_"+this_INIT_ID;
+            this. picture="https://iflix.ishopper.info/iflix_logo.png";
+            this.last_login=new Date().getTime();
+            this.last_refresh=new Date().getTime();
+            createCookie('iflix_user',JSON.stringify(this.get_GUEST_JSON))
+        }
+
+
+    }
+
+
+}
+
+cookie_domain="iflix.ishopper.info"
 
 function createCookie(name, value ) {
     var date = new Date();

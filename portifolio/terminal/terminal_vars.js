@@ -46,7 +46,16 @@ if(iflix_user_str!=null){
     user=iflix_user_json.displayName;
 }
 else{
-    user=queryParams.user||'guest';
+    try{
+        let this_guest=new GUEST_IFLIX();
+        console.log(`this_guest : ${JSON.stringify(this_guest.get_GUEST_JSON)}`)
+        user=this_guest.get_GUEST_JSON.displayName; //queryParams.user||'guest';
+    }
+    catch(err_GUEST){
+        console.log(`err_GUEST : ${err_GUEST}`)
+        user=queryParams.user||'guest';
+    }
+
 }
 
 
@@ -395,7 +404,7 @@ const directories = {
             [
 
 
-                '<span data-toggle="tooltip" data-html="true"     data-placement="bottom" title="Node.js">Node.js <i class="iconify" data-icon="logos:nodejs"  ></i></span>',
+                '<span data-toggle="tooltip" data-html="true"     data-placement="right" title="Node.js">Node.js <i class="iconify" data-icon="logos:nodejs"  ></i></span>',
                 'JavaScript',
                 'Java',
                 'Perl',

@@ -64,25 +64,25 @@ function refresh_tooltips(){
            console.log(`Error initializing tooltips: ${e_LISTER}`);
        }*/
 
-    try{
-        $(document).ready(function(){
+    /* try{
+         $(document).ready(function(){
 
-            $('[data-toggle="tooltip"]').tooltip('destroy').tooltip(); // Clean up and reapply tooltips
-            $('[data-toggle="tooltip"]').tooltip();
+             $('[data-toggle="tooltip"]').tooltip('destroy').tooltip(); // Clean up and reapply tooltips
+             $('[data-toggle="tooltip"]').tooltip();
 
 
 
-        });
-    }
-    catch(e_LISTER){
-        console.log(`e_LISTER : ${e_LISTER}`)
-    }
-    try {
+         });
+     }
+     catch(e_LISTER){
+         console.log(`e_LISTER : ${e_LISTER}`)
+     }
+     try {
 
-        $('[data-toggle="tooltip"]').tooltip('destroy').tooltip(); // Clean up and reapply tooltips
-    } catch (e_LISTER) {
-        console.log(`Error initializing tooltips: ${e_LISTER}`);
-    }
+         $('[data-toggle="tooltip"]').tooltip('destroy').tooltip(); // Clean up and reapply tooltips
+     } catch (e_LISTER) {
+         console.log(`Error initializing tooltips: ${e_LISTER}`);
+     }*/
 
 
     $(document).ready(function() {
