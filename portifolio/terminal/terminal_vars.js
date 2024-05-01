@@ -1,3 +1,16 @@
+try{
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+
+
+
+    });
+}
+catch(e_LISTER){
+    console.log(`e_LISTER : ${e_LISTER}`)
+}
+
+
 // Get the URL of the currently executing script
 const scriptUrl = document.currentScript.src;
 
@@ -113,7 +126,7 @@ const my_cmds = {
         stop = false; // Variable to track if Ctrl+C was pressed
         // Add event listener for keydown event on the document
         // Add event listener for keydown event on the document
-      //  document.addEventListener('keydown', handleCtrlC);
+        //  document.addEventListener('keydown', handleCtrlC);
 
 
 
@@ -123,7 +136,7 @@ const my_cmds = {
         if (stop) return;
         if(res.ok){
             const data = await res.json();
-              (async () => {
+            (async () => {
 
                 try {
 
@@ -146,10 +159,10 @@ const my_cmds = {
                         if(to_SHOW_ARR.length>=quick_show_count){                           break;}
                         else{
                             to_SHOW_ARR.push(this_result);
-                          //  console.log(`to_SHOW_ARR : ${to_SHOW_ARR.length}`)
+                            //  console.log(`to_SHOW_ARR : ${to_SHOW_ARR.length}`)
                             const posterUrl = this_result.poster_path !== null ? `https://image.tmdb.org/t/p/w500${this_result.poster_path}` : '';
 
-                           // console.log(`${this_result.title}`)
+                            // console.log(`${this_result.title}`)
 
                             if (to_SHOW_ARR.length  >= quick_show_count) { // Check both conditions for proper comma placement
                                 my_ARR_HTML += `${this_result.title}`;
@@ -157,9 +170,9 @@ const my_cmds = {
                                 my_ARR_HTML += `${this_result.title} , `;
 
                             }
-                          /*  if (xixi >= quick_show_count - 1) { // Stop after the 3rd item
-                                break;
-                            }*/
+                            /*  if (xixi >= quick_show_count - 1) { // Stop after the 3rd item
+                                  break;
+                              }*/
 
                         }
 
@@ -170,13 +183,14 @@ const my_cmds = {
                         delay: 50,
                         typing: true
                     })
-
+                    refresh_tooltips();
 
                 } catch (err_POP_MOVIES) {
                     await this.echo("NO DATA FOUND (check URL)", {
                         delay: 50,
                         typing: true
                     });
+                    refresh_tooltips();
                 }
 
             })();
@@ -216,15 +230,17 @@ const my_cmds = {
         return [
             '',
             '<white>Used libraries:</white>',
-            '* <a href="https://terminal.jcubic.pl">jQuery Terminal</a>',
-            '* <a href="https://github.com/patorjk/figlet.js/">Figlet.js</a>',
+            '* <a href="https://terminal.jcubic.pl" data-toggle="tooltip" data-html="true"     data-placement="bottom" title="jQuery">jQuery Terminal</a>',
+            '* <a href="https://github.com/patorjk/figlet.js/" data-toggle="tooltip" data-html="true"     data-placement="bottom" title="Figlet.js">Figlet.js</a>',
             // '* <a href="https://github.com/jcubic/isomorphic-lolcat">Isomorphic Lolcat</a>',
             // '* <a href="https://jokeapi.dev/">Joke API</a>',
             '',
 
-            'Credits <a href="https://iflix.ishopper.info/" target="_blank">iFlix</a>',
+            'Credits <a href="https://iflix.ishopper.info/" target="_blank" data-toggle="tooltip" data-html="true"     data-placement="bottom" title="iFlix">iFlix</a>',
             '',
         ].join('\n');
+
+        refresh_tooltips();
     },
     ls(dir = null) {
         if (dir) {
@@ -258,6 +274,7 @@ const my_cmds = {
             const dir = cwd.substring(2);
             this.echo(directories[dir].join('\n'));
         }
+        refresh_tooltips();
     },
     cd(dir = null) {
         if (dir === null || (dir === '..' && cwd !== root)) {
@@ -371,14 +388,14 @@ const directories = {
     ].flat(),
     skills:
 
-      [
+        [
             '',
             '<white>languages</white>',
 
             [
 
 
-                'Node.js <i class="iconify" data-icon="logos:nodejs" data-toggle="tooltip" data-html="true"  data-placement="top" title="Find a Movie"></i>',
+                '<span data-toggle="tooltip" data-html="true"     data-placement="bottom" title="Node.js">Node.js <i class="iconify" data-icon="logos:nodejs"  ></i></span>',
                 'JavaScript',
                 'Java',
                 'Perl',
@@ -435,7 +452,7 @@ figlet.defaults({ fontPath: 'https://unpkg.com/figlet/fonts/' });
 figlet.preloadFonts([font], ready);
 
 
-// for the DIV     #div_terminal
+// for the DIV   #div_terminal
 let term =  $('body').terminal(my_cmds, {
     greetings: false,
     checkArity: false,
