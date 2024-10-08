@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- jQuery -->
+    <!--<script src="https://ui-themez.smartinnovates.net/items/Gilb/assets/js/jquery-3.6.0.min.js"></script>-->
+    <script src="https://strouroul.github.io/portifolio/home/js/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Strouroul</title>
+    <style>
+        body {
+            /* Typography Declarations */
+            color: #222222;
+            font-size: 1em;
+            font-family: "Open Sans", "Helvetica Neue", sans-serif;
+        }
+
+        .content-footer,
+        .masthead-heading,
+        .masthead-intro {
+            text-align: center;
+        }
+
+        .masthead {
+            padding: 6em 0;
+            background-image: url('https://i.imgur.com/yGmrlyg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-top: solid 1em #FFCF33;
+        }
+
+        .masthead-intro {
+            /* Layout Declarations */
+            margin-bottom: 0.1em;
+            /* Typography Declarations */
+            font-family: "Gentium Book Basic", Georgia, serif;
+            font-size: 2em;
+        }
+
+        .masthead-heading {
+            /* Layout Declarations */
+            color: #d6d9e0;
+            margin-top: -0.2em;
+            /* Typography Declarations */
+            font-family: "Open Sans", "Helvetica Neue", sans-serif;
+            font-weight: bold;
+            font-size: 6em;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        .introduction-section,
+        .location-section,
+        .questions-section {
+            max-width: 38em;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2em;
+        }
+
+        .introduction-section > p,
+        .location-section > p,
+        .questions-section,
+        .content-footer > p {
+            /* Typography Declarations */
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+
+        .questions-section > h2 {
+            font-family: "Gentium Book Basic", Georgia, serif;
+            font-size: 1.2em;
+            font-weight: bold;
+            /* Layout */
+            margin: 2em 0 1em 0;
+        }
+
+        section > h1 {
+            margin-top: 2em;
+        }
+
+        .content-footer,
+        .masthead-heading,
+        .masthead-intro {
+            text-align: center;
+        }
+
+        .masthead {
+            padding: 6em 0;
+            /*background-image: url('https://i.imgur.com/yGmrlyg.jpg');*/
+            background-image: url('https://www.webhopers.com/wp-content/uploads/2022/02/website-design-company-in-yamuna-nagar.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-top: solid 1em #1d7578;
+        }
+
+        .masthead-intro {
+            margin-bottom: 0.1em;
+            font-family: "Gentium Book Basic", Georgia, serif;
+            font-size: 2em;
+            color: #d6d9e0;
+        }
+
+        .masthead-heading {
+            margin-top: -0.2em;
+            font-family: "Open Sans", "Helvetica Neue", sans-serif;
+            font-weight: bold;
+            font-size: 6em;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+        .introduction > p,
+        .location > p,
+        .content-footer > p {
+            /* Typography Declarations */
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+        h2 {
+            /* Typography Declarations */
+            font-family: "Gentium Book Basic", Georgia, serif;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .introduction-section,
+        .location-section,
+        .questions-section {
+            max-width: 38em;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2em;
+        }
+        .content-footer {
+            margin: 50px 0;
+            padding: 20px 0;
+            text-align: center;
+            background-color: #73A8C2;
+            text-decoration: none;
+        }
+        .social > li {
+            display: inline-block;
+            margin: 0 5px;
+        }
+        .content-footer > p {
+            color: #F7EDE1;
+        }
+        a {
+            font-weight: bold;
+            text-decoration: none;
+            color: #F1C863;
+        }
+
+        @media only screen and (max-width: 500px) {
+            .masthead {
+                padding: 3em 0;
+            }
+            .masthead-heading {
+                font-size: 3em;
+            }
+            .content-footer {
+                padding: 2em 2.5em;
+            }
+        }
+    </style>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+ -->
+    <link href="https://strouroul.github.io/iRide/assets/bootstrap/5.3.0/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/all.css">
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/regular.css"
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/solid.css"
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/brands.css"
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/light.css"
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/duotone.css"
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/thin.css"
+          crossorigin="anonymous"/>
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css'>
+
+
+    <script src="https://strouroul.github.io/iRide/assets/bootstrap/5.3.0/bootstrap.bundle.min.js"></script>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+    <style>
+        .animated-progress {
+            width: 300px;
+            height: 30px;
+            border-radius: 5px;
+            margin: 20px 10px;
+            border: 1px solid rgb(189, 113, 113);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .animated-progress span {
+            height: 100%;
+            display: block;
+            width: 0;
+            color: rgb(255, 251, 251);
+            line-height: 30px;
+            position: absolute;
+            text-align: end;
+            padding-right: 5px;
+        }
+
+        .progress-blue span {
+            background-color: blue;
+        }
+        .progress-green span {
+            background-color: green;
+        }
+        .progress-purple span {
+            background-color: indigo;
+        }
+        .progress-red span {
+            background-color: red;
+        }
+    </style>
+
+
+    <!-- Include the library. -->
+    <script
+            src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js">
+    </script>
+
+    <!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
+    />
+</head>
+<body>
+<script src="https://strouroul.github.io/portifolio/home/js/iconify.min.js"></script>
+<header class='masthead'>
+    <p class='masthead-intro' style="   ">Hi I'm</p>
+    <h1 class='masthead-heading'>Haytham!</h1>
+</header>
+<section class="introduction-section">
+    <h1>Introduction</h1>
+    <p>I am a Web Developer, part time trader, and a CEO for
+        <a href="https://iride.ishopper.info">iRide</a> ,
+        <a href="https://iflix.ishopper.info">iFlix</a>
+        and <a href="https://www.ishopper.info">iShopper</a>
+    </p>
+    <p>I love the internet, technology, and building beautiful things.</p>
+</section>
+<section class="location-section">
+    <h1>Where I'm From</h1>
+    <p>I'm originally from Egypt <span class="flag-icon flag-icon-eg" data-toggle="tooltip" data-html="true"
+                                       title="Egypt"></span>, moved to Ottawa, Ontario  <span class="flag-icon flag-icon-ca" data-toggle="tooltip" data-html="true"
+                                                  title="Canada"></span>  , and now back in Cairo <span class="flag-icon flag-icon-eg" data-toggle="tooltip" data-html="true"
+                                                                                                   title="Egypt"></span></p>
+</section>
+<section class="questions-section">
+    <h1>More About Me</h1>
+    <h2>What are your favorite hobbies?</h2>
+    <p>My favorite hobby is building things on the internet like ecommerce sites
+        <img src="https://thumbs.dreamstime.com/b/ecommerce-icon-vector-isolated-white-background-your-web-mobile-app-design-ecommerce-logo-concept-ecommerce-icon-vector-133828682.jpg" alt="" data-toggle="tooltip" data-html="true"
+             title="E-Commerce" style="width:25px;height:25px;">
+        ,
+        trading bots ( <i class="iconify" data-icon="fa6-brands:bots" style="width:25px;height:25px;"
+                          data-toggle="tooltip" data-html="true"
+                          title="Trading Crypto BOTS"></i>
+        <i class="iconify" data-icon="simple-icons:blockchaindotcom" style="width:25px;height:25px;" data-toggle="tooltip" data-html="true"
+           title="BlockChain"></i><i class="iconify" data-icon="cryptocurrency-color:usdt" style="width:15px;height:15px;" data-toggle="tooltip" data-html="true"
+                                     title="USDT"></i>
+        <i class="iconify" data-icon="cryptocurrency-color:eth" style="width:25px;height:25px;" data-toggle="tooltip" data-html="true"
+           title="Etherum"></i>
+        <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1762.png" alt="" data-toggle="tooltip" data-html="true"
+             title="ERGO" style="width:25px;height:25px;">)
+        , chat bots ( <i class="iconify" data-icon="logos:messenger" style="width:25px;height:25px;" data-toggle="tooltip" data-html="true"
+                         title="Messenger"></i>
+        <i class="iconify" data-icon="logos:whatsapp-icon" style="width:25px;height:25px;" data-toggle="tooltip" data-html="true"
+           title="WhatsApp"></i>
+
+        )
+        , social media website,ERP System,
+        and all kinds of new ideas (ex : encrypted js for the client side    <i class="iconify" data-icon="openmoji:javascript" data-toggle="tooltip" data-html="true"
+                                                                                title="Javascript"></i> ,
+        Video Chat : Front-end :<i class="iconify" data-icon="logos:html-5" data-toggle="tooltip" data-html="true"
+                                   title="HTML5"></i>
+        <i class="iconify" data-icon="logos:css-3"  data-toggle="tooltip" data-html="true"
+           title="CSS" ></i>
+        <i class="iconify" data-icon="openmoji:javascript" data-toggle="tooltip" data-html="true"
+           title="Javascript"></i>
+        <i class="iconify" data-icon="logos:webrtc" data-toggle="tooltip" data-html="true"
+           title="WebRTC"></i> / Back-Ends : <img src="https://img.icons8.com/?size=80&id=FBycNmdwUQz1&format=png"
+                                                  alt="" data-toggle="tooltip" data-html="true"
+                                                  title="Java, JSP" style="display: inline-block;width: 25px;height: 25px;">  <i class="iconify" data-icon="devicon:nodejs-wordmark"  data-toggle="tooltip" data-html="true"
+                                                                                                                                 title="Node.js" style="display: inline-block;width: 25px;height: 25px;"></i>
+        <i class="iconify" data-icon="skill-icons:perl" style="width:25px;height:25px;"
+           data-toggle="tooltip" data-html="true"
+           title="Perl" ></i> ).</p>
+    <h2>What's your dream job?</h2>
+    <p>My dream job is similar to my current job except I would like to be building buildings instead of software.</p>
+    <h2>Where do you live?</h2>
+    <p>I live in Cairo close to the pyramids  <i class="iconify" data-icon="game-icons:egyptian-pyramids" data-toggle="tooltip" data-html="true"
+                                                 title="Pyramids of Egypt" style="width: 40px;height: 40px;"></i>.</p>
+    <h2>Why do you want to be a web developer?</h2>
+    <p>Because programming is awesome and programming for the internet is even more awesome.</p>
+
+
+    <h2>  Skills :</h2>
+
+
+    <!--Start Animated Progress Bar-->
+
+
+    <i class="iconify" data-icon="devicon:nodejs-wordmark"  data-toggle="tooltip" data-html="true"
+       title="Node.js" style="display: inline-block;width: 25px;height: 25px;"></i>
+    <i class="iconify" data-icon="skill-icons:perl" style="width:35px;height:35px;"
+       data-toggle="tooltip" data-html="true"
+       title="Perl" ></i>
+    <div class="animated-progress progress-green">
+        <span data-progress="95"></span>
+    </div>
+
+
+    <i class="iconify" data-icon="devicon:html5"  data-toggle="tooltip" data-html="true"
+       title="HTML 5" style="display: inline-block;width: 25px;height: 25px;"></i>
+    <i class="iconify" data-icon="logos:css-3"  data-toggle="tooltip" data-html="true"
+       title="CSS" style="display: inline-block;width: 25px;height: 25px;"></i>
+    <i class="iconify" data-icon="openmoji:javascript"  data-toggle="tooltip" data-html="true"
+       title="JavaScript" style="display: inline-block;width: 25px;height: 25px;"></i>
+    <i class="iconify" data-icon="logos:webrtc" data-toggle="tooltip" data-html="true"
+       data-placement="top" title="WebRTC" style="width: 25px;height: 25px;"></i>
+
+    <div class="animated-progress progress-green">
+        <span data-progress="95"></span>
+    </div>
+
+    <img src="https://img.icons8.com/?size=80&id=FBycNmdwUQz1&format=png"
+         alt="" data-toggle="tooltip" data-html="true"
+         title="Java, JSP" style="display: inline-block;width: 25px;height: 25px;">
+    <div class="animated-progress progress-blue">
+        <span data-progress="90"></span>
+    </div>
+
+
+
+
+
+    <i class="iconify" data-icon="cib:dot-net" data-toggle="tooltip" data-html="true"
+       data-placement="top" title=".NET Framework" style="width: 25px;height: 25px;"></i>
+
+    <i class="iconify" data-icon="vscode-icons:file-type-vbproj" data-toggle="tooltip" data-html="true"
+       data-placement="top" title="Visual Basic .NET" style="width: 25px;height: 25px;"></i>
+    <i class="iconify" data-icon="vscode-icons:file-type-csharp2" data-toggle="tooltip" data-html="true"
+       data-placement="top" title="C# .NET" style="width: 25px;height: 25px;"></i>
+
+    <i class="iconify" data-icon="vscode-icons:file-type-asp" data-toggle="tooltip" data-html="true"
+       data-placement="top" title="Active Server Pages" style="width: 25px;height: 25px;"></i>
+
+
+
+    <div class="animated-progress progress-purple">
+        <span data-progress="85"></span>
+    </div>
+
+
+
+    <i class="iconify" data-icon="logos:php" data-toggle="tooltip" data-html="true"
+       data-placement="top" title="PHP" style="width: 25px;height: 25px;"></i>
+
+
+
+    <div class="animated-progress progress-purple">
+        <span data-progress="75"></span>
+    </div>
+
+
+
+    <img src="https://strouroul.github.io/images/web_crawler_no_bg.png" style="width: 40px;height: 40px;" data-toggle="tooltip" data-html="true"
+         title="Web Crawler" />
+    <i class="iconify" data-icon="fa6-brands:bots" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
+       title="Trading Crypto BOTS"></i>
+    <div class="animated-progress progress-red">
+        <span data-progress="70"></span>
+    </div>
+
+    <!--
+
+       <div class="animated-progress progress-green">
+          <span data-progress="95"></span>
+      </div>
+      <div class="animated-progress progress-purple">
+          <span data-progress="70"></span>
+      </div>
+      <div class="animated-progress progress-red">
+          <span data-progress="85"></span>
+      </div>-->
+    <!--End Animated Progress Bar-->
+
+
+
+
+
+
+    <!-- Prepare a container for your calendar. -->
+    Github Chart : <div class="calendar">
+    <!-- Loading stuff -->
+    Loading the data just for you.
+</div>
+
+    <script>
+        // GitHubCalendar(".calendar", "Strouroul");
+
+        // or enable responsive functionality:
+        GitHubCalendar(".calendar", "Strouroul",
+            { responsive: true,global_stats :true,tooltips :true }
+        );
+
+        // Use a proxy
+        /*  GitHubCalendar(".calendar", "Strouroul", {
+              proxy (username) {
+                  return fetch(`https://your-proxy.com/github?user=${username}`)
+              }
+          }).then(r => r.text())*/
+    </script>
+
+
+    Github Chart : <img src="https://ghchart.rshah.org/Strouroul" alt="Strouroul's Github chart" />
+    <div>
+        Github Build : <!--<img src="https://github.com/Strouroul/iRide/actions/workflows/node.js.yml/badge.svg">--><img src="https://strouroul.github.io/assets/images/passing_badge.svg">
+        <BR>Gitlab Build : <!--<img src="https://ishopper.info:9898/gitlab/strouroul/iRide/badges/main/pipeline.svg">--><img src="https://strouroul.github.io/assets/images/passing_badge.svg">
+        <BR>
+        <a href="https://strouroul.github.io/portifolio/home.html">About Me</a><BR>
+
+
+        <!--
+         <img src="https://strouroul.github.io/images/web_crawler_no_bg.png" style="width: 40px;height: 40px;" data-toggle="tooltip" data-html="true"
+              title="Web Crawler">
+         <i class="iconify" data-icon="fluent:movies-and-tv-24-regular" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
+            title="Movies & TV"></i>
+         <i class="iconify" data-icon="icon-park:music" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
+            title="Music & MP3s"></i>
+        -->
+
+        <HR>
+        <span>
+                <a href="/sitemap_github.xml"> <img src="https://cdn-icons-png.flaticon.com/128/11104/11104255.png" alt="" data-toggle="tooltip" data-html="true"
+                                                    title="Github" style="width:25px;height: 25px;"> Index Sitemap</a> |  <a href="/sitemap_exchange.xml"> <i class="iconify" data-icon="cryptocurrency-color:usdt" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
+                                                                                                                                                              title="USDT"></i>
+                                                        <i class="iconify" data-icon="cryptocurrency-color:eth" style="width:40px;height:40px;" data-toggle="tooltip" data-html="true"
+                                                           title="Etherum"></i> Exchange Sitemap</a>  |  <a href="/portifolio/sitemap_portfolio.xml"> <i class="iconify" data-icon="dashicons:portfolio" style="width:25px;height:25px;" data-toggle="tooltip" data-html="true"
+                                                                                                                                                         title="Portfolio"></i> Portfolio Sitemap</a>
+</span>
+
+
+
+
+
+        <script>
+
+
+            //   let my_status=        checkConnection("ishopper.info",443)
+            //  console.log(JSON.stringify(my_status))
+
+            let my_services = {
+                smtp: {
+                    port: 25,
+                    host: "mail.ishopper.info",
+                    desc: "SMTP Server",
+                    logo: '<i class="fa-solid fa-at"></i>'
+                },
+                pop3: {
+                    port: 110,
+                    host: "mail.ishopper.info",
+                    desc: "POP3 Server",
+                    logo: '<img src="/assets/new_taxi_layout/pop3.jpg" style="width: 25px;height: 25px;">'
+                },
+                imap: {
+                    port: 143,
+                    host: "mail.ishopper.info",
+                    desc: "IMAP Server",
+                    logo: '<i class="fa-solid fa-envelope"></i>'
+                },
+                web: {
+                    url: "http://ishopper.info",
+                    port: 80,
+                    host: "ishopper.info",
+                    desc: "HTTP Server",
+                    logo: '<img src="/assets/new_taxi_layout/webserver.png" style="width: 25px;height: 25px;"> '
+                },
+                web_ssl: {
+                    url: "https://ishopper.info",
+                    port: 443,
+                    host: "ishopper.info",
+                    desc: "HTTPS Server",
+                    logo: '<i class="fa-brands fa-expeditedssl"></i>'
+                },
+
+                ws: {
+                    port: 3000,
+                    host: "ishopper.info",
+                    desc: "WS Server",
+                    logo: '<img src="/assets/new_taxi_layout/ws_network.png" style="width: 25px;height: 25px;"> '
+                },
+                ws_ssl: {
+                    port: 9898,
+                    host: "ishopper.info",
+                    desc: "WS w/ SSL Server",
+                    logo: '<i class="fa-brands fa-expeditedssl"></i>'
+                },
+
+
+                mysql: {
+                    port: 3306,
+                    host: "ishopper.info",
+                    desc: "MySQL Server",
+                    logo: '<img src="/assets/new_taxi_layout/mysql.png" style="width: 25px;height: 25px;">'
+                },
+                youtrack: {
+                    url: "https://iride.youtrack.cloud",
+                    port: 443,
+                    host: "iride.youtrack.cloud",
+                    desc: "YOUTRACK Server",
+                    logo: '<img src="/assets/new_taxi_layout/youtrack-svgrepo-com.svg" style="width: 25px;height: 25px;">'
+                },
+                gitlab: {
+                    url: "https://ishopper.info/gitlab",
+                    port: 443,
+                    host: "gitlab.ishopper.info",
+                    desc: "GITLAB Server",
+                    logo: '<i class="fa-brands fa-gitlab"></i>'
+                },
+            };
+
+            getStatus();
+            async function getStatus() {
+                try {
+                    let my_status = await checkConnection("ishopper.info", 443);
+                    console.log(JSON.stringify(my_status));
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+
+            function checkConnection(host, port, timeout) {
+                timeout = timeout || 10000; // default of 10 seconds
+
+                return new Promise(async function (resolve, reject) {
+                    var timer = setTimeout(function () {
+                        reject({status: "Offline", time: new Date().getTime(),reason:"Timeout"});
+                    }, timeout);
+
+                    let my_stats={};
+
+                    // Prepare the fetch promises
+                    const fetchHttps = fetch(`https://${host}:${port}`)
+                        .then(response => {
+                            if (response.ok) {
+                                return {status: "Online", time: new Date().getTime(), type: "HTTPS"};
+                            } else {
+                                return {status: "Offline", time: new Date().getTime(), type: "HTTPS"};
+                            }
+                        })
+                        .catch(error => {
+                            return {status: "Error", time: new Date().getTime(), type: "HTTPS", error};
+                        });
+
+
+                    const fetchWss =await checkWebSocketConnection(host, port)
+                        .then(status => {console.log(`WebSocket Status: ${status}`)
+                            return {status: "Online", time: new Date().getTime(), type: "WS"};
+                        })
+                        .catch(error => {console.log(`WebSocket Error: ${error}`)
+                            return {status: "Error", time: new Date().getTime(), type: "WS", error};
+                        });
+
+                    // Wait for all fetches to complete
+                    Promise.allSettled([fetchHttps, fetchWss])
+                        .then(results => {
+                            clearTimeout(timer); // Clear the timeout upon completion
+                            my_stats.https = results[0]   ;  //.value || results[0].reason;
+                            my_stats.wss = results[1];  //.value || results[1].reason;
+                            resolve(my_stats); // Resolve with all stats
+                        })
+                        .catch(error => {
+                            clearTimeout(timer); // It's good practice to clear the timer in catch too, but in this case, it's not strictly necessary since Promise.allSettled doesn't reject.
+                            reject(error);
+                        });
+                });
+            }
+
+
+
+            function checkWebSocketConnection(host, port, timeout = 5000) {
+                return new Promise((resolve, reject) => {
+                    // Construct WebSocket URL
+                    const wsUrl = `wss://${host}`;
+                    const ws = new WebSocket(wsUrl);
+
+                    // Set up a timer to reject the promise if connection takes too long
+                    const timer = setTimeout(() => {
+                        ws.close(); // Close the connection attempt
+                        reject('Timeout');
+                    }, timeout);
+
+                    ws.onopen = () => {
+                        clearTimeout(timer); // Clear the timeout on successful connection
+                        ws.close(); // Close the connection as we just wanted to check if it's possible
+                        // console.log(`TEST OPEN DONE`)
+                        resolve('Online'); // Resolve promise with success
+                    };
+
+                    ws.onerror = (error) => {
+                        //   clearTimeout(timer); // Clear the timeout on error
+                        console.log(`TEST ERROR DONE`)
+                        reject('Offline'); // Reject promise as connection failed
+                    };
+
+                    // Note: You might not need to handle ws.onclose depending on your use case
+                    ws.onclose = (event) => {
+                        // Handle close event if needed
+                        // console.log(`TEST CLOSE DONE`)
+                    };
+                });
+            }
+
+
+
+
+        </script>
+    </div>
+</section>
+
+<footer class="content-footer">
+    <p>Say hi to me on these social networks:</p>
+    <ul class="social">
+        <li><a class="css-is-deranged" href="https://www.linkedin.com/company/iridequick" target="_blank"><i
+                class="fa-brands fa-linkedin" ></i>LinkedIn</a></li>
+
+        <li><a class="css-is-deranged" href="https://github.com/Strouroul/" target="_blank"><i
+                class="fa-brands fa-github" ></i>GitHub</a></li>
+        <li><a class="css-is-deranged" href="https://www.facebook.com/iRideQuicker" target="_blank"><i class="fa-brands fa-facebook"
+                                                                                                       data-toggle="tooltip" title="FB Status"></i> Facebook</a></li>
+        <li><a class="css-is-deranged" href="https://www.google.com/search?q=iRide" target="_blank"><i class="fa-brands fa-google"></i> Google</a></li>
+    </ul>
+
+    Services Status <a href="https://ishopperstats.glitch.me/" target="_blank">iShopper Stats</a>
+</footer>
+
+
+
+<script>
+    $(".animated-progress span").each(function () {
+        $(this).animate(
+            {
+                width: $(this).attr("data-progress") + "%",
+            },
+            1000
+        );
+        $(this).text($(this).attr("data-progress") + "%");
+    });
+</script>
+<script>
+    try{
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+
+            /* try{
+                 get_all_users_online();
+             }
+             catch(e_LIST_ONLINE){
+                 console.log(`e_LIST_ONLINE : ${e_LIST_ONLINE}`)
+             }*/
+
+        });
+    }
+    catch(e_LISTER){
+        console.log(`e_LISTER : ${e_LISTER}`)
+    }
+</script>
+
+
+
+</body>
+</html>
