@@ -41,6 +41,12 @@ let status_HTML=`
     </div>
 </div>`;
 
+
+
+
+let modal_title_header_for_contact_html="Thank You for contacting Haytham Meiz © 2024";
+
+
 let contact_firstname = document.getElementById("firstname");
 let contact_lastname = document.getElementById("lastname");
 let contact_email = document.getElementById("email");
@@ -104,7 +110,7 @@ async function postAjax_ASYNC(url, data, success) {
 
 let last_email_sent=0;
 function send_contact_info(my_btn) {
-    var myMAG = 'https://iride.ishopper.info/info/contactus';
+    var myMAG = 'https://broadcast.ishopper.info/info/contactus';
     //'magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10&dn=Sintel&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F&xs=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2Fsintel.torrent';
     var myJSON =null;
 
@@ -217,7 +223,7 @@ function send_contact_info(my_btn) {
             document.getElementById("modal_body").style.color="green";
 
             document.getElementById("modal_title_header").style.backgroundColor ='blue';
-            modal_title_header.innerHTML = "Thank You for contacting iRide © 2023";
+            modal_title_header.innerHTML = modal_title_header_for_contact_html;//"Thank You for contacting Haytham Meiz © 2024";
 
 
             modal_body.innerHTML =  "loading...<BR>Please Wait for Confirmation ... <span class=\"loader\"></span>";
@@ -242,7 +248,7 @@ function send_contact_info(my_btn) {
                         if(this_JSON.status===true||this_JSON.status==="success"){status_found=true;}
                     }
 
-                    document.getElementById("modal_title_header").innerHTML = "Thank You for contacting iRide © 2023";
+                    document.getElementById("modal_title_header").innerHTML =modal_title_header_for_contact_html; // "Thank You for contacting Haytham Meiz © 2024";
 
 
 

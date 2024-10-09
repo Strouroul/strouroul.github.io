@@ -1734,6 +1734,7 @@ body.loaded {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    max-height: 300px; /* Set a maximum height for the box */
 
 }
 
