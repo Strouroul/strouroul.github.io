@@ -5778,6 +5778,7 @@ img.left {
     }
     .left-area {
         display: block !important;
+        max-height:300px;
     }
     .left-area .menu-links {
         margin-bottom: 15px;
