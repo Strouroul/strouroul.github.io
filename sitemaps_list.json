@@ -12,6 +12,11 @@
       "icon": "<i class=\"fa-brands fa-github\"></i>"
     },
     {
+      "name": "iMeet",
+      "path": "/sitemap_imeet.xml",
+      "icon": "<i class=\"fa-sharp-duotone fa-solid fa-handshake\"></i>"
+    },
+    {
       "name": "iRide",
       "path": "/sitemap_iride.xml",
       "icon": "<i class=\"fa-duotone fa-car-side\"></i>"

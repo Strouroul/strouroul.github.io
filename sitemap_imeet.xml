@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="https://imeet.glitch.me/sitemaps_xsl.xsl"?>
+<sitemapindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd"
+              xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+   <loc>https://imeet.ishopper.info/user/logout</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>1.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/user/double_user_logout_to_login</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>2.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/dashboard/user/history</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>3.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/dashboard/user/last_activity</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>4.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/meeting/create</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>5.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/meeting/join</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>6.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/meeting/enter</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>7.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/meeting/viewer_test</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>8.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/meeting/broadcast_test</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>9.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/user/messages</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>10.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/apply/teacher</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>11.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/apply/my_classes</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>12.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/apply/get_class</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>13.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/apply/success</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>14.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/push_events/candidates_client_stream</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>15.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/push_events/candidates_broadcast_stream</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>16.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/home</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>17.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>18.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/about</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>19.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/special_class</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>20.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/admission</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>21.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/test_alpine</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>22.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/old_admission</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>23.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/terms-conditions</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>24.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/classes</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>25.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/single-class</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>26.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/teachers</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>27.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/contact</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>28.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/yourvoicematter</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>29.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/page_comment</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>30.0</priority>
+</url>
+<url>
+   <loc>https://imeet.ishopper.info/mail/unsubscribe</loc>
+   <lastmod>1/20/2025, 1:15:52 PM</lastmod>
+   <changefreq>hourly</changefreq>
+   <priority>31.0</priority>
+</url>
+</sitemapindex>
