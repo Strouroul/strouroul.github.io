@@ -170,6 +170,29 @@
       "url": "https://iride.ishopper.info",
 
       "website": "<a href=\"https://ishopper.info:9898/LOGIN/final/index.html\" target=\"_blank\">iShopper</a>"
+    },
+
+
+    {
+      "id": "imeet",
+      "name": "iMeet",
+      "bg_img": "https://media.istockphoto.com/id/1194145159/vector/tourist-with-a-suitcase-using-a-ride-hailing-app.jpg?s=612x612&w=0&k=20&c=B7-eu48qIl8D3AZJunlXoM2_VIxc3u5Lqk_WgS6hvxk=",
+
+      "status": {
+        "node.js": "working",
+        "java": "still developing"
+      } ,
+      "logo": "https://strouroul.github.io/images/imeet_logo.png",
+      "pic_1": "https://strouroul.github.io/images/imeet_logo.png",
+      "pic_2": "https://strouroul.github.io/images/imeet_logo.png",
+      "description": "<p>Want to learn a new language or anything else you want ? Like Dancing , Cooking ,... ? Welcome to iMeet where you can learn anything at your fingertips.</p>",
+      "description_extended": "<h6 class=\"mb-15 line-height-28\">iRide, a leading ride-hailing and delivery service in Cairo, Egypt, offers unparalleled safety, affordability, and convenience. By harnessing cutting-edge technologies, iRide ensures a secure, comfortable, and efficient experience for all its users.</h6>\n                                        <p>iRide leverages advanced GPS tracking, real-time ride monitoring, and secure in-app payment methods to ensure the safety and security of every trip. Its innovative features, such as immediate SOS alerts and trip sharing capabilities, provide peace of mind to passengers. iRide is committed to delivering high-quality services at the lowest rates in the market, coupled with the lowest service fees for drivers, fostering a sustainable and supportive community for its workforce.</p>\n                                        <ul class=\"rest list-arrow mt-50\">\n                                            <li>\n        <span class=\"icon\">\n            <svg width=\"100%\" height=\"100%\" viewBox=\"0 0 9 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M7.71108 3.78684L8.22361 4.29813L7.71263 4.80992L4.64672 7.87832L4.13433 7.36688L6.87531 4.62335H1.11181H0.750039H0.388177L0.382812 0.718232H1.10645L1.11082 3.90005H6.80113L4.12591 1.22972L4.63689 0.718262L7.71108 3.78684Z\" fill=\"#fff\"></path>\n            </svg>\n        </span>\n                                                <h6 class=\"inline fz-18\">Enhanced security with real-time GPS tracking and SOS alerts.</h6>\n                                            </li>\n                                            <li class=\"mt-20\">\n        <span class=\"icon\">\n            <svg width=\"100%\" height=\"100%\" viewBox=\"0 0 9 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M7.71108 3.78684L8.22361 4.29813L7.71263 4.80992L4.64672 7.87832L4.13433 7.36688L6.87531 4.62335H1.11181H0.750039H0.388177L0.382812 0.718232H1.10645L1.11082 3.90005H6.80113L4.12591 1.22972L4.63689 0.718262L7.71108 3.78684Z\" fill=\"#fff\"></path>\n            </svg>\n        </span>\n                                                <h6 class=\"inline fz-18\">Affordable rates and low service fees for a cost-effective ride every time.</h6>\n                                            </li>\n                                            <li class=\"mt-20\">\n        <span class=\"icon\">\n            <svg width=\"100%\" height=\"100%\" viewBox=\"0 0 9 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M7.71108 3.78684L8.22361 4.29813L7.71263 4.80992L4.64672 7.87832L4.13433 7.36688L6.87531 4.62335H1.11181H0.750039H0.388177L0.382812 0.718232H1.10645L1.11082 3.90005H6.80113L4.12591 1.22972L4.63689 0.718262L7.71108 3.78684Z\" fill=\"#fff\"></path>\n            </svg>\n        </span>\n                                                <h6 class=\"inline fz-18\">State-of-the-art technology for a smooth and secure ride experience.</h6>\n                                            </li>\n                                            <li class=\"mt-20\">\n        <span class=\"icon\">\n            <svg width=\"100%\" height=\"100%\" viewBox=\"0 0 9 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M7.71108 3.78684L8.22361 4.29813L7.71263 4.80992L4.64672 7.87832L4.13433 7.36688L6.87531 4.62335H1.11181H0.750039H0.388177L0.382812 0.718232H1.10645L1.11082 3.90005H6.80113L4.12591 1.22972L4.63689 0.718262L7.71108 3.78684Z\" fill=\"#fff\"></path>\n            </svg>\n        </span>\n <h6 class=\"inline fz-18\">Commitment to customer satisfaction with 24/7 support and responsive service.</h6>\n </li>\n </ul>",
+      "date": "6, August 2023",
+      "categories": "Ride-Hailing / Delivery",
+      "client": "iRide",
+      "url": "https://imeet.glitch.me",
+
+      "website": "<a href=\"https://imeet.glitch.me\" target=\"_blank\">iMeet</a>"
     }
 
   ]
