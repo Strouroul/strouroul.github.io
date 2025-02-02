@@ -1,0 +1,77 @@
+html,body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,*:after, *:before{
+  margin: inherit;
+  padding: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#container {
+  width: 600px;
+  padding: 30px;
+  
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table thead tr,
+table tfoot tr{
+  background: rgba(0,0,0,0.2);  
+}
+
+table tbody tr {
+  background: rgba(0,0,0,0.08);  
+}
+
+table tbody tr:hover{
+    background: rgba(0,0,0,0.05);
+}
+
+table tr>th {
+  text-align: left;
+}
+
+table tr>th, tr>td {
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 10px 15px;
+  cursor:pointer;
+  
+}
+
+#pagination {
+  display: block;
+  padding:10px;
+  text-align:center;
+}
+
+#pagination > a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-right: 0;
+  background: rgba(0,0,0,0.08);
+  color: #000;
+  font-weight: 600;
+}
+
+#pagination > a:last-child {
+  border-right: 1px solid rgba(0,0,0,0.2);
+}
+
+#pagination > a:hover {
+  background: rgba(0,0,0,0.03);
+  color: #FB3C00;
+}
