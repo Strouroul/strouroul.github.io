@@ -631,7 +631,7 @@ a.scroll-top i {
 .slider-area .home-slider .single-slider::before {
   position: absolute;
   content: "";
-  background:url(https://strouroul.github.io/LAYOUT/edvi/images/home-overly.png);  /* url(../images/home-overly.png);*/
+  background:url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/home-overly.png);  /* url(../images/home-overly.png);*/
   width: 100%;
   height: 100%;
   top: 0;
@@ -730,20 +730,20 @@ a.scroll-top i {
 
 
 .slider-area .single-slider-bg-1 {
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/home-bg.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/home-bg.png);
 }
 
 .slider-area .single-slider-bg-2 {
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/home-bg2.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/home-bg2.png);
 }
 
 .slider-area .single-slider-bg-3 {
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/home-bg3.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/home-bg3.png);
 }
 
 
 .slider-area .single-slider-bg-4 {
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/home-bg4.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/home-bg4.png);
 }
 
 
@@ -756,7 +756,7 @@ a.scroll-top i {
   position: relative;
   box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.07);
   padding: 50px 20px;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/servicebg.png) center center;
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/servicebg.png) center center;
   border-radius: 10px;
   transition: 0.3s;
   background-position: center center;
@@ -942,7 +942,7 @@ a.scroll-top i {
   overflow: hidden;
 }
 .home-admission .single-addmission {
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/bg.png) no-repeat;
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/bg.png) no-repeat;
   background-position: center center;
   position: relative;
   height: 100%;
@@ -1247,7 +1247,7 @@ a.scroll-top i {
   padding-bottom: 75px;
 }
 .course-slider-area .course-slider {
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/slider.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/slider.png);
   background-size: cover;
   width: 100%;
   padding: 30px;
@@ -1501,7 +1501,7 @@ a.scroll-top i {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/about-bg.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/about-bg.png);
   background-attachment: fixed;
   height: 400px;
 }
@@ -1510,7 +1510,7 @@ a.scroll-top i {
   content: "";
   width: 100%;
   height: 100%;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/banner-overly.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/banner-overly.png);
   left: 0;
   top: 0;
   background-size: cover;
@@ -1731,7 +1731,7 @@ a.scroll-top i {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/classes-details.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/classes-details.png);
   height: 400px;
   background-size: cover;
 }
@@ -1740,7 +1740,7 @@ a.scroll-top i {
   content: "";
   width: 100%;
   height: 100%;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/banner-overly.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/banner-overly.png);
   left: 0;
   top: 0;
   background-size: cover;
@@ -1751,7 +1751,7 @@ a.scroll-top i {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/class.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/class.png);
   height: 400px;
   background-size: cover;
   background-position: center center;
@@ -1762,7 +1762,7 @@ a.scroll-top i {
   content: "";
   width: 100%;
   height: 100%;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/banner-overly.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/banner-overly.png);
   left: 0;
   top: 0;
   background-size: cover;
@@ -1850,7 +1850,7 @@ a.scroll-top i {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/special-Courses.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/special-Courses.png);
   height: 400px;
   background-size: cover;
 }
@@ -1859,7 +1859,7 @@ a.scroll-top i {
   content: "";
   width: 100%;
   height: 100%;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/banner-overly.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/banner-overly.png);
   left: 0;
   top: 0;
   background-size: cover;
@@ -2123,7 +2123,7 @@ a.scroll-top i {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/events-bg.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/events-bg.png);
   height: 400px;
   background-size: cover;
   background-position: center center;
@@ -2133,7 +2133,7 @@ a.scroll-top i {
   content: "";
   width: 100%;
   height: 100%;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/banner-overly.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/banner-overly.png);
   left: 0;
   top: 0;
   background-size: cover;
@@ -2215,7 +2215,7 @@ a.scroll-top i {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/events-bg1.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/events-bg1.png);
   height: 400px;
   background-size: cover;
 }
@@ -2224,7 +2224,7 @@ a.scroll-top i {
   content: "";
   width: 100%;
   height: 100%;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/banner-overly.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/banner-overly.png);
   left: 0;
   top: 0;
   background-size: cover;
@@ -2431,7 +2431,7 @@ a.scroll-top i {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/news.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/news.png);
   height: 400px;
   background-size: cover;
   background-position: center center;
@@ -2442,7 +2442,7 @@ a.scroll-top i {
   content: "";
   width: 100%;
   height: 100%;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/banner-overly.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/banner-overly.png);
   left: 0;
   top: 0;
   background-size: cover;
@@ -2453,7 +2453,7 @@ a.scroll-top i {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/news-bg.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/news-bg.png);
   height: 400px;
   background-size: cover;
   background-attachment: fixed;
@@ -2464,7 +2464,7 @@ a.scroll-top i {
   content: "";
   width: 100%;
   height: 100%;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/banner-overly.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/banner-overly.png);
   left: 0;
   top: 0;
   background-size: cover;
@@ -2831,7 +2831,7 @@ a.scroll-top i {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/teacher-bg.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/teacher-bg.png);
   height: 400px;
   background-size: cover;
   background-attachment: fixed;
@@ -2842,7 +2842,7 @@ a.scroll-top i {
   content: "";
   width: 100%;
   height: 100%;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/banner-overly.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/banner-overly.png);
   left: 0;
   top: 0;
   background-size: cover;
@@ -2853,7 +2853,7 @@ a.scroll-top i {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/teacher-bg2.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/teacher-bg2.png);
   height: 400px;
   background-attachment: fixed;
   background-size: cover;
@@ -2865,7 +2865,7 @@ a.scroll-top i {
   content: "";
   width: 100%;
   height: 100%;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/banner-overly.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/banner-overly.png);
   left: 0;
   top: 0;
   background-size: cover;
@@ -3122,7 +3122,7 @@ a.scroll-top i {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/signup.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/signup.png);
   height: 400px;
   background-attachment: fixed;
   background-size: cover;
@@ -3132,7 +3132,7 @@ a.scroll-top i {
   content: "";
   width: 100%;
   height: 100%;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/banner-overly.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/banner-overly.png);
   left: 0;
   top: 0;
   background-size: cover;
@@ -3203,7 +3203,7 @@ a.scroll-top i {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/terms.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/terms.png);
   height: 400px;
   background-attachment: fixed;
   background-size: cover;
@@ -3217,7 +3217,7 @@ a.scroll-top i {
   content: "";
   width: 100%;
   height: 100%;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/banner-overly.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/banner-overly.png);
   left: 0;
   top: 0;
   background-size: cover;
@@ -3308,7 +3308,7 @@ a.scroll-top i {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/testimonials.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/testimonials.png);
   height: 400px;
   background-attachment: fixed;
   background-size: cover;
@@ -3319,7 +3319,7 @@ a.scroll-top i {
   content: "";
   width: 100%;
   height: 100%;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/banner-overly.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/banner-overly.png);
   left: 0;
   top: 0;
   background-size: cover;
@@ -3432,7 +3432,7 @@ a.scroll-top i {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/price-bg.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/price-bg.png);
   height: 400px;
   background-attachment: fixed;
   background-size: cover;
@@ -3442,7 +3442,7 @@ a.scroll-top i {
   content: "";
   width: 100%;
   height: 100%;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/banner-overly.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/banner-overly.png);
   left: 0;
   top: 0;
   background-size: cover;
@@ -3650,7 +3650,7 @@ a.scroll-top i {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/contact-bg1.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/contact-bg1.png);
   height: 400px;
   background-size: cover;
   background-position: center center;
@@ -3662,7 +3662,7 @@ a.scroll-top i {
   content: "";
   width: 100%;
   height: 100%;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/banner-overly.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/banner-overly.png);
   left: 0;
   top: 0;
   background-size: cover;
@@ -3677,7 +3677,7 @@ a.scroll-top i {
   position: relative;
   box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.07);
   padding: 65px 20px;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/servicebg.png) center center;
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/servicebg.png) center center;
   border-radius: 10px;
   transition: 0.3s;
   background-position: center center;
@@ -3738,7 +3738,7 @@ a.scroll-top i {
 }
 .home-contact-area .home-contact-content {
   position: relative;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/contact-bg.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/contact-bg.png);
   background-size: cover;
   padding: 50px;
   border-radius: 40px;
@@ -3800,7 +3800,7 @@ a.scroll-top i {
   position: relative;
   padding: 75px 0;
   overflow: hidden;
-  background: url(https://strouroul.github.io/LAYOUT/edvi/images/footer-area.png);
+  background: url(https://strouroul.github.io/iMeet/LAYOUT/edvi/images/footer-area.png);
   background-size: cover;
 }
 .footer-area .footer-left p {
