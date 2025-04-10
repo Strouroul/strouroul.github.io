@@ -438,6 +438,10 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
                                 <span class="icon pe-7s-map-marker"></span>
                                 <span class="text">Contact</span>
                             </a>
+                            <a href="#0" data-scroll-nav="5">
+                                <span class="icon pe-7s-help1 open-zammad-chat"></span>
+                                <span class="text">Help</span>
+                            </a>
                         </div>
                         <div class="author-profile">
                             <div class="author-img">
@@ -2702,7 +2706,17 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
 
 
 
-
+<script src="https://helpdesk.ishopper.info/assets/chat/chat-no-jquery.min.js"></script>
+<script>
+    (function() {
+        new ZammadChat({
+            title: '<strong>Chat </strong> with us',
+            fontSize: '12px',
+            chatId: 1,
+            show: false
+        });
+    })();
+</script>
 
 
 
