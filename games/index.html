@@ -81,6 +81,12 @@
         const rawData = anchor.getAttribute('data-info');
         try {
             const data = JSON.parse(rawData.replace(/&apos;/g, "'"));
+            if(data.hasOwnProperty('path')){
+                delete data.path;
+            }
+            if(data.hasOwnProperty('icon')){
+                delete data.icon;
+            }
             document.querySelector('.modal-body').innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
         } catch (err) {
             document.querySelector('.modal-body').textContent = 'Failed to load data.';
@@ -134,7 +140,13 @@
                     if(value.hasOwnProperty('INFO')){
                         if(value.INFO!==null){
                             if(value.INFO.length>0){
-                                cell.innerHTML = `<img src='${value["INFO"][0].background_image}' style="width:100px;height:100px;">` ;
+                                // cell.innerHTML = `<img src='${value["INFO"][0].background_image}' style="width:100px;height:100px;">` ;
+                                cell.innerHTML = `
+  <img src='${value["INFO"][0].background_image}'
+       style="width:100px;height:100px;transition:transform 0.3s ease;"
+       onmouseover="this.style.transform='scale(2)'"
+       onmouseout="this.style.transform='scale(1)'">
+`;
                             }
                         }
                         else{
@@ -147,7 +159,10 @@
                 else{
                     // cell.innerHTML = (col.key === 'key') ? `<a href='javascript:void(0)' data-bs-toggle="modal" data-bs-target="#infoModal" onclick="document.querySelector('.modal-body').innerHTML=JSON.stringify(value)">${key}</a>` : value[col.key];
                     cell.innerHTML = (col.key === 'key')
-                        ? `<a href='javascript:void(0)' data-bs-toggle="modal" data-bs-target="#infoModal" data-info='${JSON.stringify(value).replace(/'/g, "&apos;")}' onclick="handleModalOpen(this)">${key}</a>`
+                        ? `<a href='javascript:void(0)' data-bs-toggle="modal"
+                data-bs-target="#infoModal"
+                 data-info='${JSON.stringify(value).replace(/'/g, "&apos;")}'
+                 onclick="handleModalOpen(this);document.querySelector('#infoModalLabel').innerHTML='${key}';">${key}</a>`
                         : value[col.key];
                 }
 
