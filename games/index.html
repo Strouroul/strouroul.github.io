@@ -21,7 +21,7 @@
 
 <script>
     // Global array with keys to hide in the table.
-    const HIDE_COLOUM = ['path', 'name'];  // Adjust this array as needed
+    const HIDE_COLOUM = ['path', 'name','INFO'];  // Adjust this array as needed
 
     // 1. Function to fetch JSON from a URL
     async function fetchJSON(url) {
@@ -44,7 +44,9 @@
             { key: 'key', header: keyFieldName === "Key" ? "Name" : keyFieldName },
             { key: 'name', header: 'Name' },
             { key: 'size', header: 'Size' },
-            { key: 'path', header: 'Path' }
+            { key: 'path', header: 'Path' },
+            { key: 'INFO', header: 'INFO' },
+            { key: 'IMG', header: 'IMG' }
         ];
 
         const visibleCols = allCols.filter(col => !HIDE_COLOUM.includes(col.key));
@@ -61,7 +63,26 @@
             const row = document.createElement("tr");
             visibleCols.forEach(col => {
                 const cell = document.createElement("td");
-                cell.textContent = (col.key === 'key') ? key : value[col.key];
+                if(col.key==="IMG"){
+
+                    //  console.log(`value[col.key] : `,value );
+                    if(value.hasOwnProperty('INFO')){
+                        if(value.INFO!==null){
+                            if(value.INFO.length>0){
+                                cell.innerHTML = `<img src='${value["INFO"][0].background_image}' style="width:100px;height:100px;">` ;
+                            }
+                        }
+                        else{
+
+                        }
+
+                    }
+
+                }
+                else{
+                    cell.textContent = (col.key === 'key') ? key : value[col.key];
+                }
+
                 row.appendChild(cell);
             });
             table.appendChild(row);
