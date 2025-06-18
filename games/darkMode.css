@@ -1,0 +1,632 @@
+/* Global variables for light theme */
+:root {
+    --bg-color: #fff;
+    --text-color: #303030;
+    --switch-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.1) inset;
+    --transition: all 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+
+
+    --btn-hover-color:#3a97b9;
+
+
+
+    --dropdown-menu-bg-color: #1e1e1e;
+    --dropdown-menu-font-color: #eee;
+    --dropdown-item-color: #ccc;
+    --dropdown-item-hover-bg: #4aaf4d;
+    --dropdown-item-hover-color: #fff;
+    --dropdown-border-color: #444;
+
+
+
+}
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+
+    --switch-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.1) inset;
+    transition: var(--transition);
+
+  /*  --transition: all 0.3s cubic-bezier(0.76, 0, 0.24, 1);*/
+}
+/* Override variables in dark mode */
+.darkMode{
+
+    :root.darkMode {
+            --bg-color: #292639;
+            --text-color: #ebeaf7;
+            --switch-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5) inset;
+
+        }
+
+}
+
+
+
+/*
+  .btn {
+    background-color: #569477;
+    color: #fff;
+    border-color: #444;
+}
+
+  .btn:hover,
+  .btn:focus {
+    background-color: #2484ad;
+    border-color: #2369a4;
+    color: #fff;
+}
+*/
+
+.darkMode a {
+    color: #90caf9;
+}
+
+.darkMode .card {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+.darkMode input,
+.darkMode textarea,
+.darkMode select {
+    background-color: #2a2a2a;
+    color: var(--text-color);
+    border: 1px solid #555;
+}
+
+.darkMode .btn {
+    /*background-color: #333;*/
+    color: var(--text-color);
+    border-color: #444;
+}
+
+.darkMode .btn:hover {
+    background-color: var(--btn-hover-color);
+}
+
+
+
+
+.darkMode .navbar {
+    background-color: #1c1c1c;
+    border-bottom: 1px solid #444;
+}
+
+.darkMode .table {
+    background-color: #1b1b1b;
+    color: #ddd;
+}
+
+.darkMode .modal-content {
+    background-color: #1f1f1f;
+    color: #eee;
+}
+
+/* === DARK MODE OVERRIDES === */
+.darkMode .rd-navbar-static .rd-nav-link,
+.darkMode .rd-navbar-static .rd-navbar-search-toggle,
+.darkMode .rd-navbar-static .rd-navbar-search-toggle span::before {
+    color: #e0e0e0;
+}
+
+.darkMode .rd-navbar-static .rd-nav-link:hover,
+.darkMode .rd-navbar-static .rd-navbar-search-toggle:hover {
+    color: #f4b942;
+}
+
+.darkMode .rd-navbar-static .rd-nav-item.focus .rd-nav-link,
+.darkMode .rd-navbar-static .rd-nav-item.opened .rd-nav-link,
+.darkMode .rd-navbar-static .rd-nav-item.active .rd-nav-link,
+.darkMode .rd-navbar-static .rd-nav-item.focus > .rd-navbar-submenu-toggle,
+.darkMode .rd-navbar-static .rd-nav-item.active > .rd-navbar-submenu-toggle,
+.darkMode .rd-navbar-static .rd-nav-item.opened > .rd-navbar-submenu-toggle {
+    color: #f4b942;
+    background: transparent;
+}
+
+/* Submenus */
+.darkMode .rd-navbar-static .rd-menu,
+.darkMode .rd-navbar-static .rd-navbar-dropdown,
+.darkMode .rd-navbar-static .rd-navbar-megamenu {
+    background: #1e1e1e;
+    box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.6);
+}
+
+/* Dropdown links */
+.darkMode .rd-navbar-static .rd-dropdown-link,
+.darkMode .rd-navbar-static .rd-megamenu-list-link {
+    color: #b5b5b5;
+}
+
+.darkMode .rd-navbar-static .rd-dropdown-link:hover,
+.darkMode .rd-navbar-static .rd-megamenu-list-link:hover {
+    color: #ffffff;
+}
+
+/* Indicators */
+.darkMode .rd-navbar-static .rd-navbar-dropdown li > a::before,
+.darkMode .rd-navbar-static .rd-megamenu-list li > a::before {
+    color: #f4b942;
+}
+
+/* Active/hover indicator visibility */
+.darkMode .rd-navbar-static .rd-navbar-dropdown li.focus > a::before,
+.darkMode .rd-navbar-static .rd-navbar-dropdown li.opened > a::before,
+.darkMode .rd-navbar-static .rd-navbar-dropdown li > a:hover::before,
+.darkMode .rd-navbar-static .rd-megamenu-list li.focus > a::before,
+.darkMode .rd-navbar-static .rd-megamenu-list li.opened > a::before,
+.darkMode .rd-navbar-static .rd-megamenu-list li > a:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Search */
+.darkMode .rd-navbar-static .rd-search {
+    background-color: #2a2a2a;
+}
+
+.darkMode .rd-navbar-static .form-input {
+    background-color: #1c1c1c;
+    color: #f4f4f4;
+    border-color: #444;
+}
+
+.darkMode .rd-navbar-static .form-input::placeholder {
+    color: #999;
+}
+
+/* Banner */
+.darkMode .rd-navbar-static .rd-megamenu-item .banner::before {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.darkMode .rd-navbar-static .rd-megamenu-item .banner .button-primary:hover {
+    background: #f4b942;
+    border-color: #f4b942;
+}
+
+/* Optional: navbar search icons */
+.darkMode .rd-navbar-static .rd-navbar-search-toggle span::before {
+    color: #e0e0e0;
+}
+
+.darkMode .rd-navbar-static .rd-navbar-search-toggle span::after {
+    color: #e0e0e0;
+}
+
+
+.darkMode .page-header-navbar {
+    background-color: #222;
+    color: #fff;
+}
+
+.darkMode .rd-navbar-wrap {
+    background-color: #333;
+}
+
+
+.darkMode .rd-navbar-main-outer,
+.darkMode .rd-navbar-main-element {
+    background-color: #111;
+    color: #eee;
+}
+
+/*
+@media (prefers-color-scheme: dark) {
+    .rd-navbar-main-outer,
+    .rd-navbar-main-element {
+        background-color: #111;
+        color: #eee;
+    }
+}*/
+
+
+
+
+.darkMode .container,
+.darkMode .row,
+.darkMode .section,
+.darkMode .text-block {
+    background-color: #111;
+    color: #eee;
+}
+
+.darkMode .button,
+.darkMode .button-lg {
+    background-color: #222;
+    color: #fff;
+    border-color: #444;
+}
+
+.darkMode .button:hover,
+.darkMode .button-lg:hover {
+    background-color: #007bff; /* Bootstrap blue or pick your own */
+    border-color: #007bff;
+    color: #fff;
+}
+
+
+/* Keep images intact – do NOT override parallax backgrounds */
+.darkMode .jumbotron-classic.parallax-container,
+.darkMode .jumbotron-classic .parallax-content {
+    background: none !important;
+    background-image: none !important;
+}
+
+.darkMode .jumbotron-classic.bg-gray-700 h6,
+.darkMode .jumbotron-classic.bg-gray-700 .heading-6 {
+    color: #fff;
+}
+
+.darkMode .jumbotron-classic-content {
+    color: #fff; /* Ensures any text inside is white */
+}
+
+/* Ensure the parallax background stays intact and isn't affected by darkMode */
+.darkMode .jumbotron-classic.parallax-container {
+    background-color: transparent !important; /* Ensure background color isn't added */
+    background-image: inherit !important;  /* Keep the original parallax background image intact */
+}
+
+.darkMode .jumbotron-classic.bg-gray-700 {
+    background-color: #222 !important;  /* Dark background if it's not a parallax section */
+}
+
+/* Optional: Adjust the parallax overlay color for dark mode */
+.darkMode .jumbotron-classic.parallax-content {
+    background: rgba(0, 0, 0, 0.4) !important;  /* Darken overlay without affecting the image */
+}
+
+/* For better visibility, you can add a subtle dark overlay to the parallax image */
+.darkMode .jumbotron-classic.parallax-container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);  /* Optional overlay for dark mode */
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+@media (prefers-color-scheme: dark) {
+
+}
+*/
+
+
+
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --bg-color: #eeedf3;
+        --text-color: #8a83e0;
+        --switch-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5) inset;
+        --ball-color: #f0f0f3;
+    }
+    /*
+    body {
+        --bg-color: #292639;
+        --text-color: #ebeaf7;
+        --switch-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.5) inset;
+    }*/
+    .light body {
+        --bg-color: #fff;
+        --text-color: #303030;
+        --switch-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.1) inset;
+    }
+    .theme-switch .ball {
+        transform: translateX(40px);
+        background-color: var(--ball-color);
+    }
+
+    .light body {
+        --bg-color: #fff;
+        --text-color: #303030;
+        --switch-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.1) inset;
+        --ball-color: #3aaed9;
+    }
+
+    .light .theme-switch .ball {
+        transform: translateX(0);
+        background-color: var(--ball-color);
+    }
+}
+
+
+
+
+
+/* Dark Mode Styles for wp-content */
+.darkMode .wp-content {
+    background-color: #1e1e1e; /* Dark background for wp-content */
+    color: #ddd; /* Lighter text color for readability */
+}
+
+/* Dark Mode Footer Styles */
+.darkMode .footer {
+    background-color: #333; /* Dark footer */
+    color: #fff; /* Light text for footer */
+}
+
+.darkMode .footer-left,
+.darkMode .footer-right {
+    color: #ddd; /* Light text color in footer sections */
+}
+
+/* Dark Mode Links */
+.darkMode .wp-content a {
+    color: #90caf9; /* Lighter blue for links */
+}
+
+.darkMode .wp-content a:hover {
+    color: #f4b942; /* Hover color for links */
+}
+
+/* Dark Mode Buttons */
+
+
+
+.darkMode .wp-content  .btn {
+ /*   background-color: #333;
+
+    border-color: #444;*/
+
+    color: #fff;
+}
+
+.darkMode .wp-content .btn:hover,
+.darkMode .wp-content .btn:focus {
+ /*   background-color: #24ad52;
+    border-color: #555;*/
+    color: #fff;
+}
+
+
+/*
+.darkMode .wp-content  .btn-primary {
+    background-color: #4aaf4d;
+    border-color: #4aaf4d;
+    color: #fff;
+}
+
+.darkMode .wp-content  .btn-primary:hover,
+.darkMode .wp-content  .btn-primary:focus {
+    background-color: #3e9d42;
+    border-color: #3e9d42;
+    color: #fff;
+}
+
+.darkMode .wp-content .darkMode .btn-secondary {
+    background-color: #555;
+    border-color: #666;
+    color: #fff;
+}
+
+.darkMode .wp-content .darkMode .btn-secondary:hover,
+.darkMode .wp-content .btn-secondary:focus {
+    background-color: #666;
+    border-color: #777;
+    color: #fff;
+}
+
+.darkMode .wp-content  .btn-danger {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    color: #fff;
+}
+
+.darkMode .wp-content  .btn-danger:hover,
+.darkMode .wp-content  .btn-danger:focus {
+    background-color: #c9302c;
+    border-color: #ac2925;
+    color: #fff;
+}
+*/
+
+
+
+/* Dark Mode Font Awesome Icons */
+.darkMode .fa * {
+    color: #ddd; /* Default icon color */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Dark Mode hover effect for Font Awesome icons */
+.darkMode .fa:hover {
+    color: #f4b942; /* Icon color on hover */
+}
+
+/* Dark Mode specific icons color changes */
+.darkMode .fa-search {
+    color: #90caf9; /* Lighter color for search icon */
+}
+
+.darkMode .fa-heart {
+    color: #f4b942; /* Yellow for heart icon */
+}
+
+.darkMode .fa-trash {
+    color: #f44336; /* Red color for trash icon */
+}
+
+.darkMode .fa-check {
+    color: #4caf50; /* Green color for check icon */
+}
+
+.darkMode .fa-cogs {
+    color: #b0bec5; /* Light gray for settings gear */
+}
+
+.darkMode .fa-user {
+    color: #8a83e0; /* Light purple for user icon */
+}
+
+/* Dark Mode Font Awesome icons with background */
+.darkMode .fa-circle {
+    background-color: #333; /* Dark background for circle icons */
+    border-radius: 50%;
+    padding: 5px;
+}
+
+/* Dark Mode icons with a border */
+.darkMode .fa-box {
+    border: 1px solid #555; /* Light border for box icon */
+    padding: 5px;
+}
+
+/* Dark Mode social media icons */
+.darkMode .fa-facebook {
+    color: #3b5998; /* Facebook icon color */
+}
+
+.darkMode .fa-twitter {
+    color: #00aced; /* Twitter icon color */
+}
+
+.darkMode .fa-instagram {
+    color: #e1306c; /* Instagram icon color */
+}
+
+.darkMode .fa-linkedin {
+    color: #0077b5; /* LinkedIn icon color */
+}
+
+/* Dark Mode with larger icons */
+.darkMode .fa-lg {
+    font-size: 1.5em;
+}
+
+.darkMode .fa-2x {
+    font-size: 2em;
+}
+
+.darkMode .fa-3x {
+    font-size: 3em;
+}
+
+
+
+.darkMode .dropdown-menu {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    color: #eee;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.darkMode .dropdown-menu .dropdown-item {
+    color: #ccc;
+}
+
+.darkMode .dropdown-menu .dropdown-item:hover,
+.darkMode .dropdown-menu .dropdown-item:focus {
+    background-color: var(--dropdown-item-hover-bg);
+    color: #fff;
+}
+/* Default light logo */
+.site_logo {
+    content: url("/LAYOUT/call_center/images/supportRus_new_logo_light.png");
+}
+
+/* When body has darkMode class */
+body.darkMode .site_logo {
+    content: url("/LAYOUT/call_center/images/supportRus_new_logo_dark.png");
+}
+/* You can add more for btn-success, btn-warning, etc. */
+
+
+/* === Dark mode for megamenu === */
+.darkMode .megamenu {
+    background-color: var(--dropdown-menu-bg-color);
+    color: var(--dropdown-menu-font-color);
+}
+
+.darkMode .megamenu a {
+    color: var(--dropdown-item-color);
+}
+
+.darkMode .megamenu a:hover {
+    background-color: var(--dropdown-item-hover-bg);
+    color: var(--dropdown-item-hover-color);
+}
+
+.darkMode .megamenu .list-group-item {
+    background-color: transparent;
+    color: var(--dropdown-item-color);
+    border: none;
+}
+
+.darkMode .megamenu .list-group-item:hover {
+    background-color: var(--dropdown-item-hover-bg);
+    color: var(--dropdown-item-hover-color);
+}
+
+.darkMode .megamenu .btn {
+    background-color: #222;
+    color: var(--text-color);
+    border-color: var(--dropdown-border-color);
+}
+
+.darkMode .megamenu .btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.darkMode .megamenu .collapse {
+    background-color: var(--dropdown-menu-bg-color);
+    border: 1px solid var(--dropdown-border-color);
+}
+
+
+/* Initially set both icons to be visible */
+.navbar_toggler i {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; /* Smooth fade transition */
+}
+
+/* Show the fa-bars icon when not clicked */
+.navbar_toggler .fa-bars {
+    opacity: 1;
+}
+
+/* Show the fa-times icon when clicked */
+.navbar_toggler.clicked .fa-times {
+    opacity: 1;
+}
+
+/* Hide the fa-bars icon when clicked */
+.navbar_toggler.clicked .fa-bars {
+    opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
