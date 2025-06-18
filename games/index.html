@@ -12,28 +12,23 @@
 <BR><BR>
 <a href="./games_isos.json">ISOs</a>
 -->
-
 <p>Installed Games</p>
 <div id="table-installed"></div>
-<BR><BR>
+<br><br>
 
 <p>ISO Games</p>
 <div id="table-ISOs"></div>
 
 <script>
-
     // Global array with keys to hide in the table.
-    // For example, to hide the 'size' column, you can set:
-    // const HIDE_COLOUM = ["size"];
-    const HIDE_COLOUM = ['path','name'];  // Adjust this array as needed
+    const HIDE_COLOUM = ['path', 'name'];  // Adjust this array as needed
 
     // 1. Function to fetch JSON from a URL
     async function fetchJSON(url) {
         try {
             const response = await fetch(url);
             if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            const jsonData = await response.json();
-            return jsonData;
+            return await response.json();
         } catch (error) {
             console.error("Failed to fetch JSON:", error);
             return null;
@@ -41,25 +36,19 @@
     }
 
     // 2. Function to create an HTML table from the JSON data
-    //    Allows customizing the header name for the key column.
     function createTableFromData(data, keyFieldName = "Name") {
         const table = document.createElement("table");
         table.border = 1;
 
-        // Predefined order for columns.
-        // The "key" field (coming from the JSON object's key) is customizable.
-        // The other fields ('name', 'size', 'path') come from the inner object.
         const allCols = [
-            { key: 'key', header: keyFieldName==="Key"?"Name":keyFieldName },
-           { key: 'name', header: 'Name' },
+            { key: 'key', header: keyFieldName === "Key" ? "Name" : keyFieldName },
+            { key: 'name', header: 'Name' },
             { key: 'size', header: 'Size' },
             { key: 'path', header: 'Path' }
         ];
 
-        // Filter out the columns you want to hide.
         const visibleCols = allCols.filter(col => !HIDE_COLOUM.includes(col.key));
 
-        // Create the header row.
         const headerRow = document.createElement("tr");
         visibleCols.forEach(col => {
             const th = document.createElement("th");
@@ -68,16 +57,11 @@
         });
         table.appendChild(headerRow);
 
-        // Create a table row for each entry in the JSON object.
         for (const [key, value] of Object.entries(data)) {
             const row = document.createElement("tr");
             visibleCols.forEach(col => {
                 const cell = document.createElement("td");
-                if (col.key === 'key') {
-                    cell.textContent = key;
-                } else {
-                    cell.textContent = value[col.key];
-                }
+                cell.textContent = (col.key === 'key') ? key : value[col.key];
                 row.appendChild(cell);
             });
             table.appendChild(row);
@@ -86,29 +70,39 @@
         return table;
     }
 
-    // 3. Function to tie everything together: fetch JSON and render the table.
-    //    It now accepts a third parameter for the custom key header name.
+    // 3. Function to render the table and show render time
     async function renderTableFromJSON(url, targetElementId, keyFieldName = "Key") {
+        const startTime = performance.now();
+
         const data = await fetchJSON(url);
         if (!data) return;
 
         const table = createTableFromData(data, keyFieldName);
+
+
+
         const container = document.getElementById(targetElementId);
+
+        const endTime = performance.now();
+        const duration = (endTime - startTime).toFixed(2);
         if (container) {
+            const timeSpan = document.createElement("span");
+            timeSpan.textContent = `Rendered in ${duration} ms`;
+            timeSpan.style.display = "block";
+            timeSpan.style.marginBottom = "5px";
+            container.appendChild(timeSpan);
             container.appendChild(table);
         } else {
             console.warn(`Element with ID "${targetElementId}" not found`);
         }
     }
-
 </script>
-
 
 <script>
-    renderTableFromJSON("./games_installed.json", "table-installed");
-
-    renderTableFromJSON("./games_isos.json", "table-ISOs");
+    renderTableFromJSON("./games_installed.json", "table-installed", "Name");
+    renderTableFromJSON("./games_isos.json", "table-ISOs", "Name");
 </script>
+
 
 </body>
 </html>
