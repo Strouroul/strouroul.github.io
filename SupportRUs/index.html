@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="divParams">
+
+</div>
+
+<script>
+
+    function readParamsFromUrl() {
+        return window.location.search.substring(1); // removes the '?'
+    }
+    function parseParamsFromUrl(queryString) {
+        const params = {};
+        if (!queryString) return params;
+
+        const pairs = queryString.split('&');
+        for (let pair of pairs) {
+            const [key, value] = pair.split('=').map(decodeURIComponent);
+            if (key) {
+                params[key] = value || '';
+            }
+        }
+        return params;
+    }
+
+    const query = readParamsFromUrl();
+    const params = parseParamsFromUrl(query)||null;
+
+    console.log(params);
+
+    let myParamsHtml='';
+
+    if(params!=null&&Object.keys(params).length>0){
+        Object.keys(params).forEach(key=>{
+            myParamsHtml+=`${key} : ${params[key]}<BR>`;
+        })
+    }
+
+    document.getElementById('divParams').innerHTML=myParamsHtml;
+</script>
+</body>
+</html>
