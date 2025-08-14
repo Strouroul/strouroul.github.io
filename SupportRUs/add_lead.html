@@ -417,8 +417,8 @@
                             console.log("Lead status from server : " + JSON.stringify(my_DATA));
 
 
-                            if (my_DATA.hasOwnProperty('highest_lead_id')) {
-                                this_lead_id=my_DATA.highest_lead_id
+                            if (my_DATA.hasOwnProperty('lead_id')) {
+                                this_lead_id=my_DATA.lead_id;
                                 console.log("Lead status from server : ", (this_lead_id));
                                 //  show_data_textboxes(my_DATA.db);
                             }
