@@ -386,7 +386,54 @@
         }
         */
 
+    function check_swal_toast_visible(){
+        if (Swal.isVisible()) {
+            console.log("A toast or popup is currently visible");
+            swal_toast_showing=true;
+        } else {
+            console.log("No toast is visible");
+            swal_toast_showing=false;
+        }
 
+        return   swal_toast_showing;
+    }
+    function show_swal_toast(my_icon, my_msg, timer) {
+
+        if (timer != null) {
+        } else {
+            timer = 1500;
+        }
+        //my_icon  = 'success'||'error'||'warning'||'info' ||'question'
+        try {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                //   position: 'center',
+                position: "top-end",
+                iconColor: 'white',
+                /*  html               :
+                      '<input class="swal2-input" id="rating-number" placeholder="Qo`shiladigan ballni yozing" type="number" style=" width: 80%; ">' +
+                      '<label for="rating-checkbox" class="swal2-checkbox" style="display: flex;">' +
+                      '<input type="checkbox" value="1" id="rating-checkbox">' +
+                      '<span class="swal2-label">Chempionat baliga ham qo`shilsin</span>' +
+                      '</label>',*/
+                customClass: {
+                    popup: 'colored-toast',
+                },
+                showConfirmButton: false,
+                timer: timer,
+                timerProgressBar: true,
+
+            });
+            (async () => {
+                await Toast.fire({
+                    icon: my_icon,   //'success',
+                    title: my_msg  //'Authenticated',
+                })
+            })()
+        } catch (err_taost) {
+        }
+    }
     function update_lead(key, value) {
         //  console.log(`Updated ${key} to ${value}`);
         // Add your logic here, like sending an AJAX request
@@ -427,13 +474,16 @@
                     })
                     .then(my_DATA => {
                         if (my_DATA != null) {
-                            console.log("Lead status from server : " + JSON.stringify(my_DATA));
+                           // console.log("Lead status from server : " + JSON.stringify(my_DATA));
 
 
                             if (my_DATA.hasOwnProperty('lead_id')) {
                                 this_lead_id=my_DATA.lead_id;
                                 console.log("Lead status from server : ", (this_lead_id));
                                 //  show_data_textboxes(my_DATA.db);
+                                if(!check_swal_toast_visible()){
+                                    show_swal_toast('success','Lead Added')
+                                }
                             }
 
 
@@ -482,6 +532,9 @@
                             if (my_DATA.hasOwnProperty('db')) {
                                 console.log("Lead status from server : ", (my_DATA.db));
                                 //  show_data_textboxes(my_DATA.db);
+                                if(!check_swal_toast_visible()){
+                                    show_swal_toast('success','Lead Updated')
+                                }
                             }
 
 
