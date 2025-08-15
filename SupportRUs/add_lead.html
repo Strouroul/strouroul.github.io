@@ -391,7 +391,12 @@
         //  console.log(`Updated ${key} to ${value}`);
         // Add your logic here, like sending an AJAX request
 
+
         if(value!==null && value!=='') {
+            if(key==='phone_number'||key==="alt_phone"){
+                  value = value.replace(/\D/g, '');
+                  document.getElementById(key).value=value;
+            }
             if (this_lead_id === null) {
                 let this_lead_update_json = {
 
