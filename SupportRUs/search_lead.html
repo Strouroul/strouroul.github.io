@@ -320,25 +320,26 @@
             <div class="tab-pane active" id="divParams" style="overflow-y: scroll;">
 
 
-                <label for="lead_list_id">
-                    Lead List ID: <input type="text" id="lead_list_id" value="800" disabled placeholder="Enter the List ID">
-                </label>
-                <button  onclick="searchLeads()" >Search</button>
-
-
-                <div id="dropdownContainer">
-                    <label for="select_perPage">
-                        Results per page:
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <label for="lead_list_id">
+                        Lead List ID:
+                        <input type="text" id="lead_list_id" value="800" disabled placeholder="Enter the List ID">
                     </label>
-                    <select id="select_perPage" onchange="changePerPage(this.value)" >
-                        <option value="5" selected>5</option>
-                        <option value="10">10</option>
-                        <option value="20">20</option>
-                        <option value="50">50</option>
-                    </select>
+
+                    <button onclick="searchLeads()">Search</button>
+
+                    <div id="dropdownContainer">
+                        <label for="select_perPage">Results per page:</label>
+                        <select id="select_perPage" onchange="changePerPage(this.value)">
+                            <option value="5" selected>5</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                        </select>
+                    </div>
                 </div>
 
-                <HR>
+
                 <div id="result_container"
                      style="overflow-y: scroll;overflow-x: scroll; height: 80%; width: 100%;" >
                     <table style="overflow-y: scroll;overflow-x: scroll; height: 80%; width: 100%;" >
@@ -599,7 +600,7 @@ function searchLeads(){
         <td>${item.phone_number}</td>
         <td>${item.alt_phone}</td>
         <td>${item.comments}</td>
-          <td>
+          <td style="width: 100px;">
            <i class="iconify" data-icon="tabler:edit" style="width:25px;height:25px;" data-toggle="tooltip" data-html="true"
            title="Edit" onclick="open_edit_page('${encodeURIComponent(JSON.stringify(item))}')" ></i>
          <i class="iconify" data-icon="tdesign:delete-filled" style="width:25px;height:25px;" data-toggle="tooltip" data-html="true"
