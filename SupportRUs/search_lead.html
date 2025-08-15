@@ -160,11 +160,12 @@
 
 
     <style>
+
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            overflow:scroll;
         }
 
         #exTab1 {
@@ -324,7 +325,7 @@
                 </label>
                 <button  onclick="searchLeads()" >Search</button>
 
-                <BR>
+
                 <div id="dropdownContainer">
                     <label for="select_perPage">
                         Results per page:
@@ -338,8 +339,9 @@
                 </div>
 
                 <HR>
-                <div id="result_container" style="overflow-y: scroll;overflow-x: scroll; height: 80%; width: 100%;" >
-                    <table>
+                <div id="result_container"
+                     style="overflow-y: scroll;overflow-x: scroll; height: 80%; width: 100%;" >
+                    <table style="overflow-y: scroll;overflow-x: scroll; height: 80%; width: 100%;" >
                         <thead>
                         <tr>
                             <th>First Name</th><th>Last Name</th><th>Phone</th><th>Alt Phone</th><th>Comments</th><th>Actions</th>
@@ -598,9 +600,9 @@ function searchLeads(){
         <td>${item.alt_phone}</td>
         <td>${item.comments}</td>
           <td>
-           <i class="iconify" data-icon="tabler:edit" style="width:25px;height:25px;display: inline-block;" data-toggle="tooltip" data-html="true"
+           <i class="iconify" data-icon="tabler:edit" style="width:25px;height:25px;" data-toggle="tooltip" data-html="true"
            title="Edit" onclick="open_edit_page('${encodeURIComponent(JSON.stringify(item))}')" ></i>
-         <i class="iconify" data-icon="tdesign:delete-filled" style="width:25px;height:25px;display: inline-block;" data-toggle="tooltip" data-html="true"
+         <i class="iconify" data-icon="tdesign:delete-filled" style="width:25px;height:25px;" data-toggle="tooltip" data-html="true"
            title="Edit"></i>
          </td>
     </tr>
