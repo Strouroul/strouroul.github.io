@@ -432,11 +432,9 @@
 
 
                         return new Promise((resolve, reject) => {
-                            console.log(`Lead Update  : ${data}`);
+                           // console.log(`Lead Update  : ${data}`);
                             let myJSON_new = JSON.parse(data);
                             if (myJSON_new != null) {
-
-
                                 resolve(myJSON_new);
 
                             } else {
@@ -448,12 +446,15 @@
                     })
                     .then(my_DATA => {
                         if (my_DATA != null) {
-                            console.log("Lead status from server : " + JSON.stringify(my_DATA));
+                           // console.log("Lead status from server : " + JSON.stringify(my_DATA));
 
 
                             if(my_DATA.hasOwnProperty('db')){
                                 console.log("Lead status from server : ", (my_DATA.db));
                                 //  show_data_textboxes(my_DATA.db);
+                                if(!check_swal_toast_visible()){
+                                    show_swal_toast('success','Lead Updated')
+                                }
                             }
 
 
