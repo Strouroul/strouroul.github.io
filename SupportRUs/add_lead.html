@@ -160,20 +160,20 @@
 
 
     <style>
-       /* html, body {
+        html, body {
             height: 100%;
             margin: 0;
             padding: 0;
-            overflow: hidden;
-        }*/
+            overflow: scroll;
+        }
 
         #exTab1 {
-            position: fixed; /* makes sure it ignores content height */
+            position: relative; /* makes sure it ignores content height */
             top: 0;
             left: 0;
             width: 100vw;  /* 100% of viewport width */
-            height: 100vh; /* 100% of viewport height */
-            overflow: hidden;
+            height: 80vh; /* 100% of viewport height */
+            overflow: scroll;
         }
 
         .nav-pills {
@@ -209,6 +209,8 @@
     </style>
 </head>
 <body>
+
+<div  style="overflow-y: scroll;">
 <div id="exTab1" class="container"
      style="overflow-y: scroll;width:100%;height:100%;">
     <ul  class="nav nav-pills">
@@ -233,10 +235,9 @@
 
     </div>
 </div>
-
-
-
 </div>
+
+
 
 <script src="./postAjax.js"></script>
 <script>
