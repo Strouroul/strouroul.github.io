@@ -348,14 +348,14 @@
                     <table style="overflow-y: scroll;overflow-x: scroll; height: 80%; width: 100%;" >
                         <thead>
                         <tr>
-                            <th>First Name</th><th>Last Name</th><th>Phone</th><th>Alt Phone</th><th>Comments</th><th>Actions</th>
+                            <th>Lead ID</th><th>First Name</th><th>Last Name</th><th>Phone</th><th>Alt Phone</th><th>Comments</th><th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
                         </tbody>
                         <tfoot>
                         <tr>
-                            <th>First Name</th><th>Last Name</th><th>Phone</th><th>Alt Phone</th><th>Comments</th><th>Actions</th>
+                            <th>Lead ID</th><th>First Name</th><th>Last Name</th><th>Phone</th><th>Alt Phone</th><th>Comments</th><th>Actions</th>
                         </tr>
                         </tfoot>
                     </table>
@@ -597,9 +597,12 @@ function searchLeads(){
                     if(Object.keys(my_DATA.db).length>0|| my_DATA.db.length>0){
 
                         document.getElementById('results_count').innerText=Object.keys(my_DATA.db).length;
+                        // Sort ascending by lead_id
+                       let sorted_by_lead_id= my_DATA.db.sort((a, b) => a.lead_id - b.lead_id);
                         // Usage
-                        paginate_leads(my_DATA.db, perPage, (item) => `
+                        paginate_leads(sorted_by_lead_id, perPage, (item) => `
     <tr   >
+      <td>${item.lead_id}</td>
         <td>${item.first_name}</td>
         <td>${item.last_name}</td>
         <td>${item.phone_number}</td>
