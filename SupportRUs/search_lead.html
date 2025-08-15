@@ -227,7 +227,7 @@
             justify-content: center;
         }
 */
-        #container {
+        #result_container {
             width: 600px;
             padding: 30px;
 
@@ -287,6 +287,14 @@
             background: rgba(0,0,0,0.03);
             color: #FB3C00;
         }
+
+
+         #select_perPage {
+            display: inline-block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+             width:100px;
+        }
     </style>
 </head>
 <body>
@@ -294,6 +302,8 @@
 <div class="container">
     <h1>CRM / Script  </h1>
 </div>-->
+
+
 <div id="exTab1" class="container" style="overflow-y: scroll;">
     <ul  class="nav nav-pills">
         <li class="active">
@@ -307,12 +317,28 @@
     <div class="tab-content clearfix" >
 
         <div class="tab-pane active" id="divParams">
+
+
             <label for="lead_list_id">
                Lead List ID: <input type="text" id="lead_list_id" value="800" disabled placeholder="Enter the List ID">
             </label>
             <button  onclick="searchLeads()" >Search</button>
 
-            <div id="container" style="overflow-y: scroll;overflow-x: scroll; height: 80%; width: 100%;" >
+            <BR>
+            <div id="dropdownContainer">
+                <label for="select_perPage">
+                    Results per page:
+                </label>
+                <select id="select_perPage" onchange="changePerPage(this.value)" >
+                    <option value="5" selected>5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+
+            <HR>
+            <div id="result_container" style="overflow-y: scroll;overflow-x: scroll; height: 80%; width: 100%;" >
                 <table>
                     <thead>
                     <tr>
@@ -330,19 +356,7 @@
                 <div id="pagination"></div>
             </div>
         </div>
-        <div class="tab-pane " id="2a">
-            <h3>Script for Agents go here !! Could be from a URL too ?</h3>
-        </div>
 
-        <div class="tab-pane " id="3a">
-            <h3><a href="https://helpdesk.ishopper.info" target="_blank">Open Helpdesk / tickets </a></h3>
-        </div>
-        <!--
-        <iframe class="tab-pane" id="3a"  src="https://helpdesk.ishopper.info"  style="width:100%;height:100%;overflow: scroll;" scrolling="yes"></iframe>
--->
-        <div class="tab-pane" id="4a">
-            <h3>We use css to change the background color of the content to be equal to the tab</h3>
-        </div>
     </div>
 </div>
 <!--
@@ -491,7 +505,7 @@ function displayItems(dataSet, page = 1, perPage = 2, rowTemplateFn) {
 
     const html = slicedItems.map(item => rowTemplateFn(item));
 
-    document.querySelector('#container tbody').innerHTML = html.join('');
+    document.querySelector('#result_container tbody').innerHTML = html.join('');
 }
 
 // Pagination setup
@@ -512,6 +526,9 @@ function paginate_leads(dataSet, perPage = 2, rowTemplateFn) {
 
     // Show first page
     displayItems(dataSet, 1, perPage, rowTemplateFn);
+
+
+   // document.getElementById('dropdownContainer').innerHTML = `   `;
 }
 
 
@@ -594,9 +611,19 @@ function searchLeads(){
 }
 
 
+function changePerPage(newPerPage){
+    perPage=newPerPage;
+    searchLeads();
+}
+
 document.addEventListener( "DOMContentLoaded", function(){
     searchLeads()
 } );
+
+
+
+
+
 
 </script>
 </body>
