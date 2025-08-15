@@ -525,8 +525,18 @@ function open_edit_page(item_str) {
 
     console.log(`item_str : `,item_str)
     let item = JSON.parse(decodeURIComponent(item_str).replaceAll('+'," ")) || {};
-    const params = new URLSearchParams(item).toString();
+   // const params = new URLSearchParams(item).toString();
 
+    let params="";
+    Object.keys(item).forEach((key,index)=>{
+        if(index===(Object.keys(item).length-1)){
+            params+=`${key}=${item[key]}`
+        }
+        else{
+            params+=`${key}=${item[key]}&`
+        }
+
+    })
     console.log(`item : `,item)
     window.open(`index.html?${params}`, '_blank');
 }
