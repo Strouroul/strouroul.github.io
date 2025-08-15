@@ -303,62 +303,65 @@
     <h1>CRM / Script  </h1>
 </div>-->
 
+<div  style="overflow-y: scroll;">
+    <div id="exTab1" class="container" style="overflow-y: scroll;">
+        <ul  class="nav nav-pills">
+            <li class="active">
+                <a  href="#divParams" data-toggle="tab">Search Leads</a>
+            </li>
+            <li><a href="./add_lead.html" >Add Lead</a>
+            </li>
 
-<div id="exTab1" class="container" style="overflow-y: scroll;">
-    <ul  class="nav nav-pills">
-        <li class="active">
-            <a  href="#divParams" data-toggle="tab">Search Leads</a>
-        </li>
-        <li><a href="./add_lead.html" >Add Lead</a>
-        </li>
+        </ul>
 
-    </ul>
+        <div class="tab-content clearfix" >
 
-    <div class="tab-content clearfix" >
-
-        <div class="tab-pane active" id="divParams">
+            <div class="tab-pane active" id="divParams" style="overflow-y: scroll;">
 
 
-            <label for="lead_list_id">
-               Lead List ID: <input type="text" id="lead_list_id" value="800" disabled placeholder="Enter the List ID">
-            </label>
-            <button  onclick="searchLeads()" >Search</button>
-
-            <BR>
-            <div id="dropdownContainer">
-                <label for="select_perPage">
-                    Results per page:
+                <label for="lead_list_id">
+                    Lead List ID: <input type="text" id="lead_list_id" value="800" disabled placeholder="Enter the List ID">
                 </label>
-                <select id="select_perPage" onchange="changePerPage(this.value)" >
-                    <option value="5" selected>5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="50">50</option>
-                </select>
+                <button  onclick="searchLeads()" >Search</button>
+
+                <BR>
+                <div id="dropdownContainer">
+                    <label for="select_perPage">
+                        Results per page:
+                    </label>
+                    <select id="select_perPage" onchange="changePerPage(this.value)" >
+                        <option value="5" selected>5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+
+                <HR>
+                <div id="result_container" style="overflow-y: scroll;overflow-x: scroll; height: 80%; width: 100%;" >
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>First Name</th><th>Last Name</th><th>Phone</th><th>Alt Phone</th><th>Comments</th><th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th>First Name</th><th>Last Name</th><th>Phone</th><th>Alt Phone</th><th>Comments</th><th>Actions</th>
+                        </tr>
+                        </tfoot>
+                    </table>
+                    <div id="pagination"></div>
+                </div>
             </div>
 
-            <HR>
-            <div id="result_container" style="overflow-y: scroll;overflow-x: scroll; height: 80%; width: 100%;" >
-                <table>
-                    <thead>
-                    <tr>
-                        <th>First Name</th><th>Last Name</th><th>Phone</th><th>Alt Phone</th><th>Comments</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <th>First Name</th><th>Last Name</th><th>Phone</th><th>Alt Phone</th><th>Comments</th>
-                    </tr>
-                    </tfoot>
-                </table>
-                <div id="pagination"></div>
-            </div>
         </div>
-
     </div>
 </div>
+
+
 <!--
 
 <hr></hr>
@@ -588,12 +591,18 @@ function searchLeads(){
                     if(Object.keys(my_DATA.db).length>0|| my_DATA.db.length>0){
                         // Usage
                         paginate_leads(my_DATA.db, perPage, (item) => `
-    <tr onclick="open_edit_page('${encodeURIComponent(JSON.stringify(item))}')" style="cursor:pointer">
+    <tr   >
         <td>${item.first_name}</td>
         <td>${item.last_name}</td>
         <td>${item.phone_number}</td>
         <td>${item.alt_phone}</td>
         <td>${item.comments}</td>
+          <td>
+           <i class="iconify" data-icon="tabler:edit" style="width:25px;height:25px;display: inline-block;" data-toggle="tooltip" data-html="true"
+           title="Edit" onclick="open_edit_page('${encodeURIComponent(JSON.stringify(item))}')" ></i>
+         <i class="iconify" data-icon="tdesign:delete-filled" style="width:25px;height:25px;display: inline-block;" data-toggle="tooltip" data-html="true"
+           title="Edit"></i>
+         </td>
     </tr>
 `);
                     }
