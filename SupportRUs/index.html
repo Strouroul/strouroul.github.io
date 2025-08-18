@@ -141,20 +141,7 @@
             overflow-y: scroll;
         }
 
-        #3a {
-            height: 100vh; /* Full viewport height */
-            width: 100%;
-            overflow-x: scroll;
-            overflow-y: scroll;
-        }
 
-        #3a iframe {
-            height: 100%;
-            width: 100%;
-            border: none;
-            overflow-x: scroll;
-            overflow-y: scroll;
-        }
 
     </style>-->
 
@@ -192,17 +179,18 @@
 
 
 
-        #3a   {
-            height: 100%;
-            width: 100%;
+
+
+
+        #helpdesk_iframe {
+            height: 70%;
+            width: 90%;
             border: none;
-           /* overflow: auto; /* Makes iframe scrollable */
             overflow: scroll;
             overflow-x: scroll !important;
             display: block;
-
-        }
-
+            overflow-x: scroll;
+         }
     </style>
 </head>
 <body>
@@ -214,6 +202,8 @@
     <ul  class="nav nav-pills">
         <li class="active">
             <a  href="#divParams" data-toggle="tab">CRM</a>
+        </li>
+        <li><a href="#1b" data-toggle="tab">Live Chat</a>
         </li>
         <li><a href="#2a" data-toggle="tab">Script</a>
         </li>
@@ -229,12 +219,19 @@
 
 
         </div>
+
+        <div class="tab-pane" id="1b">
+
+            <button class="open-zammad-chat" style="display: none;visibility: hidden;">Open HelpDesk</button>
+            <h3><a href="javascript:void(0);" onclick="load_helpdesk_chat()">Show Live Chat</a></h3>
+        </div>
         <div class="tab-pane " id="2a">
             <h3>Script for Agents go here !! Could be from a URL too ?</h3>
         </div>
 
         <div class="tab-pane " id="3a">
             <h3><a href="https://helpdesk.ishopper.info" target="_blank">Open Helpdesk / tickets </a></h3>
+          <!--  <iframe id="helpdesk_iframe" src="https://helpdesk.ishopper.info" ></iframe>-->
         </div>
         <!--
         <iframe class="tab-pane" id="3a"  src="https://helpdesk.ishopper.info"  style="width:100%;height:100%;overflow: scroll;" scrolling="yes"></iframe>
@@ -315,6 +312,117 @@
 
 
 <script>
+    let helpdesk_js_files=['https://helpdesk.ishopper.info/assets/chat/chat-no-jquery.min.js',
+        '/SupportRUs/helpdesk.js'];
+    let is_helpdesk_loaded=false;
+
+    let scripts_loaded=[];
+    function loadScriptFromString(codeString) {
+        const script = document.createElement('script');
+        script.textContent = codeString;
+        document.head.appendChild(script);
+    }
+    async function loadJSFileStats(url) {
+        return new Promise((resolve) => {
+            const xhr = new XMLHttpRequest();
+            const startTime = performance.now();
+
+            xhr.open('GET', url, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    const endTime = performance.now();
+                    const duration = endTime - startTime;
+
+                    const result = {
+                        url,
+                        status: xhr.status === 200 ? 'success' : 'error',
+                        httpCode: xhr.status,
+                        timeMs: duration.toFixed(2),
+                        contentLength: xhr.getResponseHeader('Content-Length') || xhr.responseText.length,
+                        loaded: xhr.status === 200,
+                        //  script: xhr.status === 200 ? xhr.responseText : null
+                    };
+                    loadScriptFromString(xhr.status === 200 ? xhr.responseText : '')
+                    scripts_loaded.push({url:url,result:result})
+                    resolve(result);
+
+
+                }
+            };
+
+            xhr.onerror = function () {
+                resolve({
+                    url,
+                    status: 'network-error',
+                    httpCode: 0,
+                    timeMs: 0,
+                    contentLength: 0,
+                    loaded: false,
+                    script: null
+                });
+            };
+
+            xhr.send();
+        });
+    }
+
+
+
+    function allItemsExist(sourceArray, targetArray) {
+        return (sourceArray.every(item => targetArray.includes(item))&&
+            targetArray.every(item => sourceArray.includes(item)));
+    }
+
+    async function load_helpdesk_chat() {
+
+
+        let allLoaded =[]; // helpdesk_js_files.every(file => scripts_loaded.includes(file));
+        scripts_loaded.forEach(script=>{
+            if(helpdesk_js_files.includes(script.url)){
+                allLoaded.push(script.url);
+            }
+        })
+        let final_load=false;
+        final_load=allItemsExist(allLoaded, helpdesk_js_files)
+        if (final_load) {
+            console.log("✅ All files are loaded");
+        } else {
+
+
+            try{
+                if(eval(zammad_check_counter!=null && zammad_check_counter>0 &&agent_toast_alerted===(false||true))){
+                    console.log("✅ All files are loaded   (zammad_check_counter) :" +zammad_check_counter);
+                    refresh_helpdesk_status();
+                }
+                else{}
+            }
+            catch(err_zammad_check_counter){
+                console.log("❌ Some files are missing");
+                for (const helpdesk_js of helpdesk_js_files) {
+                    const stats = await loadJSFileStats(helpdesk_js);
+                    console.debug(`helpdesk_js_files stats : `, stats);
+                    if (stats.loaded) {
+                        console.log(`✅ Loaded: ${stats.url} in ${stats.timeMs} ms`);
+                        const index = scripts_loaded.findIndex(file => file.url === helpdesk_js);
+                        if(scripts_loaded>-1){
+                            scripts_loaded[index].stats=stats;
+                        }
+                        else{
+                            scripts_loaded.push({url:helpdesk_js,stats:stats});
+                        }
+                    } else {
+                        console.error(`❌ Failed to load: ${stats.url}`);
+                    }
+
+                }
+            }
+            let toLoad=[];
+
+
+        }
+
+    }
+
     let swal_toast_showing=false;
 
     let keys_toHide=['pass','server_ip','state','rank'];
