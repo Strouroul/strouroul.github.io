@@ -250,6 +250,24 @@
             transition: color 500ms;
         }
 
+
+
+        #zammad-chat-root {
+            position: fixed !important;
+            bottom: auto !important;  /* remove bottom */
+            right: auto !important;   /* remove right */
+            top: 50px !important;     /* set your custom position */
+            left: 50px !important;    /* set your custom position */
+            z-index: 999999 !important; /* make sure it stays on top */
+        }
+        #zammad-chat {
+            position: fixed !important;
+            bottom: auto !important;  /* remove bottom */
+            right: auto !important;   /* remove right */
+            top: 50px !important;     /* set your custom position */
+            left: 50px !important;    /* set your custom position */
+            z-index: 999999 !important; /* make sure it stays on top */
+        }
     </style>
 </head>
 <body>
@@ -286,9 +304,9 @@
             <h3>Script for Agents go here !! Could be from a URL too ?</h3>
         </div>
 
-        <div class="tab-pane" id="1b">
+        <div class="tab-pane" id="1b" style="max-height: 200px; height: 200px;width:100%;overflow-y: scroll;overflow-x: scroll;">
 
-            <button class="open-zammad-chat" style="display: none;visibility: hidden;">Open HelpDesk</button>
+            <button class="open-zammad-chat" style="position:relative;display: none;visibility: hidden;">Open HelpDesk</button>
             <h3><a href="javascript:void(0);" onclick="load_helpdesk_chat()">Show Live Chat</a></h3>
         </div>
         <div class="tab-pane " id="3a">
@@ -472,6 +490,23 @@
             catch(err_zammad_check_counter){
                 console.error("Error checking zammad_check_counter: ", err_zammad_check_counter);
             }
+
+            if(agent_button_show){
+                document.querySelector('.open-zammad-chat').click();
+                const chat_window =document.querySelector('.zammad-chat')
+              /*  if (!chat_window) {
+                    console.error("chat_window not found.");
+                    return false;
+                }*/
+                if(document.querySelector('.zammad-chat')){
+                    document.querySelector('.zammad-chat').style.zIndex=9999;
+                    document.querySelector('.zammad-chat').style.right=0;
+                    document.querySelector('.zammad-chat').style.top=0;
+
+                }
+
+
+            }
         } else {
 
 
@@ -479,6 +514,12 @@
                 if(eval(zammad_check_counter!=null && zammad_check_counter>0 &&agent_toast_alerted===(false||true))){
                     console.log("✅ All files are loaded   (zammad_check_counter) :" +zammad_check_counter);
                     refresh_helpdesk_status();
+                    if(document.querySelector('.zammad-chat')){
+                        document.querySelector('.zammad-chat').style.zIndex=9999;
+                        document.querySelector('.zammad-chat').style.right=0;
+                        document.querySelector('.zammad-chat').style.top=0;
+
+                    }
                 }
                 else{}
             }
@@ -499,6 +540,13 @@
                     } else {
                         console.error(`❌ Failed to load: ${stats.url}`);
                     }
+
+                }
+
+                if(document.querySelector('.zammad-chat')){
+                    document.querySelector('.zammad-chat').style.zIndex=9999;
+                    document.querySelector('.zammad-chat').style.right=0;
+                    document.querySelector('.zammad-chat').style.top=0;
 
                 }
             }
