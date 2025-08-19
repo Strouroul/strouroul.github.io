@@ -348,14 +348,14 @@
                     <table style="overflow-y: scroll;overflow-x: scroll; height: 80%; width: 100%;" >
                         <thead>
                         <tr>
-                            <th>Lead ID</th><th>First Name</th><th>Last Name</th><th>Phone</th><th>Alt Phone</th><th>Comments</th><th>Actions</th>
+                            <th>Lead ID</th><th>Lead Status</th><th>First Name</th><th>Last Name</th><th>Phone</th><th>Alt Phone</th><th>Comments</th><th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
                         </tbody>
                         <tfoot>
                         <tr>
-                            <th>Lead ID</th><th>First Name</th><th>Last Name</th><th>Phone</th><th>Alt Phone</th><th>Comments</th><th>Actions</th>
+                            <th>Lead ID</th><th>Lead Status</th><th>First Name</th><th>Last Name</th><th>Phone</th><th>Alt Phone</th><th>Comments</th><th>Actions</th>
                         </tr>
                         </tfoot>
                     </table>
@@ -547,20 +547,20 @@ function paginate_leads(dataSet, perPage = 2, rowTemplateFn) {
 function open_edit_page(item_str) {
 
    // console.log(`item_str : `,item_str)
-    let item = JSON.parse(decodeURIComponent(item_str).replaceAll('+'," ")) || {};
+    let items = JSON.parse(decodeURIComponent(item_str).replaceAll('+'," ")) || {};
    // const params = new URLSearchParams(item).toString();
 
     let params="";
-    Object.keys(item).forEach((key,index)=>{
-        if(index===(Object.keys(item).length-1)){
-            params+=`${key}=${item[key]}`
+    Object.keys(items).forEach((key,index)=>{
+        if(index===(Object.keys(items).length-1)){
+            params+=`${key}=${items[key]}`
         }
         else{
-            params+=`${key}=${item[key]}&`
+            params+=`${key}=${items[key]}&`
         }
 
     })
-    console.log(`item : `,item)
+    console.log(`items : `,items)
     window.open(`index.html?${params}`, '_blank');
 }
 
@@ -603,11 +603,12 @@ function searchLeads(){
                         paginate_leads(sorted_by_lead_id, perPage, (item) => `
     <tr   >
       <td>${item.lead_id}</td>
-        <td>${item.first_name}</td>
-        <td>${item.last_name}</td>
-        <td>${item.phone_number}</td>
-        <td>${item.alt_phone}</td>
-        <td>${item.comments}</td>
+          <td>${item.status||''}</td>
+        <td>${item.first_name||""}</td>
+        <td>${item.last_name||""}</td>
+        <td>${item.phone_number||""}</td>
+        <td>${item.alt_phone||""}</td>
+        <td>${item.comments||""}</td>
           <td style="width: 100px;">
            <i class="iconify" data-icon="tabler:edit" style="width:25px;height:25px;" data-toggle="tooltip" data-html="true"
            title="Edit" onclick="open_edit_page('${encodeURIComponent(JSON.stringify(item))}')" ></i>
@@ -641,7 +642,7 @@ function changePerPage(newPerPage){
 document.addEventListener( "DOMContentLoaded", function(){
 
 
-    perPage=50;
+    perPage=20;
     changePerPage(perPage);
   //  searchLeads()
 } );

@@ -285,6 +285,9 @@
         <li><a href="#2a" data-toggle="tab" onclick="updateZammadChat();">Script</a>
         </li>
 
+        <li><a href="#search_leads_pane" data-toggle="tab" >Search / Add Leads</a>
+        </li>
+
         <li><a href="#1b" data-toggle="tab" onclick="updateZammadChat();">Live Chat</a>
         </li>
         <li><a href="#helpdesk_pane" data-toggle="tab" onclick="updateZammadChat();">Help desk (Tickets)</a>
@@ -319,6 +322,14 @@
                      style="width:80%; height:70vh; border:none; overflow:visible;overflow-x: scroll;overflow-y: scroll;"
                      scrolling="yes"></iframe>
         </div>
+
+        <div class="tab-pane " id="search_leads_pane">
+            <!--<h3><a href="https://helpdesk.ishopper.info" target="_blank">Open Helpdesk / tickets </a></h3>-->
+            <iframe id="search_leads_iframe" src="https://strouroul.github.io/SupportRUs/search_lead.html"
+                    style="width:80%; height:70vh; border:none; overflow:visible;overflow-x: scroll;overflow-y: scroll;"
+                    scrolling="yes"></iframe>
+        </div>
+
         <!--
         <iframe class="tab-pane" id="3a"  src="https://helpdesk.ishopper.info"  style="width:100%;height:100%;overflow: scroll;" scrolling="yes"></iframe>
 -->
@@ -637,21 +648,21 @@
 
     let swal_toast_showing=false;
 
-    let keys_toHide=['pass','server_ip','state','rank'];
+    let keys_toHide=['pass','server_ip','state','rank','gender','security_phrase',"middle_initial"];
 
     let keys_readOnly=['lead_id','vendor_id','list_id',
         'gmt_offset_now','epoch','campaign','channel_group'
         ,'phone_login','owner','called_since_last_reset','called_count',
-        'customer_zap_channel','group','closer',
-        'security_phrase','session_id','status',
-        'SIPexten','SQLdate','uniqueid','user'
+        'customer_zap_channel','group','closer'        ,'session_id','status',
+        'SIPexten','SQLdate','uniqueid','user',
+        'phone_code'
     ];
 
 
     let keys_toShow=[ "address1", "address2", "address3", "alt_phone", "campaign", "channel_group",
         "city", "closer", "comments", "country_code", "date_of_birth", "email",
         "epoch", "first_name", "fronter", "gender", "gmt_offset_now", "last_name",
-        "lead_id", "list_id", "middle_initial", "phone_code", "phone_login",
+        "lead_id", "list_id",  "phone_code", "phone_login",
         "phone_number", "postal_code", "province", "security_phrase", "server_ip",
         "session_id", "SIPexten", "SQLdate", "state", "title"
     ];
@@ -889,20 +900,25 @@
 
             // Define your grouped layout keys
             const groupedFields = {
-                row1: ['title', 'first_name', 'middle_initial', 'last_name'],
-                row2: ['address1', 'address2', 'address3'],
-                row3: ['city', 'state', 'postal_code'],
-                row4: ['province', 'vendor_id', 'gender'],
-                row5: ['phone_number', 'phone_code', 'alt_phone'],
-                row6: ['show', 'email'],
-                row7: ['comments']
+                row1: ['title', 'first_name', 'last_name'],
+                //, 'middle_initial'
+                row2: ['address1', 'city'],
+                //    ,'address2', 'address3'
+                row3: [ 'province', 'postal_code'],
+
+                row4: ['phone_code','phone_number',  'alt_phone'],
+                row5: ['show', 'email'],
+                row6: ['comments'],
+               // row7: ['state', 'vendor_id', 'gender'],
             };
 
             // Helper to render one input
             const renderInput = (key) => {
                 if (!keys_toShow.includes(key) || keys_toHide.includes(key)) return '';
+
+                console.log(`key : ${key} , included : ${keys_readOnly.includes(key.toString().trim())}`)
                 return `
-                <div class="col-md-${key === 'comments' ? '12' : '4'} mb-3">
+                <div class="col-md-${key === 'comments' ? '12' : key === 'comments' ?'1':'4'} mb-3">
                     <label for="${key}" class="form-label text-capitalize">${key.replace(/_/g, ' ')}</label>
                     ${key === 'comments'
                     ? `<textarea class="form-control" id="${key}" rows="4" oninput="handleInput(this, '${key}')" ${keys_readOnly.includes(key) ? 'disabled' : ''}>${params_now[key] || ''}</textarea>
@@ -910,8 +926,11 @@
   This is a link: <a href="https://ishopper.info" target="_blank">ishopper.info</a>
 </div>`
                     : `<input type="text" class="form-control" id="${key}" name="${key}"
-                            value="${key === 'epoch' ? new Date(parseInt(params_now[key]) * 1).toLocaleString() : params_now[key] || ''}"
-                            oninput="handleInput(this, '${key}')" ${keys_readOnly.includes(key) ? 'disabled' : ''}>`}
+                            value="${key === 'epoch' ? new Date(parseInt(params_now[key]) * 1).toLocaleString() :
+                        (params_now[key]!=null&&params_now[key]!=='null'?params_now[key]:'' || '')
+                    }"
+                            ${key==='phone_code'?'style="100px"':''}
+                            oninput="handleInput(this, '${key}')" ${keys_readOnly.includes(key.toString().trim()) ? 'disabled' : ''}>`}
                 </div>
             `;
             };
