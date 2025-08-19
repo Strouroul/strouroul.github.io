@@ -277,19 +277,22 @@
 </div>-->
 <div id="exTab1" class="container" style="overflow-y: scroll;">
     <ul  class="nav nav-pills">
-        <li class="active">
+        <li class="active" onclick="updateZammadChat();">
             <a  href="#divParams" data-toggle="tab">CRM</a>
         </li>
 
-        <li><a href="#2a" data-toggle="tab">Script</a>
+        <li><a href="#2a" data-toggle="tab" onclick="updateZammadChat();">Script</a>
         </li>
 
-        <li><a href="#1b" data-toggle="tab">Live Chat</a>
+        <li><a href="#1b" data-toggle="tab" onclick="updateZammadChat();">Live Chat</a>
         </li>
-        <li><a href="#3a" data-toggle="tab">Help desk (Tickets)</a>
+        <li><a href="#3a" data-toggle="tab" onclick="updateZammadChat();">Help desk (Tickets)</a>
         </li>
-        <li><a href="#4a" data-toggle="tab">More Menu 2</a>
+        <li><a href="#4a" data-toggle="tab" onclick="updateZammadChat();">More Menu 2</a>
         </li>
+        <li><a href="#darkMode_pane" data-toggle="tab" onclick="updateZammadChat();">Dark Mode</a>
+        </li>
+
     </ul>
 
     <div class="tab-content clearfix" >
@@ -322,7 +325,7 @@
             <h3>Sub menu stuff here (buttons , forms , ....... ) to work with the dialer too on the same page !!</h3>
         </div>
 
-        <div class="tab-pane" id="2b">
+        <div class="tab-pane" id="darkMode_pane">
             <h3> <input id="toggle_darkMode" class="toggle_darkMode" type="checkbox">
                 <div class="background"></div>
                 <label for="toggle_darkMode" class="title">Toggle dark mode</label></h3>
@@ -401,6 +404,30 @@
 
 
 <script>
+    const target = document.getElementById("1b");
+
+    if (target) {
+        const observer = new MutationObserver((mutationsList) => {
+            for (let mutation of mutationsList) {
+                if (mutation.attributeName === "class") {
+                    if (target.classList.contains("active")) {
+                        console.log(`1b has active`)
+                        //updateZammadChat();
+
+                        document.querySelector('.zammad-chat').style.zIndex = '9999';
+                        document.querySelector('.zammad-chat').style.visibility = 'visible';
+                    }else{
+                        console.log(`1b NOT active`);
+                        document.querySelector('.zammad-chat').style.zIndex = '0';
+                        document.querySelector('.zammad-chat').style.visibility = 'hidden';
+                    }
+                }
+            }
+        });
+
+        observer.observe(target, { attributes: true });
+
+    }
     let helpdesk_js_files=['https://helpdesk.ishopper.info/assets/chat/chat-no-jquery.min.js',
         'https://strouroul.github.io/SupportRUs/helpdesk.js'];
     let is_helpdesk_loaded=false;
@@ -456,7 +483,21 @@
     }
 
 
+    // watch #1b's active state and update .zammad-chat
+    function updateZammadChat() {
+        const chat = document.querySelector('.zammad-chat');
+        const box = document.getElementById('1b');
 
+        if (!chat || !box) return;
+
+        if (box.classList.contains('active')) {
+            chat.style.zIndex = '9999';
+            chat.style.visibility = 'visible';
+        } else {
+            chat.style.zIndex = '0';
+            chat.style.visibility = 'hidden';
+        }
+    }
     function allItemsExist(sourceArray, targetArray) {
         return (sourceArray.every(item => targetArray.includes(item))&&
             targetArray.every(item => sourceArray.includes(item)));
@@ -484,6 +525,8 @@
                 if(eval(zammad_check_counter!=null && zammad_check_counter>0 &&agent_toast_alerted===(false||true))){
                     console.log("✅ All files are loaded   (zammad_check_counter) :" +zammad_check_counter);
                     refresh_helpdesk_status();
+
+
                 }
                 else{}
             }
@@ -505,7 +548,7 @@
 
                 }
 
-
+                updateZammadChat();
             }
         } else {
 
@@ -895,19 +938,10 @@
 
   function show_data_textboxes(data){
       document.getElementById('divParams').innerHTML=
-       /*   `<!--<div class="container">
-  <form action="/action_page.php">`+ //  generateInputFields(data)   +
-           ` </form></div>-->`           +      */
 
-   `<!--<div class="container my-4">-->
-  <div class="card shadow-sm">
 
-    <div class="card-header bg-primary text-white">
-      <h5 class="mb-0">Edit Lead</h5>
-    </div>
-    <div class="card-body  p-4" style="max-height: 50vh; overflow-y: auto;">
-
-        `+generateInputFields(data)+`
+   '  <div class="card shadow-sm">    <div class="card-header bg-primary text-white">      <h5 class="mb-0">Edit Lead</h5>    </div>    <div class="card-body  p-4" style="max-height: 50vh; overflow-y: auto;">        '+
+          generateInputFields(data)+`
 
         <div class="mt-4 text-end">
           <button type="submit" class="btn btn-success">Submit</button>
@@ -915,7 +949,7 @@
     </div>
 
   </div>
-<!--</div>-->
+
 `
           ||"NO DATA";
 
