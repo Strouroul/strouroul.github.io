@@ -633,11 +633,17 @@ function searchLeads(){
 
 function changePerPage(newPerPage){
     perPage=newPerPage;
+    let select = document.getElementById("select_perPage");
+    select.value = perPage; // <-- this sets the selected option
     searchLeads();
 }
 
 document.addEventListener( "DOMContentLoaded", function(){
-    searchLeads()
+
+
+    perPage=50;
+    changePerPage(perPage);
+  //  searchLeads()
 } );
 
 
