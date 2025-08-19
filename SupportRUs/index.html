@@ -286,7 +286,7 @@
 
         <li><a href="#1b" data-toggle="tab" onclick="updateZammadChat();">Live Chat</a>
         </li>
-        <li><a href="#3a" data-toggle="tab" onclick="updateZammadChat();">Help desk (Tickets)</a>
+        <li><a href="#helpdesk_pane" data-toggle="tab" onclick="updateZammadChat();">Help desk (Tickets)</a>
         </li>
         <li><a href="#4a" data-toggle="tab" onclick="updateZammadChat();">More Menu 2</a>
         </li>
@@ -312,9 +312,9 @@
             <button class="open-zammad-chat" style="position:relative;display: none;visibility: hidden;">Open HelpDesk</button>
             <h3><a href="javascript:void(0);" onclick="load_helpdesk_chat()">Show Live Chat</a></h3>
         </div>
-        <div class="tab-pane " id="3a">
+        <div class="tab-pane " id="helpdesk_pane">
             <!--<h3><a href="https://helpdesk.ishopper.info" target="_blank">Open Helpdesk / tickets </a></h3>-->
-             <iframe id="helpdesk_iframe" src="https://helpdesk.ishopper.info"
+             <iframe id="helpdesk_iframe" src=""
                      style="width:80%; height:70vh; border:none; overflow:visible;overflow-x: scroll;overflow-y: scroll;"
                      scrolling="yes"></iframe>
         </div>
@@ -404,7 +404,7 @@
 
 
 <script>
-    const target = document.getElementById("1b");
+    let target = document.getElementById("1b");
 
     if (target) {
         const observer = new MutationObserver((mutationsList) => {
@@ -416,6 +416,32 @@
 
                         document.querySelector('.zammad-chat').style.zIndex = '9999';
                         document.querySelector('.zammad-chat').style.visibility = 'visible';
+                    }else{
+                        console.log(`1b NOT active`);
+                        document.querySelector('.zammad-chat').style.zIndex = '0';
+                        document.querySelector('.zammad-chat').style.visibility = 'hidden';
+                    }
+                }
+            }
+        });
+
+        observer.observe(target, { attributes: true });
+
+    }
+    target = document.getElementById("helpdesk_pane");
+    if (target) {
+        const observer = new MutationObserver((mutationsList) => {
+            for (let mutation of mutationsList) {
+                if (mutation.attributeName === "class") {
+                    if (target.classList.contains("active")) {
+                        console.log(`1b has active`)
+                        //updateZammadChat();
+
+                        if( document.querySelector('#helpdesk_iframe').src!=='https://helpdesk.ishopper.info'){
+                            document.querySelector('#helpdesk_iframe').src='https://helpdesk.ishopper.info';
+                        }
+
+
                     }else{
                         console.log(`1b NOT active`);
                         document.querySelector('.zammad-chat').style.zIndex = '0';
