@@ -981,8 +981,8 @@ ${keys_readOnly.includes(key) ? 'disabled' : ''}>`
                 if (key === 'call_notes') {
                     // async injection but no "await"
                     get_lead_notes(params_now['lead_id'], notes => {
-                        if(document.getElementById('call_notes')){
-                            document.getElementById('call_notes').innerHTML = notes;
+                        if(document.getElementById('lead_call_notes')){
+                            document.getElementById('lead_call_notes').innerHTML = notes;
                         }
                         refresh_collapsible();
                     });
@@ -994,7 +994,7 @@ ${keys_readOnly.includes(key) ? 'disabled' : ''}>`
             ${key === 'comments'
                     ? `<textarea class="form-control" id="${key}" rows="4" oninput="handleInput(this, '${key}')" ${keys_readOnly.includes(key) ? 'disabled' : ''}>${params_now[key] || ''}</textarea>`
                     : (key === 'call_notes'
-                        ? `<div   id="call_notes"  >${call_notes}</div>`
+                        ? `<div   id="lead_call_notes"  >${call_notes}</div>`
                         : `<input type="text" class="form-control" id="${key}" name="${key}"
                     value="${key === 'epoch' ? new Date(parseInt(params_now[key]) * 1).toLocaleString() :
                             (params_now[key]!=null&&params_now[key]!=='null'?params_now[key]:'')}"
@@ -1053,9 +1053,9 @@ ${keys_readOnly.includes(key) ? 'disabled' : ''}>`
                         (a, b) => new Date(b.call_date) - new Date(a.call_date)
                     );
 
-                    let notes = 'Work Notes (Copy to add at end) :' +
+                    let notes = 'Work Notes (You will see this in the Dispo Page) :<BR>' +
                         `
-<textarea class="form-control" id="work_call_notes" rows="4"   > </textarea>
+<textarea class="form-control" id="work_call_notes" rows="4" onkeypress="handleInput(this,'call_notes')"  > </textarea>
 `+
 
       `<button type="button" class="collapsible_btn">View All Notes</button>
@@ -1135,7 +1135,20 @@ ${keys_readOnly.includes(key) ? 'disabled' : ''}>`
 */
     function handleInput(input, key) {
         const cursorPos = input.selectionStart;
-        if(key==='call_notes'){}
+
+        if(key==='call_notes'){
+
+           // console.log(`vici_iframe_load_test : ${vici_iframe_load_test}`)
+            console.log(`SET NOTES TO : ${input.value}`)
+          /*  window.parent.document.querySelectorAll('.cust_form_text').forEach(el=>{
+                el.innerHTML=input.value;
+            })*/
+            // send message to parent
+            window.parent.postMessage(
+                { action: "update_call_notes", value: input.value },
+                "*" // or restrict to parent origin e.g. "https://ishopper.info"
+            );
+        }
         else{
             update_lead(key, input.value);
             input.setSelectionRange(cursorPos, cursorPos);
