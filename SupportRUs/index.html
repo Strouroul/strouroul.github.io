@@ -303,7 +303,7 @@
 
     <div class="tab-content clearfix" >
 
-        <div class="tab-pane active" id="divParams">
+        <div class="tab-pane active" id="divParams" style="width:100%;height: 100%;">
 
 
         </div>
@@ -1176,22 +1176,27 @@ ${keys_readOnly.includes(key) ? 'disabled' : ''}>`
       document.getElementById('divParams').innerHTML=
 
 
-   '  <div class="card shadow-sm">    <div class="card-header bg-primary text-white">      <h5 class="mb-0">Edit Lead</h5>    </div>    <div class="card-body  p-4" style="max-height: 50vh; overflow-y: auto;">        '+
-          generateInputFields(data)+`
-
-        <div class="mt-4 text-end">
-          <button type="submit" class="btn btn-success">Submit</button>
+   '  <div class="card shadow-sm" style="width: 100%;height: 100%;">  '+
+          '  <div class="card-header bg-primary text-white">  '+
+          '    <h5 class="mb-0">Edit Lead</h5>    '+
+          '</div>   '+
+          ' <div class="card-body  p-4" style="max-height: 80vh; overflow-y: auto;">        '+
+          generateInputFields(data)+
+          `
+            <div class="mt-4 text-end">
+              <button type="submit" class="btn btn-success">Submit</button>
+            </div>
         </div>
-    </div>
 
-  </div>
+    </div>
 
 `
           ||"NO DATA";
 
 
       extractAndDisplayLinks();
-
+      document.getElementById('divParams').style.width='100%;'
+      document.getElementById('divParams').style.height='100%;'
 
   }
     function extractAndDisplayLinks() {
