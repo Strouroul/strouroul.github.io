@@ -320,10 +320,10 @@
             <h3><a href="javascript:void(0);" onclick="load_helpdesk_chat()">Show Live Chat</a></h3>
         </div>
         <div class="tab-pane " id="helpdesk_pane">
-            <!--<h3><a href="https://helpdesk.ishopper.info" target="_blank">Open Helpdesk / tickets </a></h3>-->
-             <iframe id="helpdesk_iframe" src=""
+            <h3><a href="https://helpdesk.ishopper.info" target="_blank">Open Helpdesk / tickets </a></h3>
+            <!-- <iframe id="helpdesk_iframe" src=""
                      style="width:80%; height:90vh; border:none; overflow:visible;overflow-x: scroll;overflow-y: scroll;"
-                     scrolling="yes"></iframe>
+                     scrolling="yes"></iframe>-->
         </div>
 
         <div class="tab-pane " id="search_leads_pane">
@@ -462,10 +462,11 @@
                         console.log(`1b has active`)
                         //updateZammadChat();
 
+                        /*
                         console.log(`url : ${ document.querySelector('#helpdesk_iframe').src}`)
                         if( document.getElementById('helpdesk_iframe').src!=='https://helpdesk.ishopper.info/'){
                             document.querySelector('#helpdesk_iframe').src='https://helpdesk.ishopper.info';
-                        }
+                        }*/
 
 
                     }else{
@@ -666,7 +667,7 @@
         'campaign'
         ,'phone_login',"fronter",
         'closer'        ,'session_id','status',
-        'SIPexten','SQLdate','uniqueid','user',
+        'SIPexten','SQLdate','uniqueid','user',"channel_group",
         'phone_code'
     ];
 
