@@ -650,23 +650,31 @@
 
     let swal_toast_showing=false;
 
-    let keys_toHide=['pass','server_ip','state','rank','gender','security_phrase',"middle_initial"];
+    let keys_toHide=['pass','server_ip','state','rank', "comments",
+        "address2", "address3","SQLdate",
+        "security_phrase", "server_ip",
+        'owner','called_since_last_reset','called_count',
+        'gmt_offset_now','epoch','channel_group',
+        'customer_zap_channel','group',
+        "country_code", "date_of_birth",
+        'gender','security_phrase',"middle_initial"];
 
     let keys_readOnly=['lead_id','vendor_id','list_id',
-        'gmt_offset_now','epoch','campaign','channel_group'
-        ,'phone_login','owner','called_since_last_reset','called_count',
-        'customer_zap_channel','group','closer'        ,'session_id','status',
+        'campaign'
+        ,'phone_login',
+        'closer'        ,'session_id','status',
         'SIPexten','SQLdate','uniqueid','user',
         'phone_code'
     ];
 
 
-    let keys_toShow=[ "address1", "address2", "address3", "alt_phone", "campaign", "channel_group",
-        "city", "closer", "comments", "country_code", "date_of_birth", "email",
+    let keys_toShow=[ "address1","alt_phone", "campaign", "channel_group",
+        "city", "closer",  "email",
         "epoch", "first_name", "fronter", "gender", "gmt_offset_now", "last_name",
         "lead_id", "list_id",  "phone_code", "phone_login",
-        "phone_number", "postal_code", "province", "security_phrase", "server_ip",
-        "session_id", "SIPexten", "SQLdate", "state", "title"
+        "phone_number", "postal_code", "province",
+        "session_id", "SIPexten",  "state", "title",
+        "call_notes"
     ];
     function sortAsc(arr) {
        // return arr.slice().sort(); // slice() makes a copy so original isn't modified
@@ -911,32 +919,90 @@
                 row4: ['phone_code','phone_number',  'alt_phone'],
                 row5: ['show', 'email'],
                 row6: ['comments'],
-               // row7: ['state', 'vendor_id', 'gender'],
+                row7: ['call_notes'],
+               // row7: ['state', 'vendor_id', 'gender' ,],
             };
-
+/*
             // Helper to render one input
-            const renderInput = (key) => {
+            const renderInput =async (key) => {
                 if (!keys_toShow.includes(key) || keys_toHide.includes(key)) return '';
 
                 console.log(`key : ${key} , included : ${keys_readOnly.includes(key.toString().trim())}`)
+
+
+                let call_notes="";
+
+                    if(key ===  'call_notes'){
+                        call_notes=await get_lead_notes( params_now['lead_id']);
+                        console.info(`call_notes : `,call_notes);
+                    }
+
+
+
                 return `
-                <div class="col-md-${key === 'comments' ? '12' : key === 'comments' ?'1':'4'} mb-3">
+                <div class="col-md-${key === 'comments'||'call_notes' ? '12' : key === 'phone_code' ?'1':'4'} mb-3">
                     <label for="${key}" class="form-label text-capitalize">${key.replace(/_/g, ' ')}</label>
                     ${key === 'comments'
                     ? `<textarea class="form-control" id="${key}" rows="4" oninput="handleInput(this, '${key}')" ${keys_readOnly.includes(key) ? 'disabled' : ''}>${params_now[key] || ''}</textarea>
 <div id="editableDiv"   style="max-height:50px;">
   This is a link: <a href="https://ishopper.info" target="_blank">ishopper.info</a>
 </div>`
-                    : `<input type="text" class="form-control" id="${key}" name="${key}"
+                    :
+                    (key === 'call_notes'?`<textarea
+class="form-control" id="${key}" rows="4" oninput="handleInput(this, '${key}')"
+${keys_readOnly.includes(key) ? 'disabled' : ''}>`
+                            +  call_notes +
+                            `</textarea>
+<div id="notesDiv"   style="max-height:50px;">
+  This is a link: <a href="https://ishopper.info" target="_blank">ishopper.info</a>
+</div>`:
+                            `<input type="text" class="form-control" id="${key}" name="${key}"
                             value="${key === 'epoch' ? new Date(parseInt(params_now[key]) * 1).toLocaleString() :
-                        (params_now[key]!=null&&params_now[key]!=='null'?params_now[key]:'' || '')
-                    }"
+                                (params_now[key]!=null&&params_now[key]!=='null'?(key!=='call_notes'?params_now[key]:call_notes):'' || '')
+                            }"
                             ${key==='phone_code'?'style="100px"':''}
-                            oninput="handleInput(this, '${key}')" ${keys_readOnly.includes(key.toString().trim()) ? 'disabled' : ''}>`}
+                            oninput="handleInput(this, '${key}')"
+            ${keys_readOnly.includes(key.toString().trim()) ? 'disabled' : ''}>`
+                    )
+
+
+                }
                 </div>
             `;
-            };
 
+            };
+*/
+            function renderInput(key) {
+                if (!keys_toShow.includes(key) || keys_toHide.includes(key)) return '';
+
+                let call_notes = "";
+                if (key === 'call_notes') {
+                    // async injection but no "await"
+                    get_lead_notes(params_now['lead_id'], notes => {
+                        if(document.getElementById('call_notes')){
+                            document.getElementById('call_notes').innerHTML = notes;
+                        }
+
+                    });
+                }
+
+                return `
+        <div class="col-md-${key === 'comments'||key === 'call_notes' ? '12' : key === 'phone_code' ? '1':'4'} mb-3">
+            <label for="${key}" class="form-label text-capitalize">${key.replace(/_/g, ' ')}</label>
+            ${key === 'comments'
+                    ? `<textarea class="form-control" id="${key}" rows="4" oninput="handleInput(this, '${key}')" ${keys_readOnly.includes(key) ? 'disabled' : ''}>${params_now[key] || ''}</textarea>`
+                    : (key === 'call_notes'
+                        ? `<div   id="call_notes"  >${call_notes}</div>`
+                        : `<input type="text" class="form-control" id="${key}" name="${key}"
+                    value="${key === 'epoch' ? new Date(parseInt(params_now[key]) * 1).toLocaleString() :
+                            (params_now[key]!=null&&params_now[key]!=='null'?params_now[key]:'')}"
+                    ${key==='phone_code'?'style="100px"':''}
+                    oninput="handleInput(this, '${key}')"
+                    ${keys_readOnly.includes(key.toString().trim()) ? 'disabled' : ''}>`)
+                }
+        </div>
+    `;
+            }
             // Render predefined grouped fields
             Object.keys(groupedFields).forEach(row => {
                 let rowContent = '';
@@ -969,11 +1035,105 @@
 
         return myParamsHtml_NOW;
     }
+    function get_lead_notes(lead_id, callback) {
+        if (!lead_id||lead_id==='null') return callback(['Need Lead ID for notes !!']);
 
+        const this_lead_update_json = { lead_id };
+        postAjax_ASYNC(
+            'https://ishopper.info/contact_form/get_lead_notes.pl',
+            { param: JSON.stringify(this_lead_update_json) },
+            function (data) {
+                try {
+                    let myJSON_new = JSON.parse(data);
+                    if (!myJSON_new || !myJSON_new.db) return callback('');
+
+                    const sorted = myJSON_new.db.sort(
+                        (a, b) => new Date(b.call_date) - new Date(a.call_date)
+                    );
+
+                    let notes = 'Work Notes (Copy to add at end) :' +
+                        `
+<textarea class="form-control" id="work_call_notes" rows="4"   > </textarea>
+`+
+                        '<ul>';
+                    sorted.forEach(note_found => {
+                        notes += `<li>Date: ${note_found.call_date}, Note: ${note_found.call_notes}</li>`;
+                    });
+                    notes += '</ul>';
+                    callback(notes);
+                } catch (err) {
+                    console.error(err);
+                    callback('NO NOTES FOUND !!');
+                }
+            }
+        );
+    }
+/*
+    function get_lead_notes(lead_id){
+        console.log(`GET NOTES FOR LEAD ID : ${lead_id}`);
+
+        let this_return = "";
+        if (lead_id !== '') {
+            this_return = `Lead ID : ${lead_id}`;
+            let this_lead_update_json = { lead_id: lead_id };
+
+            console.log(`get_lead_notes.pl : `, this_lead_update_json);
+            // 🔴 FIX: return the Promise directly instead of wrapping in IIFE
+            return new Promise((resolve, reject) => {
+                postAjax_ASYNC(
+                    'https://ishopper.info/contact_form/get_lead_notes.pl',
+                    { param: JSON.stringify(this_lead_update_json) },
+                    function (data) {
+                        try {
+                            let myJSON_new = JSON.parse(data);
+                            if (!myJSON_new) {
+                                return reject({ error: "CANT FIND JSON" });
+                            }
+
+                            console.log("Lead NOTES from server : " + JSON.stringify(myJSON_new));
+
+                            if (myJSON_new.hasOwnProperty('db')) {
+                                this_return = "";
+                                console.log("Lead NOTES from server : ", myJSON_new.db);
+
+                                const sorted = myJSON_new.db.sort(
+                                    (a, b) => new Date(b.call_date) - new Date(a.call_date)
+                                );
+
+                                console.log(sorted);
+
+                                sorted.forEach(note_found => {
+                                    console.log(`note_found : `, note_found);
+                                    this_return += `Date : ${note_found.call_date}, Note : ${note_found.call_notes}\n`;
+                                });
+                            }
+
+                            console.log(`this_return : `, this_return);
+                            resolve(this_return);
+
+                        } catch (err) {
+                            console.log(err);
+                            reject(err);
+                        }
+                    }
+                );
+            });
+
+
+        } else {
+            this_return = 'Need Lead ID for notes !!';
+            return this_return;
+        }
+    }
+*/
     function handleInput(input, key) {
         const cursorPos = input.selectionStart;
-        update_lead(key, input.value);
-        input.setSelectionRange(cursorPos, cursorPos);
+        if(key==='call_notes'){}
+        else{
+            update_lead(key, input.value);
+            input.setSelectionRange(cursorPos, cursorPos);
+        }
+
     }
     let query = readParamsFromUrl();
     let params = parseParamsFromUrl(query)||null;
@@ -1019,7 +1179,11 @@
 
           // Regex to find all URLs
           const urlRegex = /https?:\/\/[^\s]+/gi;
-          const matches = text.match(urlRegex);
+          let matches = null;
+          if(text!=''){
+                matches = text.match(urlRegex);
+          }
+
 
           if (matches) {
               const linksHtml = matches.map(url => `<a href="${url}" target="_blank">${url}</a>`).join('<br>');
