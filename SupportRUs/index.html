@@ -772,7 +772,7 @@
                 this_lead_update_json[key] = value;
 
                 console.log(`this_lead_update_json : `,this_lead_update_json);
-                postAjax_ASYNC('https://ishopper.info/contact_form/update_lead.pl',
+                postAjax_ASYNC('https://www.ishopper.info/contact_form/update_lead.pl',
                     {param: JSON.stringify(this_lead_update_json)},
                     function (data) {
 
@@ -1050,6 +1050,9 @@ ${keys_readOnly.includes(key) ? 'disabled' : ''}>`
             function (data) {
                 try {
                     let myJSON_new = JSON.parse(data);
+
+
+                    console.log(`myJSON_new : `,myJSON_new)
                     if (!myJSON_new || !myJSON_new.db) return callback('');
 
                     const sorted = myJSON_new.db.sort(
@@ -1058,7 +1061,9 @@ ${keys_readOnly.includes(key) ? 'disabled' : ''}>`
 
                     let notes = 'Work Notes (You will see this in the Dispo Page) :<BR>' +
                         `
-<textarea class="form-control" id="work_call_notes" rows="4" onkeypress="handleInput(this,'call_notes')"  > </textarea>
+<textarea class="form-control" id="work_call_notes" rows="4" onkeypress="handleInput(this,'call_notes')"
+ onkeyup="handleInput(this,'call_notes')"
+ onkeydown="handleInput(this,'call_notes')" > </textarea>
 `+
 
       `<button type="button" class="collapsible_btn">View All Notes</button>
@@ -1066,9 +1071,17 @@ ${keys_readOnly.includes(key) ? 'disabled' : ''}>`
 
 `+
                         '<ul size="5" style="overflow-y: scroll;">';
-                    sorted.forEach(note_found => {
-                        notes += `<li>Date: ${note_found.call_date}, Note: ${note_found.call_notes}</li>`;
-                    });
+                    if(sorted.length>0){
+                        sorted.forEach(note_found => {
+                            notes += `<li>Date: ${note_found.call_date}, Note: ${note_found.call_notes}</li>`;
+                        });
+                    }
+                    else{
+
+                            notes += `<li>No Notes for lead ID : ${lead_id} Found Yet</li>`;
+
+                    }
+
                     notes += '</ul>'  +                        `</div>`;
                     callback(notes);
                 } catch (err) {
