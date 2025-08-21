@@ -983,13 +983,22 @@ ${keys_readOnly.includes(key) ? 'disabled' : ''}>`
                 let call_notes = "";
                 if (key === 'call_notes') {
                     // async injection but no "await"
-                    get_lead_notes(params_now['lead_id'], notes => {
-                        if(document.getElementById('lead_call_notes')){
-                            document.getElementById('lead_call_notes').innerHTML = notes;
-                        }
-                        refresh_collapsible();
-                    });
+                    console.log(`params_now['lead_id']  : `,params_now['lead_id'])
+
+                    if(params_now['lead_id']!=null&&params_now['lead_id']!==""){
+                        get_lead_notes(params_now['lead_id'], notes => {
+                            if(document.getElementById('lead_call_notes')){
+                                document.getElementById('lead_call_notes').innerHTML = notes;
+                            }
+                            refresh_collapsible();
+                        });
+                    }
+                    else{
+                        call_notes="No Notes Found !!"
+                    }
+
                 }
+                console.log(`key : `,key)
 
                 return `
         <div class="col-md-${key === 'comments'||key === 'call_notes' ? '12' : key === 'phone_code' ? '1':'4'} mb-3">
@@ -999,8 +1008,10 @@ ${keys_readOnly.includes(key) ? 'disabled' : ''}>`
                     : (key === 'call_notes'
                         ? `<div   id="lead_call_notes"  >${call_notes}</div>`
                         : `<input type="text" class="form-control" id="${key}" name="${key}"
-                    value="${key === 'epoch' ? new Date(parseInt(params_now[key]) * 1).toLocaleString() :
-                            (params_now[key]!=null&&params_now[key]!=='null'?params_now[key]:'')}"
+                    value="${key === 'epoch' ?
+                            new Date(parseInt(params_now[key]) * 1).toLocaleString() :
+                            (params_now[key]!=null&&params_now[key]!=='null'&&params_now[key]!==''?params_now[key]:'')
+                    }"
                     ${key==='phone_code'?'style="100px"':''}
                     oninput="handleInput(this, '${key}')"
                     ${keys_readOnly.includes(key.toString().trim()) ? 'disabled' : ''}>`)
@@ -1053,7 +1064,7 @@ ${keys_readOnly.includes(key) ? 'disabled' : ''}>`
 
 
                     console.log(`myJSON_new : `,myJSON_new)
-                    if (!myJSON_new || !myJSON_new.db) return callback('');
+                    if (!myJSON_new || !myJSON_new.db) return callback('No Notes');
 
                     const sorted = myJSON_new.db.sort(
                         (a, b) => new Date(b.call_date) - new Date(a.call_date)
