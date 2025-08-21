@@ -452,7 +452,7 @@
                 }
 
                 console.log(`GET LEAD_ID`)
-                postAjax_ASYNC('https://www.ishopper.info/contact_form/add_client_lead.pl',
+                postAjax_ASYNC('https://www.ishopper.info/voip/add_client_lead.pl',
                     {param: JSON.stringify(this_lead_update_json)},
                     function (data) {
 
@@ -504,7 +504,7 @@
                 this_lead_update_json[key] = value;
                 console.log(`ALREADY SET LEAD_ID : ${this_lead_id}`)
                 console.log(`this_lead_update_json : `, this_lead_update_json);
-                postAjax_ASYNC('https://www.ishopper.info/contact_form/add_client_lead.pl',
+                postAjax_ASYNC('https://www.ishopper.info/voip/add_client_lead.pl',
                     {param: JSON.stringify(this_lead_update_json)},
                     function (data) {
 

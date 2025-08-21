@@ -772,7 +772,7 @@
                 this_lead_update_json[key] = value;
 
                 console.log(`this_lead_update_json : `,this_lead_update_json);
-                postAjax_ASYNC('https://www.ishopper.info/contact_form/update_lead.pl',
+                postAjax_ASYNC('https://www.ishopper.info/voip/update_lead.pl',
                     {param: JSON.stringify(this_lead_update_json)},
                     function (data) {
 
@@ -1056,7 +1056,7 @@ ${keys_readOnly.includes(key) ? 'disabled' : ''}>`
 
         const this_lead_update_json = { lead_id };
         postAjax_ASYNC(
-            'https://ishopper.info/contact_form/get_lead_notes.pl',
+            'https://www.ishopper.info/voip/get_lead_notes.pl',
             { param: JSON.stringify(this_lead_update_json) },
             function (data) {
                 try {

@@ -569,7 +569,7 @@ function searchLeads(){
     let this_lead_update_json={
         lead_list_id:document.getElementById('lead_list_id').value
     };
-    postAjax_ASYNC('https://ishopper.info/contact_form/get_leads.pl',
+    postAjax_ASYNC('https://www.ishopper.info/voip/get_leads.pl',
         {param: JSON.stringify(this_lead_update_json)},
         function (data) {
 
