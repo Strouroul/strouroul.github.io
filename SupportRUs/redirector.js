@@ -1,4 +1,9 @@
-let countdown_seconds=parseInt(document.getElementById('countdown_redirect').innerText)||0;
+
+
+
+let countdown_seconds=
+    parseInt(document.getElementById('countdown_redirect').innerText)
+    ||3;
 const fullPath = window.location.pathname + window.location.search + window.location.hash;
 console.log(fullPath);
 
@@ -8,6 +13,7 @@ setInterval(function(){
     }else{
         countdown_seconds--;
         document.getElementById('countdown_redirect').innerText=countdown_seconds;
+        document.getElementById('redirect_dots').innerText+="."
     }
 },1000)
 
