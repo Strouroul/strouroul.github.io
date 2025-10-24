@@ -194,6 +194,27 @@
 
       "website": "<a href=\"https://imeet.glitch.me\" target=\"_blank\">iMeet</a>"
     }
+,
+    {
+      "id": "supportRus",
+      "name": "Support R US",
+      "bg_img": "https://www.notifyvisitors.com/pb/wp-content/uploads/2020/11/10-Best-Customer-Service-Tips-To-Provide-Better-Support_banner.jpg",
+      "status": {
+        "java": "working",
+        "perl": "working",
+        "node.js": "working"
+      },
+      "logo": "https://strouroul.github.io/SupportRUs/images/supportRus_CHATGPT.png",
+      "pic_1": "https://cdn.pixabay.com/photo/2021/06/09/16/20/customer-service-6321042_1280.png",
+      "pic_2": "https://cdn.pixabay.com/photo/2020/11/22/19/29/customer-service-5769020_1280.png",
+      "description": "<p>Support R US connects people and businesses through a unified communication hub that brings together calls, emails, and live chat in one intuitive workspace. Our agents deliver responsive, friendly, and reliable customer care — wherever your customers are.</p>\n<p>Whether it’s a quick call, an urgent email, or real-time chat, Support R US ensures every interaction is smooth, secure, and efficient. Designed for speed and collaboration, our platform empowers support teams to handle multiple channels seamlessly and keep customers happy 24/7.</p>",
+      "description_extended": "<h6 class=\"mb-15 line-height-28\">Experience world-class customer service redefined. Support R US integrates all your communication channels into one streamlined environment — making it easier than ever to stay connected with your customers and team members.</h6>\n<p>Our multi-channel support environment allows teams to manage calls, messages, and emails in real-time — providing consistent service across every touchpoint. Intelligent routing ensures no request goes unanswered, while our clean and modern interface keeps agents focused on what matters most: people.</p>\n<ul class=\"rest list-arrow mt-50\">\n    <li>\n        <span class=\"icon\"><i class=\"fas fa-headset\"></i></span>\n        <h6 class=\"inline fz-18\">24/7 Multi-Channel Support</h6>\n        <p class=\"ml-30\">Seamless handling of calls, chats, and emails from one dashboard.</p>\n    </li>\n    <li class=\"mt-20\">\n        <span class=\"icon\"><i class=\"fas fa-comments\"></i></span>\n        <h6 class=\"inline fz-18\">Unified Communication Hub</h6>\n        <p class=\"ml-30\">Integrates messaging and collaboration tools for smooth workflows.</p>\n    </li>\n    <li class=\"mt-20\">\n        <span class=\"icon\"><i class=\"fas fa-lock\"></i></span>\n        <h6 class=\"inline fz-18\">Secure & Reliable</h6>\n        <p class=\"ml-30\">Built with privacy, uptime, and end-to-end protection in mind.</p>\n    </li>\n    <li class=\"mt-20\">\n        <span class=\"icon\"><i class=\"fas fa-user-check\"></i></span>\n        <h6 class=\"inline fz-18\">Human-Driven Excellence</h6>\n        <p class=\"ml-30\">Empowered agents with real-time tools to deliver personalized care.</p>\n    </li>\n</ul>",
+      "date": "17, July 2025",
+      "categories": "Customer Support, Contact Center, Communication",
+      "client": "Support R US",
+      "website": "<a href=\"https://supportrus.ishopper.info\" target=\"_blank\">Support R US</a>",
+      "url": "https://supportrus.ishopper.info"
+    }
 
   ]
 }
