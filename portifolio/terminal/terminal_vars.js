@@ -413,15 +413,15 @@ const directories = {
                 'Get Rides or Deliveries quick and safely in Cairo, Egypt'
             ],
             ['iShopper',
-                'https://ishopper.info:9898',
+                'https://www.ishopper.info',
                 'Trading Bots, and a few more things'
             ],
             ['Video_Chat',
-                'https://ishopper.info:9898',
+                'https://www.ishopper.info',
                 'Audio / Video Chat with text and sending files encrypted !! End 2 End Encryption'
             ],
             ['iAssist',
-                'https://ishopper.info:9898',
+                'https://www.ishopper.info',
                 'Video Chat , Meetings, Whiteboard , chat, Virtual Assistant'
             ],
         ].map(([name, url, description = '']) => {
