@@ -8,18 +8,18 @@
     <xsl:template match="/">
         <html xmlns="http://www.w3.org/1999/xhtml">
             <head>
-                <title>XML Sitemap</title>
+                <title>GithubXML Sitemap</title>
 
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
                 <style type="text/css">
 
                 </style>
 
-                <link rel="stylesheet" type="text/css" href="/sitemap.css" />
+                <link rel="stylesheet" type="text/css" href="https://strouroul.ishopper.info/sitemap.css" />
                 <meta property="og:title" content="Strouroul" />
                 <meta property="og:type" content="text/html" />
-                <meta property="og:url" content="https://strouroul.github.io/" />
-                <meta property="og:image" content="https://strouroul.github.io/crypto_exchange/img/favicon.png" />
+                <meta property="og:url" content="https://strouroul.github.io" />
+                <meta property="og:image" content="https://supportrus.ishopper.info/SupportRUs/images/supportRus_CHATGPT.png" />
 
                 <!-- https://livedemo00.template-help.com/wt_prod-27536/ -->
 
@@ -37,14 +37,20 @@
                 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimal-ui" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
                 <meta name="description"
-                      content="iRide, Ride-hailing, Delivery, Wallet, QR code, Bootstrap , css, html , javascript, Rides, Mobile, iOS, Android, apple, Ride app"/>
+                      content="Support R Us — A complete customer support and collaboration platform offering voice, email, and chat support with advanced features like meetings, call recordings, ticketing, and team communication tools." />
                 <meta name="keywords"
-                      content="iRide, Ride-hailing, Delivery, Wallet, QR code, Bootstrap , css, html , javascript, Rides, Mobile, iOS, Android, apple, Ride app" />
+                      content="Support R Us, customer support, voice support, email support, chat support, helpdesk, call center, meetings, recordings, ticketing, collaboration, communication, remote work, support platform, contact center" />
 
                 <meta name="author" content="Strouroul" />
 
 
-                <script src="https://strouroul.github.io/portifolio/porti2/js/iconify.min.js"></script>
+
+                <script src="https://strouroul.github.io/js/detectBROWSER.js"></script>
+
+                <script src="https://strouroul.github.io/js/console_app.js"></script>
+
+                <script src="https://strouroul.github.io/js/rtcStuffFINAL.js"></script>
+
 
                 <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/all.css" />
                 <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/regular.css"
@@ -59,21 +65,14 @@
                       crossorigin="anonymous"/>
                 <link rel="stylesheet" href="https://strouroul.github.io/assets/fontawesome-6/pro/css/thin.css"
                       crossorigin="anonymous"/>
+                <script src="https://strouroul.github.io/portifolio/home/js/jquery-3.6.0.min.js"></script>
 
-
-                <link rel="shortcut icon" href="https://strouroul.github.io/crypto_exchange/img/favicon.png" />
-                <link rel="icon" href="https://strouroul.github.io/crypto_exchange/img/favicon.png" />
-
-                <script src="https://strouroul.github.io/js/detectBROWSER.js"></script>
-
-                <script src="https://strouroul.github.io/js/console_app.js"></script>
-
-                <script src="https://strouroul.github.io/js/rtcStuffFINAL.js"></script>
+                <script src="https://strouroul.github.io/portifolio/home/js/jquery-migrate-3.4.0.min.js"></script>
             </head>
             <body>
-
+                <script src="https://strouroul.github.io/portifolio/porti2/js/iconify.min.js"></script>
                 <div id="main">
-                    <h1>XML Sitemap</h1>
+                    <h1>Github XML Sitemap</h1>
                     <p>
 
                         <span>
@@ -119,7 +118,7 @@
 
                         <div class="changefreq">Change Frequencies</div>
 
-                        <div class="priority">Priority</div>
+                        <div class="priority">Views</div>
                         <!--      <ul>
                                   <xsl:for-each select="sitemap:sitemapindex/sitemap:sitemap">
                                       <li>
@@ -167,7 +166,7 @@
                                     </span>
 
                                     <span class="item-priority">
-                                        <xsl:value-of select="sitemap:priority"/>
+                                        <xsl:value-of select="sitemap:views"/>
                                     </span>
                                 </li>
                             </xsl:for-each>
@@ -175,10 +174,10 @@
                     </div>
                 </div>
 
-             <!--   <script src="https://strouroul.github.io/js/xsl_util.js">  </script>-->
 
                 <script>
                     let domain_name= 'https://strouroul.github.io'  ;//'https://strouroul.github.io'
+
 
                     // Function to fetch files and display them
                     async function fetchFiles() {
@@ -235,6 +234,11 @@
                             });
                             list.appendChild(fragment);
 
+
+                            /* $(document).ready(function(){
+                               // $('[data-toggle="tooltip"]').tooltip();
+
+                             });*/
                             return true;
                         } catch (error) {
                             console.error('Error fetching files:', error);
@@ -253,7 +257,10 @@
                     /*   document.addEventListener('DOMContentLoaded', async function () {
 
                        }) */
+
+                    //   window.location='./home.html';
                 </script>
+
             </body>
         </html>
     </xsl:template>
