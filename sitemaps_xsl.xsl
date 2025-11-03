@@ -193,6 +193,7 @@
                             }
 
 
+
                             // Remove line breaks from the string
                             const stringWithoutLineBreaks = txt.replace(/(\r\n|\n|\r)/gm, "");
 
