@@ -157,13 +157,6 @@ Online Research · Technical Support · Artificial Intelligence (AI) · Communic
 
 ---
 
-## 🧾 **Certifications**
-
-- 🧠 **AWS Certified Solutions Architect – Associate**
-- 🐳 **Docker and Kubernetes Administration**
-- 🛠️ **Linux System Administration (LPI Level 1)**
-
----
 ## 💼 **Professional Experience Summary**
 
 - **📡 Real-time Communication Systems** — Designed and implemented an IRC-based signaling infrastructure to replace WebSockets, achieving greater scalability and reliability for large-scale real-time applications.
