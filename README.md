@@ -63,11 +63,17 @@ Passionate about building efficient, reliable, and secure systems.
 ---
 
 ## 🚀 Core Strengths
-- Strong analytical and debugging skills
-- Experience with system integration and automation
-- Full-stack development from concept to deployment
-- Excellent documentation and mentoring abilities
-- Cross-platform development (Windows/Linux/macOS)
+
+- 🧠 Strong analytical and debugging skills
+- 🔗 Expertise in system integration and automation
+- 💻 Full-stack development — from concept to deployment
+- 📝 Excellent documentation, communication, and mentoring abilities
+- 🧩 Cross-platform development: 🪟 Windows · 🐧 Linux · 🍎 macOS · 📱 Android · 🌐 Web
+- ⚙️ DevOps, CI/CD, and infrastructure automation
+- 🔒 Security-oriented system design and data protection
+- ⚡ High-performance optimization and scalability tuning
+- 🤝 Leadership and team collaboration in multi-environment projects
+- 🧰 Hands-on with servers, APIs, and distributed architectures
 
 ---
 
