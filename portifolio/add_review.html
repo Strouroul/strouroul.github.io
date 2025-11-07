@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Add Review with True Half-Star Rating</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+        body {
+            font-family: "Nunito", sans-serif;
+            background: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .review-form {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            width: 450px;
+        }
+
+        .review-form h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+            color: #444;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="url"],
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.2s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+              .rating {
+                  direction: rtl;
+                  unicode-bidi: bidi-override;
+                  font-size: 32px;
+                  display: flex;
+                  justify-content: center;
+              }
+
+              .rating input {
+                  display: none;
+              }
+
+              .rating label {
+                  color: #ccc;
+                  cursor: pointer;
+                  position: relative;
+              }
+        /*
+                      /* full star * /
+                .rating label.full::before {
+                    content: "\f005"; /* fa-star * /
+                    font-family: "Font Awesome 6 Free";
+                    font-weight: 900;
+                }
+
+                /* half star */
+
+        .rating label.half::before {
+            content: "\f089"; /* fa-star-half-stroke * /
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+        }
+
+        /* color on hover or checked * /
+        .rating input:checked ~ label,
+        .rating label:hover,
+        .rating label:hover ~ label {
+            color: #facc15;
+        }
+*/
+        .submit-btn {
+            width: 100%;
+            background: #6366f1;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #4f46e5;
+        }
+
+        .output {
+            margin-top: 25px;
+            background: #f3f4f6;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 14px;
+            color: #111;
+            white-space: pre-wrap;
+        }
+    </style>
+
+
+    <style>
+        /* Base setup */
+        @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+        body {
+            margin: 5%;
+            text-align: center;
+            background: #111;
+            color: #333;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: .5rem;
+        }
+
+        /* Ratings widget */
+        .rate {
+            display: inline-block;
+            border: 0;
+        }
+        /* Hide radio */
+        .rate > input {
+            display: none;
+        }
+        /* Order correctly by floating highest to the right */
+        .rate > label {
+            float: right;
+        }
+        /* The star of the show */
+        .rate > label:before {
+            display: inline-block;
+            font-size: 1.1rem;
+            padding: .3rem .2rem;
+            margin: 0;
+            cursor: pointer;
+            font-family: FontAwesome;
+            content: "\f005 "; /* full star */
+        }
+        /* Zero stars rating */
+        .rate > label:last-child:before {
+            content: "\f006 "; /* empty star outline */
+        }
+        /* Half star trick */
+        .rate .half:before {
+            content: "\f089 "; /* half star no outline */
+            position: absolute;
+            padding-right: 0;
+        }
+
+
+
+        .rate .zero:before {
+            content: "\f006"; /* empty star outline */
+            font-family: FontAwesome;
+            position: absolute;
+        }
+
+        /* Click + hover color */
+        input:checked ~ label, /* color current and previous stars on checked */
+        label:hover, label:hover ~ label { color: #73B100;  } /* color previous stars on hover */
+
+        /* Hover highlights */
+        input:checked + label:hover, input:checked ~ label:hover, /* highlight current and previous stars */
+        input:checked ~ label:hover ~ label, /* highlight previous selected stars for new rating */
+        label:hover ~ input:checked ~ label /* highlight previous selected stars */ { color: #A6E72D;  }
+
+
+
+    </style>
+</head>
+<body>
+<form class="review-form" id="reviewForm">
+    <h2>Add a Review</h2>
+
+    <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="name" placeholder="Enter name" required />
+    </div>
+
+    <div class="form-group">
+        <label>Role / Title</label>
+        <input type="text" id="role" placeholder="e.g. Envato Customer" required />
+    </div>
+
+    <div class="form-group">
+        <label>Profile Image URL</label>
+        <input type="url" id="img" placeholder="https://example.com/photo.jpg" required />
+    </div>
+
+    <div class="form-group">
+        <label>Star Rating (click to rate)</label>
+        <!--<div class="rating">-->
+            <fieldset class="rate">
+                <input type="radio" id="rating10" name="rating" value="10" /><label for="rating10" title="5 stars"></label>
+                <input type="radio" id="rating9" name="rating" value="9" /><label class="half" for="rating9" title="4 1/2 stars"></label>
+                <input type="radio" id="rating8" name="rating" value="8" /><label for="rating8" title="4 stars"></label>
+                <input type="radio" id="rating7" name="rating" value="7" /><label class="half" for="rating7" title="3 1/2 stars"></label>
+                <input type="radio" id="rating6" name="rating" value="6" /><label for="rating6" title="3 stars"></label>
+                <input type="radio" id="rating5" name="rating" value="5" /><label class="half" for="rating5" title="2 1/2 stars"></label>
+                <input type="radio" id="rating4" name="rating" value="4" /><label for="rating4" title="2 stars"></label>
+                <input type="radio" id="rating3" name="rating" value="3" /><label class="half" for="rating3" title="1 1/2 stars"></label>
+
+             <!--   <input type="radio" id="rating2" name="rating" value="2" /><label for="rating2" title="1 star"></label>
+                <input type="radio" id="rating1" name="rating" value="1" /><label class="half" for="rating1" title="1/2 star"></label>
+                <input type="radio" id="rating0" name="rating" value="0" /><label for="rating0" title="0 star"></label>-->
+                <!-- ADDED ORDER FIX HERE -->
+                <input type="radio" id="rating2" name="rating" value="2" /><label for="rating2" title="1 star"></label>
+                <input type="radio" id="rating1" name="rating" value="1" /><label class="half" for="rating1" title="½ star"></label>
+                <input type="radio" id="rating0" name="rating" value="0" /><label class="zero" for="rating0" title="0 stars"></label>
+            </fieldset>
+       <!-- </div>-->
+    </div>
+
+    <div class="form-group">
+        <label>Number of Reviews</label>
+        <input type="number" id="reviews" placeholder="e.g. 88" required />
+    </div>
+
+    <div class="form-group">
+        <label>Review Text</label>
+        <textarea id="text" placeholder="Write your review here..." required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Generate JSON</button>
+
+    <div id="output" class="output" style="display:none;"></div>
+</form>
+
+<script>
+    document.getElementById("reviewForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Get selected value (1–10) from the fieldset rating
+        const selectedRatingInput = document.querySelector('input[name="rating"]:checked');
+        const ratingValue = selectedRatingInput ? parseInt(selectedRatingInput.value) / 2 : 5.0;
+        const reviewData = {
+            stars:  (ratingValue),
+            reviews: parseInt(document.getElementById("reviews").value),
+            text: document.getElementById("text").value.trim(),
+            img: document.getElementById("img").value.trim(),
+            name: document.getElementById("name").value.trim(),
+            role: document.getElementById("role").value.trim(),
+        };
+
+        const output = document.getElementById("output");
+        output.style.display = "block";
+        output.textContent = JSON.stringify(reviewData, null, 2);
+    });
+</script>
+</body>
+</html>

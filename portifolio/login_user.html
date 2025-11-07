@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-auth-compat.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        body {
+            background: #f4f6f8;
+            font-family: "Poppins", sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            width: 360px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 25px;
+            color: #333;
+        }
+        button {
+            width: 100%;
+            margin-bottom: 12px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            color: #fff;
+            font-weight: 600;
+        }
+        .google { background: #db4437; }
+        .github { background: #333; }
+        .facebook { background: #1877f2; }
+        #user {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h2>Sign In</h2>
+    <button class="google" onclick="signInGoogle()"><i class="fab fa-google"></i> Sign in with Google</button>
+    <button class="github" onclick="signInGitHub()"><i class="fab fa-github"></i> Sign in with GitHub</button>
+    <button class="facebook" onclick="signInFacebook()"><i class="fab fa-facebook-f"></i> Sign in with Facebook</button>
+    <div id="user"></div>
+</div>
+
+<script>
+    // 🔥 Your Firebase config (from Firebase Console)
+    const firebaseConfig = {
+        apiKey: "YOUR_FIREBASE_API_KEY",
+        authDomain: "",
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    function signInGoogle() {
+        const provider = new firebase.auth.GoogleAuthProvider();
+        auth.signInWithPopup(provider)
+            .then(result => showUser(result.user))
+            .catch(err => alert(err.message));
+    }
+
+    function signInGitHub() {
+        const provider = new firebase.auth.GithubAuthProvider();
+        auth.signInWithPopup(provider)
+            .then(result => showUser(result.user))
+            .catch(err => alert(err.message));
+    }
+
+    function signInFacebook() {
+        const provider = new firebase.auth.FacebookAuthProvider();
+        auth.signInWithPopup(provider)
+            .then(result => showUser(result.user))
+            .catch(err => alert(err.message));
+    }
+
+    function showUser(user) {
+        document.getElementById('user').innerHTML = `
+      <p>✅ Signed in as <strong>${user.displayName}</strong></p>
+      <p>Email: ${user.email || "N/A"}</p>
+      <img src="${user.photoURL}" width="80" style="border-radius:50%; margin-top:10px;">
+    `;
+    }
+</script>
+</body>
+</html>

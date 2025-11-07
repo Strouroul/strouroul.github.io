@@ -210,6 +210,10 @@ function set_education_list(items) {
 }
 
 
+
+////////////////////////////////////////////////////////////////////////////////////
+
+
 document.getElementById("education_list").innerHTML = set_education_list(my_education);
 
 
