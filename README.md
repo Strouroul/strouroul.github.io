@@ -178,12 +178,5 @@ Online Research · Technical Support · Artificial Intelligence (AI) · Communic
 
 ---
 
-## 🧩 Dynamic Section
-
-<div id="dynamic-content">
-  <p>Loading content...</p>
-</div>
-<script src="./readme.js"></script> 
----
 
 > _“Efficiency is not just speed — it’s doing things right, securely, and elegantly.”_
