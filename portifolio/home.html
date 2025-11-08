@@ -2117,7 +2117,7 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
 
                             <!-- ==================== Start Contact ==================== -->
 
-                            <div class="contact">
+                            <div class="contact" id="contact_box_id">
                                 <div class="sec-head mb-80 wow fadeInUp">
                                     <div class="d-inline-block">
                                         <div class="sub-title-icon d-flex align-items-center">
@@ -2328,10 +2328,11 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
 
 <!-- ==================== End Footer ==================== -->
 
-<script src="./js/blogs_testimonials.js">
+
+<script src="/js/page_url_query.js"></script>
 
 
-</script>
+<script src="./js/blogs_testimonials.js"></script>
 
 
 
@@ -2895,6 +2896,45 @@ https://ui-themez.smartinnovates.net/items/Gilb/home2.html
 <button class="open-zammad-chat" style="display: none;visibility: hidden;">Open HelpDesk</button>
 <script src="https://helpdesk.ishopper.info/assets/chat/chat-no-jquery.min.js"></script>
 <script src="https://www.ishopper.info/SupportRUs/helpdesk.js"></script>
+
+
+
+
+
+<script>
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        try{
+            if(page_url_params.hasOwnProperty('contact_me_now')){
+                if(page_url_params.contact_me_now===true||page_url_params.contact_me_now==="true"){
+                    setTimeout(function () {
+                       // const target = document.querySelector('[data-scroll-nav="4"]');
+                        const target = document.querySelector('#contact_box_id');
+
+                        if (target) {
+                            target.scrollIntoView({ behavior: "smooth" });
+                            console.log("✅ Scrolled to section with data-scroll-nav=4");
+                        } else {
+                            console.warn("⚠️ No element found with data-scroll-nav=4");
+                        }
+                    }, 3000);
+
+                }
+            }
+        }
+        catch(err_page_PARAMS){
+            console.log('err_page_PARAMS : ',err_page_PARAMS)
+        }
+
+    });
+
+
+
+</script>
+
+
 </body>
 
 </html>
