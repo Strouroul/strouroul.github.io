@@ -1,85 +1,94 @@
 const blogItems = [
     {
         image: "https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/blog/1.jpg",
-        date: "20 July 2023",
-        title: "10 Tips to Leading an Extraordinary Company",
+        date: "12 Nov 2025",
+        title: "Why Outsourcing Customer Support Can Transform Your Business",
         link: "./blog-details.html",
         delay: ".2s"
     },
     {
         image: "https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/blog/2.jpg",
-        date: "20 July 2020",
-        title: "12 Tips to Leading an Extraordinary Company",
-        link: "https://ui-themez.smartinnovates.net/items/Gilb/blog-details.html",
+        date: "05 Nov 2025",
+        title: "5 Proven Ways Support R US Improves Customer Satisfaction",
+        link: "./blog-details.html",
         delay: ".4s"
     },
     {
         image: "https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/blog/3.jpg",
-        date: "20 July 2020",
-        title: "12 Tips to Leading an Extraordinary Company",
-        link: "https://ui-themez.smartinnovates.net/items/Gilb/blog-details.html",
+        date: "27 Oct 2025",
+        title: "The Secret to 24/7 Support Without Burning Out Your Team",
+        link: "./blog-details.html",
         delay: ".6s"
     },
     {
-        image: "https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/blog/1.jpg",
-        date: "20 July 2020",
-        title: "12 Tips to Leading an Extraordinary Company",
-        link: "https://ui-themez.smartinnovates.net/items/Gilb/blog-details.html",
+        image: "https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/blog/4.jpg",
+        date: "18 Oct 2025",
+        title: "How Professional Live Chat Support Boosts Sales & Retention",
+        link: "./blog-details.html",
         delay: ".8s"
+    },
+    {
+        image: "https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/blog/5.jpg",
+        date: "10 Oct 2025",
+        title: "Building Trust Through Excellent Customer Communication",
+        link: "./blog-details.html",
+        delay: "1s"
     }
+
 ];
 
 const testimonials = [
     {
         stars: 5,
         reviews: 92,
-        text: `We’ve partnered with <strong>Support R Us</strong> for our customer service operations, and the results have been outstanding.
-    Their team’s professionalism, fast response times, and attention to detail made every interaction effortless.
-    The quality of support and clear communication truly set them apart — a reliable partner we’re proud to work with.`,
+        text: `Partnering with <strong>Support R US</strong> has been a game-changer for our business.  
+    Their agents are professional, fast, and always proactive in finding solutions.  
+    Every interaction feels effortless — they truly act as an extension of our own team.`,
         img: "https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/testim/1.jpg",
-        name: "Leonard Heiser",
-        role: "Envato customer"
+        name: "Samantha L.",
+        role: "Operations Manager"
     },
     {
         stars: 5,
         reviews: 89,
-        text: `Choosing <strong>Support R Us</strong> was one of the best decisions we’ve made for our customer service.
-    Their team handled calls, emails, and chat support seamlessly, always maintaining a friendly and professional tone.
-    Our clients noticed the difference immediately — fast resolutions, clear communication, and genuine care in every interaction.`,
+        text: `The <strong>Support R US</strong> team manages our phone, email, and live chat support flawlessly.  
+    They handle customers with empathy and professionalism, and our satisfaction scores have never been higher.  
+    We couldn’t ask for a better support partner.`,
         img: "https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/testim/2.jpg",
-        name: "Leonard Heiser",
-        role: "Envato customer"
+        name: "David K.",
+        role: "Customer Experience Lead"
     },
     {
         stars: 5,
         reviews: 88,
-        text: `The <strong>Support R Us</strong> team transformed our customer experience!
-    Their agents are quick, courteous, and genuinely care about helping our customers.
-    From voice to chat and email — everything just works smoothly. It's like having an in-house support team without the hassle.`,
+        text: `<strong>Support R US</strong> completely elevated how we handle customer service.  
+    Their agents respond quickly, communicate clearly, and genuinely care about resolving issues.  
+    It feels like having a full in-house support team — without the overhead.`,
         img: "https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/testim/3.jpg",
-        name: "Leonard Heiser",
-        role: "Envato customer"
+        name: "Melissa R.",
+        role: "E-Commerce Director"
     },
     {
         stars: 5,
         reviews: 86,
-        text: `Exceptional service from start to finish!
-    <strong>Support R Us</strong> consistently goes above and beyond to make sure our clients are heard and supported.
-    Their professionalism and dedication have made them an essential part of our daily operations.`,
+        text: `We’ve been with <strong>Support R US</strong> for over a year, and the difference is night and day.  
+    Their consistency, professionalism, and dedication help us maintain top-tier client satisfaction.  
+    They’re not just a vendor — they’re a trusted part of our business.`,
         img: "https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/testim/2.jpg",
-        name: "Leonard Heiser",
-        role: "Envato customer"
+        name: "Ahmed T.",
+        role: "Business Owner"
     },
     {
         stars: 5,
         reviews: 83,
-        text: `We’ve worked with several outsourcing providers, but none compare to <strong>Support R Us</strong>.
-    The attention to detail, reliability, and quality of communication set them apart.
-    Our customers get the help they need — fast, friendly, and always on point.`,
+        text: `After trying multiple outsourcing companies, <strong>Support R US</strong> stood out immediately.  
+    Their communication, reliability, and quality of work are unmatched.  
+    Our customers get fast, friendly, and accurate support every single time.`,
         img: "https://ui-themez.smartinnovates.net/items/Gilb/assets/imgs/testim/3.jpg",
-        name: "Leonard Heiser",
-        role: "Envato customer"
+        name: "Rebecca M.",
+        role: "Customer Support Manager"
     }
+
 ];
 
 
