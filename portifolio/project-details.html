@@ -431,7 +431,9 @@
                 //    console.log(`file : ${JSON.stringify(project_found)}`)
              // my_project_data.push(project_found);
 
-                if(project_found.id===project){
+                if(project_found.id.toString().toLowerCase()===project.toString().toLowerCase()||
+                    project_found.id.toString().toUpperCase()===project.toString().toUpperCase()||
+                    project_found.id.toString() ===project.toString() ){
                     my_project_choosen_index=counter_index;
                     adjust_project_details(project_found,all_projects );
 
@@ -566,11 +568,11 @@
 
 
     // Example usage
-    const project_name = getQueryParam('project_name')||null;
-    const project_id = getQueryParam('project_id')||null;
+    const project_name = getQueryParam('project_name') ||null;
+    const project_id = getQueryParam('project_id') ||null;
 
-    let type=project_name!=null?"NAME": (project_id!=null?"ID":"UNKNOWN") ;
-    let project=project_name!=null?project_name: (project_id!=null?project_id:"UNKNOWN") ;
+    let type=project_name !=null?"NAME": (project_id !=null?"ID":"UNKNOWN") ;
+    let project=project_name!=null?project_name : (project_id !=null?project_id :"UNKNOWN") ;
     // Log the value to the console (you can use it as needed)
     console.log('type:', type);
     console.log('project:', project);
